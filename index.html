@@ -1,0 +1,1337 @@
+<!DOCTYPE html>
+<html lang="es" class="js">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Comunidad Islámica de Torrejón de Ardoz — Inicio</title>
+  <meta name="description" content="Bienvenido a la Comunidad Islámica de Torrejón de Ardoz. Explora nuestros horarios, la Mezquita Annur, Madrasat Iqraa y el proyecto Arriduan." />
+  <meta name="theme-color" content="#4A6560" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" referrerpolicy="no-referrer" />
+  
+  <style>
+    /* ============ PALETA DE COLORES ============ */
+    :root {
+      --primary: #668983;      
+      --primary-dark: #4A6560; 
+      --primary-light: #E8EEED;
+      
+      --brown-mocha: #4E3321;  
+      --brown-earth: #6F5241;  
+      --gold: #B39153;         
+      --accent: #C3B291;       
+      
+      --bg-white: #FCFBFA;     
+      --surface-light: #F7F5F0; 
+      --surface-card: #FFFFFF; 
+      --border-color: #E6E4DF; 
+
+      --ink-900: #1B2321;      
+      --ink-700: #33423E;      
+      --ink-500: #667571;      
+      --white: #FFFFFF;
+
+      --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      --font-serif: 'Playfair Display', Georgia, serif;
+      --font-arabic: 'Amiri', serif;
+
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 22px;
+      --shadow-sm: 0 4px 14px rgba(74, 101, 96, 0.08);
+      --shadow-md: 0 12px 32px rgba(74, 101, 96, 0.12);
+      --shadow-lg: 0 20px 48px rgba(74, 101, 96, 0.18);
+    }
+
+    /* ============ BASE & RESET ============ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-sans); color: var(--ink-900); background-color: var(--bg-white); line-height: 1.65; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: var(--primary-dark); text-decoration: none; transition: all 0.2s ease; }
+    ul, ol { list-style: none; }
+    
+    .skip-link { position: absolute; top: -100px; left: 1rem; background: var(--gold); color: var(--white); padding: 0.6rem 1rem; border-radius: var(--radius-sm); font-weight: 700; z-index: 9999; }
+    .skip-link:focus { top: 1rem; }
+    .container { width: min(1200px, 92%); margin-inline: auto; }
+
+    /* ============ LÓGICA DE VISTAS (SPA) ============ */
+    .view-section { display: none; opacity: 0; transition: opacity 0.4s ease; padding-top: 2rem; }
+    .view-section.is-active { display: block; opacity: 1; animation: fadeIn 0.5s ease forwards; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    
+    #view-home { display: block; opacity: 1; transition: opacity 0.4s ease; }
+    #view-home.is-hidden { display: none; opacity: 0; }
+
+    .btn-back-global { position: sticky; top: 120px; z-index: 900; display: inline-flex; align-items: center; gap: 0.5rem; background: var(--surface-card); color: var(--ink-900); font-weight: 700; padding: 0.6rem 1.2rem; border-radius: 99px; box-shadow: var(--shadow-sm); border: 1px solid var(--border-color); margin-bottom: 2rem; margin-left: 4%; cursor: pointer; transition: all 0.2s; }
+    .btn-back-global:hover { background: var(--surface-light); color: var(--primary-dark); transform: translateX(-3px); }
+    .btn-back-global i { color: var(--gold); }
+    
+    .detail-view-wrap { padding-bottom: 4rem; }
+
+    /* ============ TYPOGRAPHY ============ */
+    h1, h2, h3, h4 { line-height: 1.2; color: var(--primary-dark); }
+    h1 em, h2 em, .display em { font-family: var(--font-serif); font-style: italic; font-weight: 500; color: var(--gold); }
+    .display { font-family: var(--font-serif); font-size: clamp(2.2rem, 4vw, 3.2rem); font-weight: 700; letter-spacing: -0.01em; margin-bottom: 0.75rem; color: var(--ink-900); }
+    .eyebrow { display: inline-block; font-size: 0.85rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; color: var(--gold); margin-bottom: 0.6rem; }
+    .eyebrow-light { color: var(--accent); }
+    .lead { font-size: clamp(1.1rem, 1.5vw, 1.25rem); color: var(--ink-700); margin-bottom: 1.5rem; line-height: 1.7; font-weight: 500;}
+    .section { padding: clamp(4rem, 7vw, 6.5rem) 0; }
+    .section-head { text-align: center; max-width: 720px; margin: 0 auto 3.5rem; }
+    .section-head-light h2 { color: var(--ink-900); }
+    .section-head-light .section-intro { color: var(--ink-700); }
+    .section-head-light h2 em { color: var(--gold); }
+    .section-intro { font-size: 1.15rem; color: var(--ink-700); line-height: 1.6; font-weight: 500;}
+
+    /* ============ BUTTONS ============ */
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem; padding: 0.9rem 1.6rem; border-radius: 999px; font-weight: 700; font-size: 0.95rem; cursor: pointer; transition: all 0.25s ease; border: none; }
+    .btn-lg { padding: 1.2rem 2.5rem; font-size: 1.1rem; }
+    .btn-sm { padding: 0.55rem 1.1rem; font-size: 0.875rem; }
+    .btn-block { display: flex; width: 100%; }
+    
+    .btn-gold { background: linear-gradient(135deg, var(--gold), var(--brown-earth)); color: var(--white); box-shadow: 0 6px 20px rgba(179, 145, 83, 0.35); }
+    .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 10px 26px rgba(179, 145, 83, 0.5); background: linear-gradient(135deg, #c7a360, var(--gold)); color: white;}
+    
+    .btn-green { background: var(--brown-earth); color: var(--white); box-shadow: 0 6px 20px rgba(111, 82, 65, 0.25); } 
+    .btn-green:hover { background: var(--brown-mocha); transform: translateY(-2px); color: var(--white); }
+    
+    .btn-ghost-light { background: rgba(255, 255, 255, 0.12); color: var(--white); border: 1px solid rgba(255, 255, 255, 0.4); backdrop-filter: blur(6px); }
+    .btn-ghost-light:hover { background: rgba(255, 255, 255, 0.25); border-color: var(--white); }
+
+    /* ============ HEADER & NAV ============ */
+    .site-header { position: sticky; top: 0; z-index: 1000; background: var(--primary-dark); border-bottom: 2px solid var(--gold); padding: 0.4rem 0; box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
+    .nav-wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+    .brand { display: flex; align-items: center; gap: 1.25rem; cursor: pointer; }
+    .brand-mark-img { height: 75px; width: auto; object-fit: contain; flex-shrink: 0; transition: transform 0.3s ease; }
+    .brand:hover .brand-mark-img { transform: scale(1.05); }
+    .brand-text { display: flex; flex-direction: column; line-height: 1.15; }
+    .brand-name { font-family: var(--font-serif); font-weight: 700; font-size: 1.3rem; color: var(--white); }
+    .brand-sub { font-size: 0.85rem; color: var(--accent); font-weight: 600; letter-spacing: 0.05em; }
+
+    .site-nav { display: flex; align-items: center; gap: 1.25rem; }
+    .site-nav ul { display: flex; align-items: center; gap: 1.25rem; }
+    .site-nav button { background: none; border: none; font-family: inherit; color: rgba(255,255,255,0.9); font-size: 0.95rem; font-weight: 500; padding: 0.35rem 0; position: relative; cursor: pointer; transition: color 0.2s;}
+    .site-nav button:hover { color: var(--gold); }
+
+    .nav-toggle { display: none; background: transparent; border: none; padding: 0.5rem; cursor: pointer; flex-direction: column; gap: 5px; }
+    .nav-toggle span { display: block; width: 24px; height: 2px; background: var(--white); transition: 0.25s; }
+
+    @media (max-width: 1080px) {
+      .nav-toggle { display: flex; }
+      .site-nav { position: absolute; top: 100%; left: 0; right: 0; background: var(--primary-dark); flex-direction: column; align-items: stretch; padding: 1.5rem; border-bottom: 3px solid var(--gold); display: none; box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
+      .site-nav.is-open { display: flex; }
+      .site-nav ul { flex-direction: column; align-items: flex-start; gap: 1rem; margin-bottom: 1.5rem; }
+      .site-nav button { font-size: 1.1rem; }
+      .brand-mark-img { height: 75px; } 
+    }
+
+    /* ============ HERO (PORTADA COMPACTA) ============ */
+    .hero { position: relative; color: var(--white); min-height: 70vh; display: flex; flex-direction: column; justify-content: center; overflow: hidden; background: var(--primary-dark); }
+    .hero-bg { position: absolute; inset: 0; z-index: 0; overflow: hidden; }
+    .hero-bg img { width: 100%; height: 100%; object-fit: cover; object-position: center; filter: brightness(0.65) saturate(1.1); }
+    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(74, 101, 96, 0.4) 0%, rgba(102, 137, 131, 0.5) 65%, var(--primary-dark) 100%); z-index: 1; }
+    .hero-inner { position: relative; z-index: 2; padding: 4rem 0; max-width: 820px; text-align: center; }
+    .hero-arabic { font-family: var(--font-arabic); font-size: clamp(1.6rem, 3vw, 2.3rem); color: var(--accent); margin-bottom: 0.75rem; text-shadow: 0 2px 10px rgba(0,0,0,0.3); }
+    .hero h1 { font-family: var(--font-serif); font-size: clamp(2.4rem, 5.5vw, 4.2rem); color: var(--white); margin-bottom: 1.2rem; text-shadow: 0 4px 15px rgba(0,0,0,0.4); }
+    .hero h1 em { color: var(--accent); }
+    .hero-sub { font-size: clamp(1.05rem, 1.8vw, 1.25rem); color: rgba(255, 255, 255, 0.95); max-width: 650px; margin: 0 auto; text-shadow: 0 2px 8px rgba(0,0,0,0.3); font-weight: 500;}
+
+    /* ============ HORARIOS DE REZO ============ */
+    .prayer { background: var(--primary); color: var(--white); padding: 3rem 0; border-bottom: 4px solid var(--gold); }
+    .prayer-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.5rem; margin-bottom: 2rem; }
+    .prayer-title { font-family: var(--font-serif); color: var(--white); font-size: clamp(1.4rem, 2.5vw, 1.8rem); margin-bottom: 0.2rem;}
+    .prayer-hijri { color: var(--accent); font-weight: 600; font-size: 1.05rem;}
+    .prayer-countdown { background: rgba(0, 0, 0, 0.25); border: 1px solid var(--gold); padding: 0.75rem 1.2rem; border-radius: var(--radius-md); display: flex; align-items: center; gap: 1rem; }
+    .prayer-countdown-label { font-size: 0.85rem; color: var(--white); text-transform: uppercase; font-weight: 700; letter-spacing: 0.05em; }
+    .prayer-countdown-clock { font-family: monospace; font-size: 1.4rem; font-weight: 700; color: var(--gold); letter-spacing: 0.05em; }
+    
+    .prayer-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 0.8rem; margin-bottom: 1rem; }
+    @media (max-width: 900px) { .prayer-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width: 520px) { .prayer-grid { grid-template-columns: repeat(2, 1fr); } }
+    
+    .rezo-caja { background: var(--surface-light); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.25rem 0.5rem; text-align: center; transition: all 0.3s ease; box-shadow: var(--shadow-sm); }
+    .rezo-nombre { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--brown-earth); margin-bottom: 0.4rem; font-weight: 800; }
+    .rezo-hora { font-family: var(--font-serif); font-size: 1.6rem; font-weight: 700; color: var(--primary-dark); }
+    .rezo-hora .ampm { font-family: var(--font-sans); font-size: 0.75rem; font-weight: 600; opacity: 0.8; }
+    
+    .rezo-caja.activo { background: var(--brown-mocha); border-color: var(--gold); box-shadow: 0 10px 30px rgba(78, 51, 33, 0.5); transform: scale(1.05) translateY(-3px); border-width: 3px; z-index: 10; }
+    .rezo-caja.activo .rezo-nombre { color: var(--accent); }
+    .rezo-caja.activo .rezo-hora { color: var(--white); }
+
+    /* ============ MAIN HUB (TARJETAS HORIZONTALES) ============ */
+    .hub-section { padding: 5rem 0; background: var(--surface-light); }
+    .hub-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+    @media (max-width: 1024px) { .hub-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 600px) { .hub-grid { grid-template-columns: 1fr; } }
+    
+    .hub-card { 
+      background: var(--surface-card); 
+      border-radius: var(--radius-lg); 
+      overflow: hidden; 
+      box-shadow: var(--shadow-md); 
+      border: 1px solid var(--border-color); 
+      transition: all 0.4s ease; 
+      display: flex; 
+      flex-direction: column; 
+      text-decoration: none; 
+      position: relative;
+      cursor: pointer;
+      text-align: left;
+    }
+    .hub-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); border-color: var(--gold); }
+    .hub-card:hover .hub-img img { transform: scale(1.08); }
+    
+    .hub-img { height: 180px; overflow: hidden; position: relative;}
+    .hub-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+    .hub-img::after { content: ''; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(27,35,33,0.8) 0%, rgba(27,35,33,0) 60%); }
+    
+    .hub-icon-badge { position: absolute; bottom: -18px; right: 1.5rem; width: 48px; height: 48px; background: var(--gold); color: var(--white); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; box-shadow: 0 4px 15px rgba(179, 145, 83, 0.4); z-index: 2;}
+    
+    .hub-content { padding: 2rem 1.5rem 1.5rem; display: flex; flex-direction: column; flex-grow: 1; }
+    .hub-content h3 { font-family: var(--font-serif); font-size: 1.3rem; color: var(--ink-900); margin-bottom: 0.5rem; }
+    .hub-content p { color: var(--ink-700); font-weight: 500; font-size: 0.9rem; margin-bottom: 1.25rem; line-height: 1.5;}
+    .hub-action { margin-top: auto; display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 800; color: var(--primary-dark); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.05em; transition: color 0.2s;}
+    .hub-card:hover .hub-action { color: var(--gold); }
+
+    /* ============ BANNER DONACIÓN URGENTE ============ */
+    .urgent-banner { background: var(--brown-mocha); color: var(--white); padding: 4.5rem 0; position: relative; overflow: hidden; border-top: 4px solid var(--gold); border-bottom: 4px solid var(--gold);}
+    .urgent-banner::before { content: ""; position: absolute; top: -50%; right: -20%; width: 60%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0) 70%); pointer-events: none;}
+    .urgent-grid { display: grid; grid-template-columns: 1fr auto; gap: 3rem; align-items: center; position: relative; z-index: 2;}
+    @media (max-width: 900px) { .urgent-grid { grid-template-columns: 1fr; text-align: center; justify-items: center;} }
+    
+    .urgent-content h2 { font-family: var(--font-serif); font-size: clamp(2rem, 4vw, 2.8rem); color: var(--white); margin-bottom: 1rem; }
+    .urgent-content h2 em { color: var(--accent); font-style: italic; }
+    .urgent-content p { font-size: 1.15rem; color: rgba(255,255,255,0.9); max-width: 700px; font-weight: 500; line-height: 1.6;}
+    
+    .pulse-dot { display: inline-block; width: 12px; height: 12px; background: var(--gold); border-radius: 50%; margin-right: 0.5rem; box-shadow: 0 0 0 rgba(179, 145, 83, 0.7); animation: pulse 1.5s infinite; }
+
+    /* ============ NOTICIAS COMPACTAS ============ */
+    .news-compact { padding: 4.5rem 0; background: var(--bg-white); }
+    .news-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.75rem; }
+    .news-card { background: var(--surface-card); border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-sm); border: 1px solid var(--border-color); display: flex; flex-direction: column; transition: transform 0.3s ease; text-decoration: none;}
+    .news-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); border-color: var(--primary);}
+    .news-img { height: 180px; }
+    .news-img img { width: 100%; height: 100%; object-fit: cover; }
+    .news-body { padding: 1.5rem; }
+    .news-meta { display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--ink-500); font-weight: 700; margin-bottom: 0.75rem; text-transform: uppercase;}
+    .news-body h3 { font-size: 1.15rem; color: var(--ink-900); margin-bottom: 0.5rem; line-height: 1.4; transition: color 0.2s;}
+    .news-card:hover .news-body h3 { color: var(--primary-dark); }
+
+    /* ============ AYAH BAND ============ */
+    .ayah-band { background: linear-gradient(135deg, var(--primary-dark), var(--primary)); color: var(--white); padding: 4.5rem 0; text-align: center; border-top: 2px solid var(--gold); border-bottom: 2px solid var(--gold); position: relative; overflow: hidden;}
+    .ayah-inner { max-width: 850px; position: relative; z-index: 1;}
+    .ayah { font-family: var(--font-arabic); font-size: clamp(1.8rem, 3.5vw, 2.5rem); color: var(--accent); line-height: 1.8; margin-bottom: 1rem; text-shadow: 0 2px 4px rgba(0,0,0,0.3);}
+    .ayah-translation { font-family: var(--font-serif); font-style: italic; font-size: clamp(1.1rem, 2vw, 1.3rem); margin-bottom: 0.75rem; color: rgba(255,255,255,0.95);}
+    .ayah-ref { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--gold); font-weight: 800;}
+
+    /* ============ CONTACT MINI ============ */
+    .contact-mini { padding: 4.5rem 0; background: var(--surface-light); text-align: center; }
+    .contact-mini h2 { font-family: var(--font-serif); font-size: 2.2rem; color: var(--ink-900); margin-bottom: 1rem;}
+    .contact-mini p { font-size: 1.1rem; color: var(--ink-700); max-width: 600px; margin: 0 auto 2rem; font-weight: 500;}
+    .contact-actions { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;}
+
+    /* ============ BOTÓN ANIMADO DONACIÓN URGENTE ============ */
+    .urgent-donate-wrapper {
+      text-align: center;
+      margin: 0.2rem 0 3rem;
+      padding: 0 1rem;
+    }
+    .btn-pulsing-red {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: var(--surface-card);
+      color: var(--ink-900);
+      font-weight: 800;
+      font-size: 0.95rem;
+      padding: 0.75rem 1.75rem;
+      border-radius: 99px;
+      border: 1px solid var(--border-color);
+      cursor: pointer;
+      box-shadow: var(--shadow-sm);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      transition: all 0.3s ease;
+    }
+    .btn-pulsing-red:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+      border-color: #D93838;
+      color: #D93838;
+    }
+    .btn-pulsing-red .red-dot {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      background: #D93838;
+      border-radius: 50%;
+      box-shadow: 0 0 0 0 rgba(217, 56, 56, 0.7);
+      animation: pulseAlert 1.5s infinite cubic-bezier(0.66, 0, 0, 1);
+    }
+    @keyframes pulseAlert {
+      to {
+        box-shadow: 0 0 0 15px rgba(217, 56, 56, 0);
+      }
+    }
+
+    /* ============ VISTAS DETALLADAS ============ */
+    .annur-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 3.5rem; align-items: center; }
+    @media (max-width: 900px) { .annur-grid { grid-template-columns: 1fr; gap: 2.5rem;} }
+    .annur-arabic, .madrasa-arabic { font-family: var(--font-arabic); font-size: 2.2rem; color: var(--gold); margin-bottom: 1rem; }
+    .annur-list { display: flex; flex-direction: column; gap: 1.25rem; margin-top: 2rem; }
+    .annur-list li { display: flex; gap: 1.25rem; align-items: flex-start; background: var(--surface-card); padding: 1.5rem; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); border: 1px solid var(--border-color); }
+    .annur-icon { width: 50px; height: 50px; border-radius: 12px; background: rgba(195, 178, 145, 0.25); color: var(--brown-earth); display: inline-flex; align-items: center; justify-content: center; font-size: 1.3rem; flex-shrink: 0; }
+    .annur-list h3 { font-size: 1.15rem; margin-bottom: 0.35rem; color: var(--ink-900); }
+    .annur-list p { font-size: 1rem; color: var(--ink-700); font-weight: 500;}
+    .annur-card { background: var(--surface-card); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg); border: 1px solid var(--border-color); }
+    .annur-card-img img { width: 100%; height: 280px; object-fit: cover; }
+    .annur-card-body { padding: 2rem; }
+    .annur-card-body h3 { font-family: var(--font-serif); font-size: 1.5rem; margin-bottom: 1.25rem; color: var(--ink-900); }
+    .annur-facts { display: flex; flex-direction: column; gap: 0.85rem; margin-bottom: 1.75rem; }
+    .annur-facts li { display: flex; align-items: center; gap: 0.85rem; font-size: 0.95rem; color: var(--ink-700); font-weight: 600;}
+    .annur-facts i { color: var(--gold); width: 20px; text-align: center; font-size: 1.1rem;}
+
+    .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.75rem; margin-bottom: 2rem; }
+    .gallery-item { background: var(--surface-card); border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-md); border: 1px solid var(--border-color); display: flex; flex-direction: column;}
+    .gallery-img { overflow: hidden; height: 240px; }
+    .gallery-img img { width: 100%; height: 100%; object-fit: cover; }
+    .gallery-item figcaption { padding: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem; }
+    .step { align-self: flex-start; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; padding: 0.25rem 0.75rem; border-radius: 6px; background: rgba(111, 82, 65, 0.15); color: var(--primary-dark); }
+    .step-current { background: var(--gold); color: var(--white); }
+    .gallery-item strong { font-size: 1.2rem; color: var(--ink-900); }
+    .gallery-item figcaption span:last-child { font-size: 0.95rem; color: var(--ink-700); line-height: 1.5; font-weight: 500;}
+
+    .timeline { display: grid; grid-template-columns: repeat(6, 1fr); gap: 0.75rem; background: var(--surface-card); padding: 1.75rem; border-radius: var(--radius-md); border: 1px solid var(--border-color); box-shadow: var(--shadow-sm); margin-bottom: 3.5rem;}
+    @media (max-width: 820px) { .timeline { grid-template-columns: repeat(2, 1fr); gap: 1.5rem;} }
+    .timeline li { position: relative; padding-top: 1.5rem; font-size: 0.95rem; font-weight: 700; color: var(--ink-500); }
+    .timeline li::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 6px; border-radius: 99px; background: var(--border-color); }
+    .timeline li.done { color: var(--primary); }
+    .timeline li.done::before { background: var(--primary); }
+    .timeline li.current { color: var(--gold); font-weight: 800; }
+    .timeline li.current::before { background: var(--gold); }
+
+    /* ESTILOS TRIBUTO SIHMED */
+    .tribute-box { background: var(--surface-card); border: 1px solid var(--border-color); border-left: 4px solid var(--gold); padding: 2.5rem; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); text-align: center; max-width: 850px; margin: 3rem auto 0; }
+    .tribute-text { font-size: 1.1rem; color: var(--ink-700); margin-bottom: 1.75rem; line-height: 1.6; font-style: italic;}
+    .tribute-text strong { color: var(--primary-dark); font-weight: 800; }
+    .tribute-video-wrap { width: 100%; margin: 0 auto; max-width: 700px;}
+    .video-responsive { overflow: hidden; padding-bottom: 56.25%; position: relative; height: 0; border-radius: var(--radius-sm); box-shadow: var(--shadow-md); background: #1B2321; }
+    .video-responsive iframe { left: 0; top: 0; height: 100%; width: 100%; position: absolute; border: 0; }
+
+    /* Pilares */
+    .pillar-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.75rem; }
+    .pillar { background: var(--surface-card); padding: 2.25rem 1.75rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); border: 1px solid var(--border-color); position: relative; display: flex; flex-direction: column; gap: 0.85rem;}
+    .pillar-icon { width: 56px; height: 56px; border-radius: 14px; background: var(--surface-light); color: var(--gold); border: 1px solid var(--border-color); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; }
+    .pillar-num { position: absolute; top: 1.5rem; right: 1.75rem; font-family: var(--font-serif); font-size: 2.2rem; font-weight: 700; color: rgba(102, 137, 131, 0.15); line-height: 1;}
+    .pillar-tag { display: inline-block; align-self: flex-start; background: rgba(195, 178, 145, 0.3); color: var(--brown-earth); font-size: 0.8rem; font-weight: 800; padding: 0.2rem 0.75rem; border-radius: 6px; }
+    .pillar h3 { font-size: 1.3rem; color: var(--ink-900); }
+    .pillar p { font-size: 1rem; color: var(--ink-700); font-weight: 500;}
+    .pillar-list { margin-top: auto; padding-top: 1rem; border-top: 1px dashed var(--border-color); display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.95rem; color: var(--ink-700); font-weight: 600;}
+    .pillar-list li::before { content: "• "; color: var(--gold); font-weight: bold; font-size: 1.1em;}
+
+    /* Madrasa */
+    .program-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.75rem; margin-bottom: 3rem; }
+    .program { background: var(--surface-card); padding: 2.25rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); border: 1px solid var(--border-color); display: flex; flex-direction: column; gap: 1rem; }
+    .program-icon { width: 52px; height: 52px; border-radius: 12px; background: rgba(195, 178, 145, 0.3); color: var(--brown-earth); display: inline-flex; align-items: center; justify-content: center; font-size: 1.4rem; }
+    .program h3 { font-size: 1.25rem; color: var(--ink-900); }
+    .program p { font-size: 1rem; color: var(--ink-700); font-weight: 500;}
+    .program-tags { display: flex; gap: 0.5rem; margin-top: auto; padding-top: 1rem; }
+    .program-tags li { font-size: 0.8rem; font-weight: 700; background: rgba(102, 137, 131, 0.08); color: var(--primary-dark); padding: 0.25rem 0.75rem; border-radius: 99px; border: 1px solid rgba(102, 137, 131, 0.2);}
+    
+    .enrol { background: var(--primary); color: var(--white); padding: 2.5rem; border-radius: var(--radius-lg); display: grid; grid-template-columns: 1.3fr 0.7fr; gap: 2.5rem; align-items: center; box-shadow: var(--shadow-lg); position: relative; overflow: hidden;}
+    .enrol::before { content: ""; position: absolute; top: -50%; right: -10%; width: 50%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0) 70%); z-index: 0; pointer-events: none;}
+    @media (max-width: 820px) { .enrol { grid-template-columns: 1fr; } }
+    .enrol-info, .enrol-cta { position: relative; z-index: 1; }
+    .enrol h3 { color: var(--accent); font-family: var(--font-serif); font-size: 1.6rem; margin-bottom: 1.25rem; }
+    .enrol-list { display: flex; flex-direction: column; gap: 0.85rem; }
+    .enrol-list li { display: flex; align-items: baseline; gap: 0.85rem; font-size: 1rem; font-weight: 500; }
+    .enrol-list i { color: var(--gold); }
+    .enrol-cta { background: rgba(255, 255, 255, 0.1); padding: 1.75rem; border-radius: var(--radius-md); border: 1px solid rgba(255, 255, 255, 0.25); display: flex; flex-direction: column; gap: 1.25rem; backdrop-filter: blur(5px);}
+    .enrol-cta p { font-size: 1.05rem; line-height: 1.5; font-weight: 500;}
+
+    /* Actividades dentro de Madrasa */
+    .activity-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.75rem; margin-bottom: 2rem;}
+    .activity { background: var(--surface-card); padding: 2rem; border-radius: var(--radius-md); border: 1px solid var(--border-color); box-shadow: var(--shadow-sm); }
+    .activity > i { font-size: 1.8rem; color: var(--gold); margin-bottom: 1.25rem; }
+    .activity h3 { margin-bottom: 0.6rem; color: var(--ink-900); font-size: 1.2rem;}
+    .activity p { font-size: 1rem; color: var(--ink-700); font-weight: 500;}
+
+    /* Interesados */
+    .interested-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 4rem; align-items: start; }
+    @media (max-width: 920px) { .interested-grid { grid-template-columns: 1fr; gap: 2.5rem;} }
+    .interested-media { position: relative; }
+    .interested-media img { width: 100%; height: 580px; object-fit: cover; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); }
+    .media-card { position: absolute; bottom: 1.5rem; left: 1.5rem; right: 1.5rem; background: rgba(252, 251, 249, 0.95); color: var(--ink-900); padding: 1.25rem 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--gold); display: flex; align-items: center; gap: 1.25rem; backdrop-filter: blur(8px); box-shadow: 0 10px 25px rgba(0,0,0,0.15);}
+    .media-card i { font-size: 1.8rem; color: var(--gold); }
+    .media-card p { font-size: 1rem; line-height: 1.5; font-weight: 500;}
+    .dropcap { font-size: 1.15rem; color: var(--ink-700); margin: 1rem 0 2rem; line-height: 1.7; font-weight: 500;}
+    .welcome-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.25rem; margin-bottom: 2rem; }
+    .welcome-card { background: var(--surface-card); padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--border-color); box-shadow: var(--shadow-sm);}
+    .welcome-card i { color: var(--brown-earth); font-size: 1.4rem; margin-bottom: 0.75rem; }
+    .welcome-card h3 { font-size: 1.05rem; margin-bottom: 0.4rem; color: var(--ink-900);}
+    .welcome-card p { font-size: 0.95rem; color: var(--ink-700); font-weight: 500;}
+    .faq { background: var(--surface-card); border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 1rem 1.25rem; margin-bottom: 0.85rem; box-shadow: 0 2px 5px rgba(0,0,0,0.02);}
+    .faq summary { font-weight: 800; color: var(--primary-dark); cursor: pointer; font-size: 1.05rem;}
+    .faq p { margin-top: 0.75rem; font-size: 1rem; color: var(--ink-700); padding-left: 1rem; border-left: 2px solid var(--accent); font-weight: 500;}
+
+    /* Formulario Donaciones */
+    .donate-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 3rem; align-items: start; }
+    @media (max-width: 920px) { .donate-grid { grid-template-columns: 1fr; gap: 2.5rem;} }
+    .donate-card { background: var(--surface-card); padding: 2.5rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); border: 1px solid var(--border-color); }
+    .donate-card h3 { font-family: var(--font-serif); font-size: 1.6rem; margin-bottom: 0.5rem; color: var(--ink-900); }
+    .muted { font-size: 0.95rem; color: var(--ink-500); margin-bottom: 1.75rem; font-weight: 500;}
+    fieldset { border: none; margin-bottom: 1.5rem; }
+    .segmented { display: grid; grid-template-columns: 1fr 1fr; background: var(--surface-light); padding: 0.4rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color); }
+    .segmented label { text-align: center; cursor: pointer; }
+    .segmented input { display: none; }
+    .segmented span { display: block; padding: 0.65rem; border-radius: 6px; font-weight: 800; font-size: 0.95rem; color: var(--ink-700); transition: all 0.2s;}
+    .segmented input:checked + span { background: var(--primary); color: var(--white); box-shadow: 0 2px 8px rgba(102, 137, 131, 0.3);}
+    .amounts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; }
+    .amounts label { cursor: pointer; }
+    .amounts input { display: none; }
+    .amounts span { display: block; text-align: center; padding: 0.85rem; border: 2px solid var(--border-color); border-radius: var(--radius-sm); font-weight: 800; transition: 0.2s; color: var(--ink-700); font-size: 1.05rem;}
+    .amounts input:checked + span { border-color: var(--gold); background: rgba(195, 178, 145, 0.25); color: var(--brown-mocha); }
+    .impact { background: rgba(195, 178, 145, 0.25); border-left: 4px solid var(--gold); padding: 1rem 1.25rem; border-radius: 6px; font-size: 0.95rem; color: var(--ink-900); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem; font-weight: 700; }
+    .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+    @media (max-width: 600px) { .field-row { grid-template-columns: 1fr; } }
+    .field { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1.25rem; }
+    .field label { font-size: 0.95rem; font-weight: 800; color: var(--ink-900); }
+    .field input, .field select, .field textarea { padding: 0.85rem 1rem; border: 2px solid var(--border-color); border-radius: var(--radius-sm); font-family: inherit; font-size: 1rem; background: var(--surface-card); transition: border-color 0.2s; color: var(--ink-900); font-weight: 500;}
+    .field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--primary); }
+    .donate-side { display: flex; flex-direction: column; gap: 1.25rem; }
+    .donate-method { background: var(--surface-card); border: 1px solid var(--border-color); padding: 1.5rem; border-radius: var(--radius-md); display: flex; gap: 1.25rem; align-items: flex-start; box-shadow: var(--shadow-sm);}
+    .method-icon { width: 48px; height: 48px; border-radius: 12px; background: rgba(195, 178, 145, 0.3); color: var(--brown-mocha); display: flex; align-items: center; justify-content: center; font-size: 1.3rem; flex-shrink: 0; }
+    .donate-method h3 { color: var(--ink-900); font-size: 1.15rem; margin-bottom: 0.35rem; }
+    .donate-method p { font-size: 1rem; color: var(--ink-700); font-weight: 500;}
+    .hadith { background: var(--surface-card); border-left: 4px solid var(--gold); padding: 1.5rem; border-radius: var(--radius-sm); font-family: var(--font-serif); font-style: italic; border: 1px solid var(--border-color); color: var(--ink-900); font-size: 1.05rem; box-shadow: var(--shadow-sm);}
+    .hadith cite { display: block; margin-top: 0.5rem; font-family: var(--font-sans); font-style: normal; font-size: 0.85rem; color: var(--brown-mocha); font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em;}
+
+    /* Formulario Contacto */
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+    @media (max-width: 900px) { .contact-grid { grid-template-columns: 1fr; gap: 3rem;} }
+    .contact-list { display: flex; flex-direction: column; gap: 1.25rem; margin: 2rem 0; }
+    .contact-list li { display: flex; gap: 1.25rem; align-items: flex-start; }
+    .contact-list i { color: var(--gold); font-size: 1.4rem; margin-top: 0.2rem; }
+    .contact-list div { display: flex; flex-direction: column; }
+    .contact-list strong { font-size: 1.05rem; color: var(--ink-900);}
+    .contact-list span { font-size: 1rem; color: var(--ink-700); margin-top: 0.2rem; font-weight: 500;}
+    .map-wrap { border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--border-color); height: 280px; box-shadow: var(--shadow-md);}
+    .map-wrap iframe { width: 100%; height: 100%; border: 0; }
+    .contact-form { background: var(--surface-card); padding: 2.5rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); border: 1px solid var(--border-color); }
+    .contact-form h3 { font-family: var(--font-serif); font-size: 1.6rem; margin-bottom: 1.5rem; color: var(--ink-900);}
+
+    /* ============ FOOTER ============ */
+    .site-footer { background: var(--primary-dark); color: rgba(255, 255, 255, 0.9); padding: 4rem 0 2rem; border-top: 5px solid var(--gold); }
+    .footer-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 3rem; padding-bottom: 2.5rem; border-bottom: 1px solid rgba(255, 255, 255, 0.15); }
+    @media (max-width: 820px) { .footer-grid { grid-template-columns: 1fr 1fr; gap: 2.5rem;} }
+    @media (max-width: 520px) { .footer-grid { grid-template-columns: 1fr; } }
+    .footer-brand p { margin-top: 1rem; font-size: 0.95rem; max-width: 360px; line-height: 1.6; font-weight: 500;}
+    .site-footer h4 { color: var(--accent); font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1.25rem; font-weight: 800;}
+    .site-footer ul { display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.95rem; font-weight: 500;}
+    .site-footer button { background: none; border: none; font-family: inherit; color: rgba(255,255,255,0.9); padding: 0; cursor: pointer; text-align: left;}
+    .site-footer button:hover { color: var(--gold); }
+    .footer-bottom { padding-top: 2rem; display: flex; justify-content: space-between; font-size: 0.9rem; font-weight: 500;}
+    
+    /* Toast feedback */
+    .toast-feedback { position: fixed; bottom: 1.5rem; right: 1.5rem; background: var(--primary-dark); color: var(--white); border: 1px solid var(--gold); padding: 1.25rem 1.75rem; border-radius: var(--radius-md); box-shadow: var(--shadow-lg); z-index: 9999; display: none; align-items: center; gap: 1rem; font-weight: 700;}
+    .toast-feedback.show { display: flex; animation: slideUp 0.3s ease forwards;}
+    @keyframes slideUp { from { transform: translateY(100px); opacity: 0;} to { transform: translateY(0); opacity: 1;} }
+    
+    /* Redes Sociales y Contacto Footer */
+    .social-flex { display: flex; gap: 0.6rem; margin-top: 1.25rem; flex-wrap: wrap; }
+    .social-flex a { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.1); color: var(--white); font-size: 1.1rem; transition: all 0.25s ease; border: 1px solid rgba(255,255,255,0.2); }
+    .social-flex a:hover { background: var(--gold); border-color: var(--gold); transform: translateY(-3px); }
+    
+    .footer-contact-col ul { display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1rem;}
+    .footer-contact-col li { display: flex; align-items: center; gap: 0.6rem; }
+    .footer-contact-col i { color: var(--gold); font-size: 1.1rem; width: 20px; text-align: center; }
+    .footer-contact-col a { color: rgba(255, 255, 255, 0.9); transition: color 0.2s; }
+    .footer-contact-col a:hover { color: var(--gold); }
+  </style>
+</head>
+<body>
+  
+  <!-- ============ HEADER GLOBAL ============ -->
+  <header class="site-header" id="top">
+    <div class="container nav-wrap">
+      <div class="brand" onclick="app.showHome()" aria-label="Inicio">
+        <img src="https://i.postimg.cc/FFnXkYv7/ISOTIPO.png" alt="Logotipo" class="brand-mark-img">
+        <span class="brand-text">
+          <span class="brand-name">Comunidad Islámica</span>
+          <span class="brand-sub">de Torrejón de Ardoz</span>
+        </span>
+      </div>
+
+      <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="Principal">
+        <ul>
+          <li><button onclick="app.showHome()">Inicio</button></li>
+          <li><button onclick="app.showView('view-annur')">Mezquita Annur</button></li>
+          <li><button onclick="app.showView('view-arriduan')">Proyecto Arriduan</button></li>
+          <li><button onclick="app.showView('view-madrasa')">Madrasa</button></li>
+          <li><button onclick="app.showView('view-interesados')">Islam</button></li>
+        </ul>
+        <button class="btn btn-gold btn-sm nav-cta" onclick="app.showView('view-arriduan', 'seccion-donar')"><i class="fa-solid fa-hand-holding-heart"></i> Donar</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    
+    <!-- ==========================================
+         VISTA 1: DASHBOARD / INICIO (Visible por defecto)
+         ========================================== -->
+    <div id="view-home" class="view-section is-active">
+      <!-- HERO COMPACTO -->
+      <section class="hero">
+        <picture class="hero-bg">
+          <img src="image_1.png" alt="Interior acogedor de la mezquita" fetchpriority="high" />
+        </picture>
+        <div class="hero-overlay"></div>
+        <div class="container hero-inner">
+          <p class="hero-arabic" lang="ar" dir="rtl">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</p>
+          <p class="eyebrow eyebrow-light">Comunidad Islámica de Torrejón de Ardoz</p>
+          <h1>Un faro de fe, <em>educación</em> y comunidad</h1>
+        </div>
+      </section>
+
+      <!-- HORARIOS DE REZO -->
+      <section class="prayer">
+        <div class="container">
+          <div class="prayer-head">
+            <div>
+              <h2 class="prayer-title">Horarios de rezo · <span id="fecha-gregoriana">Cargando...</span></h2>
+              <p class="prayer-hijri" id="fecha-islamica">--</p>
+            </div>
+            <div class="prayer-countdown">
+              <span class="prayer-countdown-label"><i class="fa-regular fa-clock"></i> Próximo rezo:</span>
+              <span class="prayer-countdown-clock" id="reloj-cuenta-atras">--:--:--</span>
+            </div>
+          </div>
+
+          <div class="prayer-grid">
+            <div class="rezo-caja" id="caja-fajr">
+              <div class="rezo-nombre">Fajr</div>
+              <div class="rezo-hora"><span id="fajr">--:--</span> <span class="ampm">AM</span></div>
+            </div>
+            <div class="rezo-caja" id="caja-shuruq">
+              <div class="rezo-nombre">Amanecer</div>
+              <div class="rezo-hora"><span id="shuruq">--:--</span> <span class="ampm">AM</span></div>
+            </div>
+            <div class="rezo-caja" id="caja-dhuhr">
+              <div class="rezo-nombre">Dhuhr</div>
+              <div class="rezo-hora"><span id="dhuhr">--:--</span> <span class="ampm">PM</span></div>
+            </div>
+            <div class="rezo-caja" id="caja-asr">
+              <div class="rezo-nombre">Asr</div>
+              <div class="rezo-hora"><span id="asr">--:--</span> <span class="ampm">PM</span></div>
+            </div>
+            <div class="rezo-caja" id="caja-maghrib">
+              <div class="rezo-nombre">Maghrib</div>
+              <div class="rezo-hora"><span id="maghrib">--:--</span> <span class="ampm">PM</span></div>
+            </div>
+            <div class="rezo-caja" id="caja-isha">
+              <div class="rezo-nombre">Isha'a</div>
+              <div class="rezo-hora"><span id="isha">--:--</span> <span class="ampm">PM</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MAIN HUB (TARJETAS HORIZONTALES) -->
+      <section class="hub-section">
+        <div class="container">
+          <header class="section-head">
+            <p class="eyebrow">Explora nuestra comunidad</p>
+            <h2 class="display">Bienvenido a <em>tu casa</em></h2>
+            <p class="section-intro">Selecciona una de nuestras áreas principales para descubrir todo lo que la Comunidad Islámica de Torrejón de Ardoz tiene para ofrecerte.</p>
+          </header>
+
+          <div class="hub-grid">
+            <button class="hub-card" onclick="app.showView('view-annur')">
+              <div class="hub-img">
+                <img src="https://images.unsplash.com/photo-1609599006353-e629aaabfeae?auto=format&fit=crop&w=600&q=80" alt="Corán abierto" loading="lazy" />
+                <div class="hub-icon-badge"><i class="fa-solid fa-person-praying"></i></div>
+              </div>
+              <div class="hub-content">
+                <h3>Mezquita Annur</h3>
+                <p>Nuestra sede actual. Descubre los servicios de oración diaria, el Yumu'ah y orientación familiar.</p>
+                <span class="hub-action">Visitar sección <i class="fa-solid fa-arrow-right"></i></span>
+              </div>
+            </button>
+
+            <button class="hub-card" onclick="app.showView('view-arriduan')">
+              <div class="hub-img">
+                <img src="https://images.unsplash.com/photo-1541888946425-d09bb18086f6?auto=format&fit=crop&w=600&q=80" alt="Obras Mezquita" loading="lazy" />
+                <div class="hub-icon-badge" style="background: var(--brown-earth);"><i class="fa-solid fa-trowel-bricks"></i></div>
+              </div>
+              <div class="hub-content">
+                <h3>Proyecto Arriduan</h3>
+                <p>El gran sueño de la comunidad. Conoce las fases de construcción de la futura gran mezquita.</p>
+                <span class="hub-action">Ver proyecto <i class="fa-solid fa-arrow-right"></i></span>
+              </div>
+            </button>
+
+            <button class="hub-card" onclick="app.showView('view-madrasa')">
+              <div class="hub-img">
+                <img src="https://images.unsplash.com/photo-1585036156171-384164a8c675?auto=format&fit=crop&w=600&q=80" alt="Aula de Madrasa" loading="lazy" />
+                <div class="hub-icon-badge"><i class="fa-solid fa-book-quran"></i></div>
+              </div>
+              <div class="hub-content">
+                <h3>Madrasat Iqraa</h3>
+                <p>Centro educativo y vida comunitaria. Clases de árabe, Corán, talleres juveniles y ayuda humanitaria.</p>
+                <span class="hub-action">Visitar sección <i class="fa-solid fa-arrow-right"></i></span>
+              </div>
+            </button>
+
+            <button class="hub-card" onclick="app.showView('view-interesados')">
+              <div class="hub-img">
+                <img src="image_0.png" alt="Té tradicional" loading="lazy" />
+                <div class="hub-icon-badge"><i class="fa-solid fa-mug-hot"></i></div>
+              </div>
+              <div class="hub-content">
+                <h3>Descubre el islam</h3>
+                <p>Tanto si buscas respuestas como si quieres conocer nuestra fe. Conversaciones sinceras y visitas guiadas.</p>
+                <span class="hub-action">Saber más <i class="fa-solid fa-arrow-right"></i></span>
+              </div>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- BANNER DONACIÓN URGENTE -->
+      <section class="urgent-banner">
+        <div class="container urgent-grid">
+          <div class="urgent-content">
+            <p class="eyebrow eyebrow-light"><span class="pulse-dot"></span>Fase Actual: Cúpula y Sala de Oración</p>
+            <h2>Construye la Mezquita <em>Arriduan</em></h2>
+            <p>La futura gran mezquita de Torrejón de Ardoz necesita tu apoyo para completar su fase estructural principal. Cada ladrillo es una sadaqa yariya que servirá a la comunidad durante generaciones.</p>
+          </div>
+          <div class="urgent-action">
+            <button class="btn btn-gold btn-lg" onclick="app.showView('view-arriduan', 'seccion-donar')"><i class="fa-solid fa-hand-holding-heart"></i> Donar al Proyecto</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- NOTICIAS COMPACTAS -->
+      <section class="news-compact">
+        <div class="container">
+          <header class="section-head" style="margin-bottom: 2.5rem;">
+            <h2 class="display" style="font-size: 2.2rem;">Últimas <em>noticias</em></h2>
+          </header>
+          <div class="news-grid">
+            <button onclick="app.showView('view-arriduan')" class="news-card" style="text-align: left; border: 1px solid var(--border-color); background: var(--surface-card); cursor: pointer;">
+              <div class="news-img"><img src="https://images.unsplash.com/photo-1519817650390-64a93db51149?auto=format&fit=crop&w=600&q=80" alt="Obras" loading="lazy"></div>
+              <div class="news-body">
+                <div class="news-meta"><span style="color:var(--brown-earth)">Obras Arriduan</span> <time>Oct 2026</time></div>
+                <h3>Avanza el cerramiento de la sala de oración y estructura de la cúpula</h3>
+              </div>
+            </button>
+            <button onclick="app.showView('view-madrasa')" class="news-card" style="text-align: left; border: 1px solid var(--border-color); background: var(--surface-card); cursor: pointer;">
+              <div class="news-img"><img src="https://images.unsplash.com/photo-1585036156171-384164a8c675?auto=format&fit=crop&w=600&q=80" alt="Madrasa" loading="lazy"></div>
+              <div class="news-body">
+                <div class="news-meta"><span style="color:var(--brown-earth)">Madrasat Iqraa</span> <time>Sep 2026</time></div>
+                <h3>Inscripciones abiertas para clases de árabe y estudios islámicos</h3>
+              </div>
+            </button>
+            <button onclick="app.showView('view-madrasa')" class="news-card" style="text-align: left; border: 1px solid var(--border-color); background: var(--surface-card); cursor: pointer;">
+              <div class="news-img"><img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=600&q=80" alt="Comunidad" loading="lazy"></div>
+              <div class="news-body">
+                <div class="news-meta"><span style="color:var(--brown-earth)">Comunidad</span> <time>Ago 2026</time></div>
+                <h3>Jornada de puertas abiertas y té de bienvenida con nuestros vecinos</h3>
+              </div>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- AYAH BAND -->
+      <section class="ayah-band">
+        <div class="container ayah-inner">
+          <p class="ayah" lang="ar" dir="rtl">يَا أَيُّهَا النَّاسُ إِنَّا خَلَقْنَاكُم مِّن ذَكَرٍ وَأُنثَىٰ وَجَعَلْنَاكُمْ شُعُوبًا وَقَبَائِلَ لِتَعَارَفُوا</p>
+          <p class="ayah-translation">«¡Oh, humanos! Os hemos creado de un varón y una hembra y os hemos hecho pueblos y tribus para que os conozcáis unos a otros».</p>
+          <p class="ayah-ref">Sura Al-Hujurat · 49:13</p>
+        </div>
+      </section>
+
+      <!-- CONTACT MINI -->
+      <section class="contact-mini">
+        <div class="container">
+          <h2>Nos encantará <em>saber de ti</em></h2>
+          <p>¿Tienes dudas sobre los horarios, quieres inscribirte en las clases o simplemente visitar la mezquita? Escríbenos.</p>
+          <div class="contact-actions">
+            <button class="btn btn-green" onclick="app.showView('view-contacto')"><i class="fa-solid fa-paper-plane"></i> Contactar</button>
+            <a href="https://goo.gl/maps" target="_blank" rel="noopener noreferrer" class="btn btn-ghost-light" style="color: var(--ink-900); border-color: var(--border-color); background: var(--surface-card);"><i class="fa-solid fa-location-dot" style="color: var(--gold)"></i> Ver ubicación</a>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- FIN VISTA 1 (HOME) -->
+
+
+    <!-- ==========================================
+         VISTA 2: MEZQUITA ANNUR
+         ========================================== -->
+    <div id="view-annur" class="view-section">
+      <button class="btn-back-global" onclick="app.showHome()"><i class="fa-solid fa-arrow-left"></i> Volver al Inicio</button>
+      <div class="detail-view-wrap">
+        <section class="section annur">
+          <div class="container annur-grid">
+            <div class="annur-body">
+              <header>
+                <p class="eyebrow">Nuestra sede actual</p>
+                <h2 class="display">Mezquita <em>Annur</em></h2>
+                <p class="annur-arabic" lang="ar" dir="rtl">مسجد النور</p>
+              </header>
+              <p class="lead">La Mezquita Annur es hoy el corazón de la Comunidad Islámica de Torrejón de Ardoz: nuestra mezquita activa y sede, donde rezamos, aprendemos y nos encontramos cada día mientras construimos la futura Mezquita Arriduan.</p>
+              <ul class="annur-list">
+                <li>
+                  <span class="annur-icon"><i class="fa-solid fa-person-praying"></i></span>
+                  <div>
+                    <h3>Salah y oración del viernes (Yumu'ah)</h3>
+                    <p>Las cinco oraciones diarias en congregación y la oración del viernes con su jutba. <button style="background:none; border:none; color:var(--gold); font-weight:700; text-decoration:underline; cursor:pointer;" onclick="app.showHome()">Ver horarios de hoy</button>.</p>
+                  </div>
+                </li>
+                <li>
+                  <span class="annur-icon"><i class="fa-solid fa-hands-holding"></i></span>
+                  <div>
+                    <h3>Orientación espiritual y reuniones</h3>
+                    <p>Acompañamiento y consejo para personas y familias, y encuentros periódicos de la comunidad.</p>
+                  </div>
+                </li>
+                <li>
+                  <span class="annur-icon"><i class="fa-solid fa-door-open"></i></span>
+                  <div>
+                    <h3>Horario de visitas</h3>
+                    <p>La mezquita abre cada día para las oraciones. Visitas guiadas se organizan con cita previa.</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <aside class="annur-card">
+              <div class="annur-card-img">
+                <img loading="lazy" src="https://images.unsplash.com/photo-1609599006353-e629aaabfeae?auto=format&fit=crop&w=900&q=80" alt="Un Corán abierto" />
+              </div>
+              <div class="annur-card-body">
+                <p class="eyebrow">Ubicación</p>
+                <h3>Punto de encuentro</h3>
+                <ul class="annur-facts">
+                  <li><i class="fa-solid fa-location-dot"></i><span>Torrejón de Ardoz, Madrid</span></li>
+                  <li><i class="fa-solid fa-clock"></i><span>Abierta todos los días</span></li>
+                  <li><i class="fa-solid fa-people-roof"></i><span>Sede principal</span></li>
+                </ul>
+                <button class="btn btn-green btn-block" onclick="app.showView('view-contacto')">Concertar visita <i class="fa-solid fa-arrow-right"></i></button>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <!-- PILARES -->
+        <section class="section pillars" style="background: var(--surface-light);">
+          <div class="container">
+            <header class="section-head">
+              <p class="eyebrow">Nuestros pilares</p>
+              <h2 class="display">Al servicio de la comunidad, <em>cada día</em></h2>
+            </header>
+            <div class="pillar-grid">
+              <article class="pillar">
+                <div class="pillar-icon"><i class="fa-solid fa-mosque"></i></div><span class="pillar-num">01</span>
+                <h3>Oraciones diarias y Yumuah</h3>
+                <p>Las cinco oraciones en congregación y la jutba semanal.</p>
+              </article>
+              <article class="pillar">
+                <div class="pillar-icon"><i class="fa-solid fa-book-quran"></i></div><span class="pillar-num">02</span>
+                <h3>Educación coránica</h3>
+                <p>Madrasat Iqraa: clases para niños y adultos de árabe y Corán.</p>
+              </article>
+              <article class="pillar">
+                <div class="pillar-icon"><i class="fa-solid fa-people-group"></i></div><span class="pillar-num">03</span>
+                <h3>Juventud y cultura</h3>
+                <p>Mentoría y programas deportivos para fortalecer lazos.</p>
+              </article>
+              <article class="pillar">
+                <div class="pillar-icon"><i class="fa-solid fa-hand-holding-heart"></i></div><span class="pillar-num">04</span>
+                <h3>Ayuda humanitaria</h3>
+                <p>Orientación familiar y reparto de alimentos vecinal.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+
+    <!-- ==========================================
+         VISTA 3: PROYECTO ARRIDUAN Y DONACIONES FUSIONADOS (APILADO LIMPIO)
+         ========================================== -->
+    <div id="view-arriduan" class="view-section">
+      <button class="btn-back-global" onclick="app.showHome()"><i class="fa-solid fa-arrow-left"></i> Volver al Inicio</button>
+      
+      <div class="detail-view-wrap">
+        
+        <!-- MITAD SUPERIOR: OBRAS + VÍDEO -->
+        <section class="section construction">
+          <div class="container">
+            <header class="section-head" style="margin-bottom: 1.5rem;">
+              <span class="badge-urgent"><span class="pulse"></span>Proyecto emblemático</span>
+              <h2 class="display">Mezquita <em>Arriduan</em></h2>
+            </header>
+
+            <!-- NUEVO BOTÓN VIVO PEGADO AL TÍTULO -->
+            <div class="urgent-donate-wrapper">
+              <button class="btn-pulsing-red" onclick="app.showView('view-arriduan', 'seccion-donar')">
+                <span class="red-dot"></span> Hacer una aportación a la obra
+              </button>
+            </div>
+
+            <p class="section-intro" style="text-align: center; max-width: 720px; margin: 0 auto 3.5rem;">El gran proyecto estratégico de la Comunidad Islámica de Torrejón de Ardoz. Las obras siguen avanzando, pero tu aportación en esta fase es esencial.</p>
+
+            <!-- FOTOS DE FASES (ANCHAS Y LIMPIAS) -->
+            <div class="gallery">
+              <figure class="gallery-item">
+                <div class="gallery-img"><img loading="lazy" src="https://images.unsplash.com/photo-1541888946425-d09bb18086f6?auto=format&fit=crop&w=800&q=80" alt="Cimientos" /></div>
+                <figcaption><span class="step">Fase I</span><strong>Cimientos y structure</strong><span>Movimiento de tierras y cimentación reforzada.</span></figcaption>
+              </figure>
+              <figure class="gallery-item">
+                <div class="gallery-img"><img loading="lazy" src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80" alt="Pilares" /></div>
+                <figcaption><span class="step">Fase II</span><strong>Pilares y arcos</strong><span>Levantamiento de columnas de la fachada principal.</span></figcaption>
+              </figure>
+              <figure class="gallery-item">
+                <div class="gallery-img"><img loading="lazy" src="https://images.unsplash.com/photo-1564769625905-50e93615e769?auto=format&fit=crop&w=800&q=80" alt="Interior" /></div>
+                <figcaption><span class="step step-current">Fase III · Ahora</span><strong>Sala de oración y cúpula</strong><span>Cerramiento estructural que hoy requiere tu apoyo.</span></figcaption>
+              </figure>
+            </div>
+            
+            <ol class="timeline" aria-label="Fases del proyecto" style="margin-bottom: 3.5rem;">
+              <li class="done"><span>Terreno y licencias</span></li>
+              <li class="done"><span>Cimentación</span></li>
+              <li class="done"><span>Estructura</span></li>
+              <li class="current"><span>Sala de oración y cúpula</span></li>
+              <li><span>Interiores</span></li>
+              <li><span>Inauguración</span></li>
+            </ol>
+
+            <!-- TRIBUTO SIHMED CENTRADO Y CONTROLADO -->
+            <div class="tribute-box">
+              <p class="tribute-text">«Recordamos con profunda gratitud y respeto a nuestro querido <strong>Sihmed</strong> (que Allah le tenga en Su misericordia). Su esfuerzo y entrega sincera fueron uno de los impulsos iniciales de este sueño que hoy seguimos construyendo entre todos. Os invitamos a ver el primer vídeo de la construcción de la mezquita.»</p>
+              <div class="tribute-video-wrap">
+                <div class="video-responsive">
+                  <iframe src="https://www.youtube-nocookie.com/embed/1Kh6tzEc15o?start=63" title="Primer vídeo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" loading="lazy" allowfullscreen></iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- MITAD INFERIOR: FORMULARIO DE DONACIONES GIGANTE -->
+        <section class="section donations" id="seccion-donar" style="background: var(--surface-light); border-top: 1px solid var(--border-color);">
+          <div class="container">
+            <header class="section-head">
+              <p class="eyebrow">Apoya el proyecto</p>
+              <h2 class="display">Construye un legado de <em>sadaqa yariya</em></h2>
+              <p class="section-intro">Cada aportación, grande o pequeña, es esencial para mantener nuestros programas y avanzar en las obras de la Mezquita Arriduan.</p>
+            </header>
+
+            <div class="donate-grid">
+              <form class="donate-card" id="donation-form">
+                <h3>Haz un compromiso de donación</h3>
+                <p class="muted">Dinos cuánto te gustaría aportar y nuestro equipo se pondrá en contacto contigo con los datos y el justificante.</p>
+                <fieldset class="segmented">
+                  <label><input type="radio" name="frequency" value="Única" checked /><span>Única</span></label>
+                  <label><input type="radio" name="frequency" value="Mensual" /><span>Mensual</span></label>
+                </fieldset>
+                <fieldset class="amounts">
+                  <label><input type="radio" name="amount" value="25" /><span>25 €</span></label>
+                  <label><input type="radio" name="amount" value="50" checked /><span>50 €</span></label>
+                  <label><input type="radio" name="amount" value="100" /><span>100 €</span></label>
+                  <label><input type="radio" name="amount" value="250" /><span>250 €</span></label>
+                  <label><input type="radio" name="amount" value="500" /><span>500 €</span></label>
+                  <label><input type="radio" name="amount" value="custom" /><span>Otro</span></label>
+                </fieldset>
+                <div class="field custom-amount" id="custom-amount-wrap" hidden>
+                  <label for="custom-amount">Tu importe (€)</label>
+                  <input type="number" id="custom-amount" min="1" />
+                </div>
+                <div class="field-row">
+                  <div class="field"><label>Nombre</label><input required /></div>
+                  <div class="field"><label>Email</label><input type="email" required /></div>
+                </div>
+                <div class="field">
+                  <label>Destinar mi donación a</label>
+                  <select name="purpose">
+                    <option>Construcción Mezquita Arriduan</option>
+                    <option>Mantenimiento Mezquita Annur</option>
+                    <option>Madrasat Iqraa (educación)</option>
+                    <option>Apoyo familiar y humanitario</option>
+                  </select>
+                </div>
+                <button type="submit" class="btn btn-gold btn-block"><i class="fa-solid fa-heart"></i> <span id="pledge-label">Comprometer 50 €</span></button>
+              </form>
+
+              <div class="donate-side">
+                <div class="donate-method">
+                  <div class="method-icon"><i class="fa-solid fa-building-columns"></i></div>
+                  <div>
+                    <h3>Transferencia bancaria</h3>
+                    <p>Indica el concepto <strong>«CONSTRUCCIÓN»</strong> o <strong>«COMUNIDAD»</strong>. <button type="button" style="background:none; border:none; color:var(--gold); font-weight:800; cursor:pointer; text-decoration:underline;" onclick="app.showView('view-contacto')">Pide los datos de cuenta aquí.</button></p>
+                  </div>
+                </div>
+                <div class="donate-method">
+                  <div class="method-icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
+                  <div>
+                    <h3>Bizum</h3>
+                    <p>Donaciones rápidas desde la app bancaria. Pide el código a la junta directiva.</p>
+                  </div>
+                </div>
+                <div class="donate-method">
+                  <div class="method-icon"><i class="fa-solid fa-mosque"></i></div>
+                  <div>
+                    <h3>En persona</h3>
+                    <p>Dona directamente en la Mezquita Annur tras cualquier rezo.</p>
+                  </div>
+                </div>
+                <blockquote class="hadith" style="margin-top: 1.5rem;">
+                  <p>«Quien construya una mezquita para Alá, Alá le construirá una casa en el Paraíso».</p>
+                  <cite>Sahih al-Bujari y Muslim</cite>
+                </blockquote>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+
+    <!-- ==========================================
+         VISTA 4: MADRASAT IQRAA + VIDA COMUNITARIA
+         ========================================== -->
+    <div id="view-madrasa" class="view-section">
+      <button class="btn-back-global" onclick="app.showHome()"><i class="fa-solid fa-arrow-left"></i> Volver al Inicio</button>
+      <div class="detail-view-wrap">
+        
+        <!-- Bloque Madrasa -->
+        <section class="section madrasa">
+          <div class="container">
+            <header class="section-head">
+              <p class="eyebrow">Educación y Cultura</p>
+              <h2 class="display">Madrasat <em>Iqraa</em> y Comunidad</h2>
+              <p class="madrasa-arabic" lang="ar" dir="rtl">مدرسة اقرأ</p>
+              <p class="section-intro">Una escuela para todas las edades y una comunidad viva donde compartimos, aprendemos y servimos juntos a lo largo de todo el año.</p>
+            </header>
+
+            <div class="program-grid">
+              <article class="program">
+                <span class="program-icon"><i class="fa-solid fa-language"></i></span>
+                <h3>Lengua árabe</h3>
+                <p>Lectoescritura y comunicación en árabe, desde el alfabeto hasta fluidez.</p>
+              </article>
+              <article class="program">
+                <span class="program-icon"><i class="fa-solid fa-scroll"></i></span>
+                <h3>Estudios islámicos</h3>
+                <p>Fundamentos de fe, práctica religiosa y moral (ajlaq) del día a día.</p>
+              </article>
+              <article class="program">
+                <span class="program-icon"><i class="fa-solid fa-book-quran"></i></span>
+                <h3>Memorización Corán</h3>
+                <p>Círculos de memorización y recitación con las reglas del tayuid.</p>
+              </article>
+            </div>
+
+            <!-- Fusión Bloque Actividades dentro de Madrasa -->
+            <h3 style="font-family: var(--font-serif); font-size: 1.8rem; margin: 3rem 0 1.5rem; text-align: center; color: var(--ink-900);">Vida y actividades sociales</h3>
+            <div class="activity-grid">
+              <article class="activity">
+                <i class="fa-solid fa-lightbulb"></i>
+                <h3>Talleres juveniles</h3>
+                <p>Talleres, deporte y espacios de debate para jóvenes.</p>
+              </article>
+              <article class="activity">
+                <i class="fa-solid fa-mug-saucer"></i>
+                <h3>Encuentros comunitarios</h3>
+                <p>Iftares en Ramadán, celebraciones de Eid y reuniones familiares.</p>
+              </article>
+              <article class="activity">
+                <i class="fa-solid fa-handshake"></i>
+                <h3>Puentes culturales</h3>
+                <p>Jornadas de puertas abiertas y visitas escolares.</p>
+              </article>
+              <article class="activity">
+                <i class="fa-solid fa-hand-holding-heart"></i>
+                <h3>Solidaridad</h3>
+                <p>Recogida de alimentos y un equipo de voluntarios vecinal.</p>
+              </article>
+            </div>
+
+            <!-- Bloque final de inscripción -->
+            <div class="enrol" style="margin-top: 4rem;">
+              <div class="enrol-info">
+                <h3>Inscripción y participación</h3>
+                <ul class="enrol-list">
+                  <li><i class="fa-regular fa-calendar"></i><span><strong>Cursos:</strong> calendario escolar regular.</span></li>
+                  <li><i class="fa-solid fa-users"></i><span><strong>Grupos:</strong> por edad y nivel (niños, jóvenes, adultos).</span></li>
+                </ul>
+              </div>
+              <div class="enrol-cta">
+                <p>¿Quieres inscribirte en clases o sumarte a nuestro equipo de voluntarios? Escríbenos.</p>
+                <button class="btn btn-gold" onclick="app.showView('view-contacto')"><i class="fa-solid fa-pen-to-square"></i> Solicitar info</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+
+
+    <!-- ==========================================
+         VISTA 5: INTERESADOS EN EL ISLAM
+         ========================================== -->
+    <div id="view-interesados" class="view-section">
+      <button class="btn-back-global" onclick="app.showHome()"><i class="fa-solid fa-arrow-left"></i> Volver al Inicio</button>
+      <div class="detail-view-wrap">
+        <section class="section interested">
+          <div class="container interested-grid">
+            <div class="interested-media">
+              <img loading="lazy" src="image_0.png" alt="Té tradicional" />
+              <div class="media-card">
+                <i class="fa-solid fa-mug-hot"></i>
+                <p><strong>El té siempre corre de nuestra cuenta.</strong> Pásate, sin cita previa.</p>
+              </div>
+            </div>
+
+            <div class="interested-body">
+              <header>
+                <p class="eyebrow">¿Te interesa el islam?</p>
+                <h2 class="display">Aquí eres <em>bienvenido de corazón</em></h2>
+              </header>
+              <p class="dropcap">No hay preguntas tontas ni expectativas: solo puertas abiertas, conversaciones sinceras y una comunidad encantada de conocerte. Ven tal como eres, a tu ritmo.</p>
+
+              <div class="welcome-cards">
+                <div class="welcome-card">
+                  <i class="fa-solid fa-door-open"></i>
+                  <h3>Visita la mezquita</h3>
+                  <p>Visitas guiadas para conocer cómo rezamos.</p>
+                </div>
+                <div class="welcome-card">
+                  <i class="fa-solid fa-comments"></i>
+                  <h3>Habla con alguien</h3>
+                  <p>Charla tranquila con un miembro del equipo.</p>
+                </div>
+              </div>
+
+              <details class="faq" open>
+                <summary>¿Tengo que ser musulmán para visitarla?</summary>
+                <p>En absoluto. Todo el mundo es bienvenido. Muchos visitantes son vecinos curiosos.</p>
+              </details>
+              <details class="faq">
+                <summary>¿Qué ropa debo llevar?</summary>
+                <p>Ropa discreta. Hay que descalzarse al entrar, y las mujeres pueden traer un pañuelo si lo desean.</p>
+              </details>
+
+              <button class="btn btn-green" style="margin-top: 1.5rem;" onclick="app.showView('view-contacto')">Concierta una charla <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+
+    <!-- ==========================================
+         VISTA 6: CONTACTO COMPLETO
+         ========================================== -->
+    <div id="view-contacto" class="view-section">
+      <button class="btn-back-global" onclick="app.showHome()"><i class="fa-solid fa-arrow-left"></i> Volver al Inicio</button>
+      <div class="detail-view-wrap">
+        <section class="section contact">
+          <div class="container contact-grid">
+            <div class="contact-info">
+              <p class="eyebrow">Contacto</p>
+              <h2 class="display">Nos encantará <em>saber de ti</em></h2>
+              <p class="section-intro">¿Tienes preguntas sobre oraciones, clases o el proyecto de construcción? Escríbenos.</p>
+              
+              <!-- CONTACTO ACTUALIZADO CON EMAIL Y WHATSAPP -->
+              <ul class="contact-list">
+                <li><i class="fa-solid fa-location-dot"></i><div><strong>Mezquita Annur</strong><span>Torrejón de Ardoz, Madrid</span></div></li>
+                <li><i class="fa-solid fa-envelope"></i><div><strong>Email Mezquita</strong><span><a href="mailto:islamtorrejon@gmail.com" style="color: var(--ink-700);">islamtorrejon@gmail.com</a></span></div></li>
+                <li><i class="fa-brands fa-whatsapp"></i><div><strong>WhatsApp Puente Atlas / Madrasa</strong><span><a href="https://wa.me/34624477660" target="_blank" rel="noopener noreferrer" style="color: var(--ink-700);">+34 624 477 660</a></span></div></li>
+                <li><i class="fa-solid fa-clock"></i><div><strong>Abierto todos los días</strong><span>Para las cinco oraciones</span></div></li>
+              </ul>
+              
+              <div class="map-wrap">
+                <iframe title="Mapa de Torrejón" src="https://www.openstreetmap.org/export/embed.html?bbox=-3.52%2C40.43%2C-3.43%2C40.48&amp;layer=mapnik"></iframe>
+              </div>
+            </div>
+
+            <form class="contact-form" id="contact-form">
+              <h3>Envía un mensaje</h3>
+              <div class="field-row">
+                <div class="field"><label>Nombre</label><input required /></div>
+                <div class="field"><label>Email</label><input type="email" required /></div>
+              </div>
+              <div class="field"><label>Asunto</label>
+                <select id="contact-topic-select">
+                  <option>Consulta general</option>
+                  <option>Visita / Conocer el islam</option>
+                  <option>Madrasat Iqraa</option>
+                  <option>Donaciones / Arriduan</option>
+                </select>
+              </div>
+              <div class="field"><label>Mensaje</label><textarea rows="5" required></textarea></div>
+              <button type="submit" class="btn btn-green btn-block">Enviar mensaje <i class="fa-solid fa-paper-plane"></i></button>
+            </form>
+          </div>
+        </section>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ============ FOOTER ACTUALIZADO CON REDES Y CONTACTO ============ -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <span class="brand-name">Comunidad Islámica de Torrejón de Ardoz</span>
+        <p>Mezquita Annur, Madrasat Iqraa y el proyecto de la Mezquita Arriduan (<span lang="ar" dir="rtl" class="footer-arabic-inline">مسجد الرضوان</span>): un hogar espiritual digno.</p>
+        
+        <!-- Redes Sociales de la Mezquita integradas elegantemente -->
+        <div class="social-flex">
+          <a href="https://www.instagram.com/mezquita_torrejon/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.tiktok.com/@mezquita_torrejon" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="https://x.com/Masjid_Arriduan" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="https://www.facebook.com/Mezquita.Arriduan" target="_blank" rel="noopener noreferrer" aria-label="Facebook Mezquita"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://www.youtube.com/@comunidadislamicatorrejond5281" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+      
+      <div>
+        <h4>Explora</h4>
+        <ul>
+          <li><button onclick="app.showHome()">Inicio & Horarios</button></li>
+          <li><button onclick="app.showView('view-annur')">Mezquita Annur</button></li>
+          <li><button onclick="app.showView('view-arriduan')">Proyecto Arriduan</button></li>
+          <li><button onclick="app.showView('view-interesados')">¿Te interesa el islam?</button></li>
+        </ul>
+      </div>
+      
+      <div>
+        <h4>Participa</h4>
+        <ul>
+          <li><button onclick="app.showView('view-arriduan', 'seccion-donar')">Dona ahora</button></li>
+          <li><button onclick="app.showView('view-madrasa')">Inscríbete en la Madrasa</button></li>
+          <li><button onclick="app.showView('view-contacto')">Contacto</button></li>
+        </ul>
+      </div>
+      
+      <!-- Cuarta columna para datos de contacto directos -->
+      <div class="footer-contact-col">
+        <h4>Contacto directo</h4>
+        <ul>
+          <li><i class="fa-solid fa-envelope"></i> <a href="mailto:islamtorrejon@gmail.com">islamtorrejon@gmail.com</a></li>
+        </ul>
+        <h4 style="margin-top: 1.25rem;">Puente Atlas / Madrasa</h4>
+        <ul>
+          <li><i class="fa-brands fa-whatsapp"></i> <a href="https://wa.me/34624477660" target="_blank" rel="noopener noreferrer">+34 624 477 660</a></li>
+          <li><i class="fa-solid fa-envelope"></i> <a href="mailto:puenteatlas@gmail.com">puenteatlas@gmail.com</a></li>
+          <li><i class="fa-brands fa-facebook-f"></i> <a href="https://www.facebook.com/madrasat.iqraa" target="_blank" rel="noopener noreferrer">Madrasat Iqraa</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="container footer-bottom">
+      <p>© <span id="year">2026</span> Comunidad Islámica de Torrejón de Ardoz · Madrid</p>
+      <button class="to-top" onclick="window.scrollTo(0,0)" style="background:none;border:none;cursor:pointer;">Volver arriba <i class="fa-solid fa-arrow-up"></i></button>
+    </div>
+  </footer>
+
+  <!-- Mensaje flotante -->
+  <div id="toast" class="toast-feedback" role="status">
+    <i class="fa-solid fa-circle-check" style="color: var(--accent); font-size: 1.3rem;"></i>
+    <span id="toast-msg">¡Gracias!</span>
+  </div>
+
+  <script>
+    // === LÓGICA DE SPA Y SCROLLING ===
+    const app = {
+      views: ['view-home', 'view-annur', 'view-arriduan', 'view-madrasa', 'view-interesados', 'view-contacto'],
+      
+      showView: function(viewId, anchorId = null) {
+        // Ocultar todas las vistas
+        this.views.forEach(id => {
+          const el = document.getElementById(id);
+          if (el) {
+            el.classList.remove('is-active');
+            if (id === 'view-home') el.classList.add('is-hidden');
+          }
+        });
+        
+        // Mostrar la vista solicitada
+        const activeView = document.getElementById(viewId);
+        if (activeView) {
+          activeView.classList.add('is-active');
+          if (viewId === 'view-home') activeView.classList.remove('is-hidden');
+        }
+        
+        // Cerrar menú móvil si está abierto
+        const nav = document.getElementById('site-nav');
+        if (nav && nav.classList.contains('is-open')) {
+          nav.classList.remove('is-open');
+        }
+
+        // Lógica de Scroll (con retraso sutil para permitir que el DOM se dibuje)
+        setTimeout(() => {
+          if (anchorId) {
+            const targetEl = document.getElementById(anchorId);
+            if (targetEl) {
+              // Offset por la cabecera fija
+              const y = targetEl.getBoundingClientRect().top + window.scrollY - 100;
+              window.scrollTo({ top: y, behavior: 'smooth' });
+            }
+          } else {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }
+        }, 50);
+      },
+      showHome: function() {
+        this.showView('view-home');
+      }
+    };
+
+    // Menú móvil toggle simple
+    const navToggle = document.querySelector('.nav-toggle');
+    const siteNav = document.getElementById('site-nav');
+    if (navToggle && siteNav) {
+      navToggle.addEventListener('click', () => {
+        siteNav.classList.toggle('is-open');
+      });
+    }
+
+    // Funcionalidad de Toast Feedback
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      document.getElementById('toast-msg').textContent = msg;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 4500);
+    }
+    
+    document.getElementById('donation-form')?.addEventListener('submit', e => {
+      e.preventDefault();
+      showToast('¡Barakallahu fik! Hemos registrado tu compromiso de donación.');
+      e.target.reset();
+    });
+    
+    document.getElementById('contact-form')?.addEventListener('submit', e => {
+      e.preventDefault();
+      showToast('¡Mensaje enviado! Nuestro equipo te responderá pronto.');
+      e.target.reset();
+    });
+
+    // Interactividad form donaciones
+    const amounts = document.querySelectorAll('input[name="amount"]');
+    const customWrap = document.getElementById('custom-amount-wrap');
+    const pledgeLabel = document.getElementById('pledge-label');
+    amounts.forEach(r => r.addEventListener('change', () => {
+      const val = document.querySelector('input[name="amount"]:checked').value;
+      if (val === 'custom') {
+        customWrap.hidden = false;
+        pledgeLabel.textContent = `Comprometer donación`;
+      } else {
+        customWrap.hidden = true;
+        pledgeLabel.textContent = `Comprometer ${val} €`;
+      }
+    }));
+
+    // === HORARIOS DE REZO API ===
+    document.addEventListener("DOMContentLoaded", () => {
+      async function iniciarHorariosRezo() {
+        const fechaGregEl = document.getElementById('fecha-gregoriana');
+        const fechaIslEl = document.getElementById('fecha-islamica');
+
+        const hoy = new Date();
+        if(fechaGregEl) {
+          fechaGregEl.textContent = hoy.toLocaleDateString('es-ES', {
+            day: 'numeric', month: 'long', year: 'numeric'
+          });
+        }
+
+        let horarios24 = { fajr: '06:32', shuruq: '08:01', dhuhr: '13:45', asr: '16:52', maghrib: '19:29', isha: '20:54' };
+
+        try {
+          const res = await fetch('https://api.aladhan.com/v1/timings?latitude=40.4567&longitude=-3.4697&method=3');
+          const data = await res.json();
+          if (data && data.data) {
+            const t = data.data.timings;
+            horarios24 = { fajr: t.Fajr.slice(0, 5), shuruq: t.Sunrise.slice(0, 5), dhuhr: t.Dhuhr.slice(0, 5), asr: t.Asr.slice(0, 5), maghrib: t.Maghrib.slice(0, 5), isha: t.Isha.slice(0, 5) };
+            const h = data.data.date.hijri;
+            if(fechaIslEl) fechaIslEl.textContent = `${h.day} ${h.month.en} ${h.year} H`;
+          }
+        } catch (e) {
+          if(fechaIslEl) fechaIslEl.textContent = 'Calendario Islámico';
+        }
+
+        function formato12(hm) {
+          const [H, M] = hm.split(':').map(Number);
+          const ampm = H >= 12 ? 'PM' : 'AM';
+          const h12 = H % 12 || 12;
+          return { hora: `${String(h12).padStart(2, '0')}:${String(M).padStart(2, '0')}`, ampm };
+        }
+
+        Object.entries(horarios24).forEach(([id, valor]) => {
+          const spanHora = document.getElementById(id);
+          if (spanHora) {
+            const f = formato12(valor);
+            spanHora.textContent = f.hora;
+            const ampmSpan = spanHora.parentElement.querySelector('.ampm');
+            if (ampmSpan) ampmSpan.textContent = f.ampm;
+          }
+        });
+
+        const ordenRezos = ['fajr', 'shuruq', 'dhuhr', 'asr', 'maghrib', 'isha'];
+        const relojEl = document.getElementById('reloj-cuenta-atras');
+
+        function actualizarCuentaAtras() {
+          const ahora = new Date();
+          let proximoId = null;
+          let proximoDate = null;
+
+          for (const id of ordenRezos) {
+            const [h, m] = horarios24[id].split(':').map(Number);
+            const candidato = new Date(ahora);
+            candidato.setHours(h, m, 0, 0);
+            if (candidato > ahora) { proximoId = id; proximoDate = candidato; break; }
+          }
+
+          if (!proximoDate) {
+            proximoId = 'fajr';
+            const [h, m] = horarios24.fajr.split(':').map(Number);
+            proximoDate = new Date(ahora);
+            proximoDate.setDate(proximoDate.getDate() + 1);
+            proximoDate.setHours(h, m, 0, 0);
+          }
+
+          document.querySelectorAll('.rezo-caja').forEach(c => c.classList.remove('activo'));
+          const cajaActiva = document.getElementById(`caja-${proximoId}`);
+          if (cajaActiva) cajaActiva.classList.add('activo');
+
+          const diff = Math.max(0, Math.floor((proximoDate - ahora) / 1000));
+          const hrs = String(Math.floor(diff / 3600)).padStart(2, '0');
+          const mins = String(Math.floor((diff % 3600) / 60)).padStart(2, '0');
+          const segs = String(diff % 60).padStart(2, '0');
+          if (relojEl) relojEl.textContent = `${hrs}:${mins}:${segs}`;
+        }
+
+        actualizarCuentaAtras();
+        setInterval(actualizarCuentaAtras, 1000);
+      }
+
+      iniciarHorariosRezo();
+    });
+  </script>
+</body>
+</html>
