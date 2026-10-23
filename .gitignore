@@ -1,2 +1,7 @@
-# Archivos temporales duplicados
+# Archivos locales de desarrollo
 miau (2).*
+iniciar-web.bat
+servidor.ps1
+*.zip
+check_tags.ps1
+
