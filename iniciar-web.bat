@@ -1,4 +1,0 @@
-@echo off
-title Servidor Web Local - Mezquita Torrejon
-powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0servidor.ps1"
-pause
