@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es" class="js">
 <head>
   <meta charset="UTF-8" />
@@ -1008,15 +1008,62 @@
               <p class="section-intro">Una escuela para todas las edades y una comunidad viva donde compartimos, aprendemos y servimos juntos a lo largo de todo el a&ntilde;o.</p>
             </header>
 
-            <!-- PORTADA SHOWCASE MADRASAT IQRAA -->
-            <div class="madrasa-showcase-wrap u-madrasa-showcase">
-              <img src="images/madrasa-portada.jpg" alt="Clase y formaci&oacute;n en Madrasat Iqraa" class="u-madrasa-showcase-img" />
-              <div class="u-madrasa-showcase-caption">
-                <div>
-                  <span class="u-badge-gold-pill">Vida Escolar y Din&aacute;micas</span>
-                  <p class="u-caption-lead">Aprendizaje interactivo, valores y convivencia comunitaria</p>
+                        <!-- CARRUSEL SHOWCASE MADRASAT IQRAA -->
+            <div class="madrasa-carousel-wrap" id="madrasaCarouselWrap" aria-label="Galer&iacute;a fotogr&aacute;fica de Madrasat Iqraa">
+              
+              <!-- Marco interactivo de diapositivas -->
+              <div class="madrasa-carousel-frame" id="madrasaCarouselFrame" onclick="madrasaCarousel.next()" title="Haz clic para avanzar a la siguiente foto">
+                
+                <!-- Diapositiva 1: ExplicaciÃ³n en clase con la profesora y pantalla interactiva -->
+                <div class="madrasa-slide active" data-index="0">
+                  <img src="images/madrasa-portada.jpg" alt="Clase y formaci&oacute;n con pantalla interactiva en Madrasat Iqraa" class="madrasa-slide-img u-img-pos-center-38" />
+                  <div class="madrasa-slide-caption">
+                    <div class="madrasa-caption-text">
+                      <span class="u-badge-gold-pill"><i class="fa-solid fa-chalkboard-user"></i> Formaci&oacute;n y Docencia</span>
+                      <h4>Clases din&aacute;micas y aprendizaje participativo</h4>
+                      <p>Explicaciones con pantalla interactiva, lengua &aacute;rabe y valores en un entorno motivador.</p>
+                    </div>
+                    <span class="u-chip-glass"><i class="fa-solid fa-book-open u-text-gold"></i> Aulas activas</span>
+                  </div>
                 </div>
-                <span class="u-chip-glass"><i class="fa-solid fa-shapes u-text-gold"></i> Talleres pr&aacute;cticos</span>
+
+                <!-- Diapositiva 2: Los alumnos trabajando en equipo en el aula -->
+                <div class="madrasa-slide" data-index="1">
+                  <img src="images/madrasa-ninos.jpg" alt="Alumnos participando en actividades cooperativas en Madrasat Iqraa" class="madrasa-slide-img" />
+                  <div class="madrasa-slide-caption">
+                    <div class="madrasa-caption-text">
+                      <span class="u-badge-gold-pill"><i class="fa-solid fa-shapes"></i> Vida Escolar</span>
+                      <h4>Convivencia, compa&ntilde;erismo y creatividad</h4>
+                      <p>Din&aacute;micas en equipo, talleres formativos y desarrollo integral para ni&ntilde;os y j&oacute;venes.</p>
+                    </div>
+                    <span class="u-chip-glass"><i class="fa-solid fa-users u-text-gold"></i> Trabajo en equipo</span>
+                  </div>
+                </div>
+
+                <!-- Botones Anterior / Siguiente -->
+                <button type="button" class="madrasa-nav-btn madrasa-nav-prev" onclick="event.stopPropagation(); madrasaCarousel.prev();" aria-label="Foto anterior">
+                  <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <button type="button" class="madrasa-nav-btn madrasa-nav-next" onclick="event.stopPropagation(); madrasaCarousel.next();" aria-label="Siguiente foto">
+                  <i class="fa-solid fa-chevron-right"></i>
+                </button>
+
+                <!-- PÃ­ldora de contador -->
+                <div class="madrasa-counter-badge" id="madrasaCounter">
+                  <i class="fa-regular fa-images"></i> <span id="madrasaCounterText">1 / 2</span>
+                </div>
+              </div>
+
+              <!-- Barra inferior con puntos y controles -->
+              <div class="madrasa-carousel-bar">
+                <div class="madrasa-carousel-info">
+                  <span class="pulse-dot"></span>
+                  <span class="madrasa-carousel-hint">Galer&iacute;a escolar &bull; Se mueve autom&aacute;ticamente o con un clic</span>
+                </div>
+                <div class="madrasa-dots" id="madrasaDots">
+                  <button type="button" class="madrasa-dot active" onclick="event.stopPropagation(); madrasaCarousel.goTo(0)" aria-label="Ver foto 1"></button>
+                  <button type="button" class="madrasa-dot" onclick="event.stopPropagation(); madrasaCarousel.goTo(1)" aria-label="Ver foto 2"></button>
+                </div>
               </div>
             </div>
 

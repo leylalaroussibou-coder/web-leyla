@@ -54,6 +54,17 @@
         if (viewId !== 'view-arriduan') {
           this.resetTributeVideo();
         }
+
+        // Control de rotaciÃ³n del carrusel de madrasa
+        if (viewId === 'view-madrasa') {
+          if (window.madrasaCarousel && typeof window.madrasaCarousel.startTimer === 'function') {
+            window.madrasaCarousel.startTimer();
+          }
+        } else {
+          if (window.madrasaCarousel && typeof window.madrasaCarousel.pauseTimer === 'function') {
+            window.madrasaCarousel.pauseTimer();
+          }
+        }
         
         // Cerrar menu movil si esta abierto
         const nav = document.getElementById('site-nav');
@@ -686,6 +697,129 @@
         toggleFinal: toggleFinal
       };
     })();
+
+
+    // CARRUSEL INTERACTIVO MADRASAT IQRAA (FOTOS DE AULA Y ACTIVIDADES)
+    const madrasaCarousel = (function() {
+      let currentIndex = 0;
+      let timer = null;
+      let isPaused = false;
+      const wrap = document.getElementById('madrasaCarouselWrap');
+      const frame = document.getElementById('madrasaCarouselFrame');
+      const slides = document.querySelectorAll('.madrasa-slide');
+      const dotsContainer = document.getElementById('madrasaDots');
+      const counterText = document.getElementById('madrasaCounterText');
+      const total = slides.length;
+
+      if (!total) {
+        return {
+          next: function() {},
+          prev: function() {},
+          goTo: function() {},
+          startTimer: function() {},
+          pauseTimer: function() {}
+        };
+      }
+
+      function updateUI() {
+        slides.forEach(function(s, idx) {
+          if (idx === currentIndex) {
+            s.classList.add('active');
+          } else {
+            s.classList.remove('active');
+          }
+        });
+
+        if (dotsContainer) {
+          const dots = dotsContainer.querySelectorAll('.madrasa-dot');
+          dots.forEach(function(d, idx) {
+            if (idx === currentIndex) {
+              d.classList.add('active');
+            } else {
+              d.classList.remove('active');
+            }
+          });
+        }
+
+        if (counterText) {
+          counterText.textContent = (currentIndex + 1) + ' / ' + total;
+        }
+      }
+
+      function goTo(index) {
+        currentIndex = ((index % total) + total) % total;
+        updateUI();
+        resetTimer();
+      }
+
+      function next() {
+        goTo(currentIndex + 1);
+      }
+
+      function prev() {
+        goTo(currentIndex - 1);
+      }
+
+      function startTimer() {
+        if (timer) clearInterval(timer);
+        timer = setInterval(function() {
+          if (!isPaused) {
+            next();
+          }
+        }, 4200);
+      }
+
+      function pauseTimer() {
+        if (timer) clearInterval(timer);
+        timer = null;
+      }
+
+      function resetTimer() {
+        startTimer();
+      }
+
+      // Event listeners para pausar en hover / touch
+      if (frame) {
+        frame.addEventListener('mouseenter', function() { isPaused = true; });
+        frame.addEventListener('mouseleave', function() { isPaused = false; });
+        frame.addEventListener('touchstart', function() { isPaused = true; }, { passive: true });
+        frame.addEventListener('touchend', function() { isPaused = false; }, { passive: true });
+
+        // Soporte gestos tÃ¡ctiles (swipe)
+        let touchStartX = 0;
+        let touchEndX = 0;
+        frame.addEventListener('touchstart', function(e) {
+          if (e.changedTouches && e.changedTouches[0]) {
+            touchStartX = e.changedTouches[0].screenX;
+          }
+        }, { passive: true });
+
+        frame.addEventListener('touchend', function(e) {
+          if (e.changedTouches && e.changedTouches[0]) {
+            touchEndX = e.changedTouches[0].screenX;
+            const diff = touchEndX - touchStartX;
+            if (Math.abs(diff) > 40) {
+              if (diff > 0) prev();
+              else next();
+            }
+          }
+        }, { passive: true });
+      }
+
+      // Iniciar
+      updateUI();
+      startTimer();
+
+      return {
+        next: next,
+        prev: prev,
+        goTo: goTo,
+        startTimer: startTimer,
+        pauseTimer: pauseTimer
+      };
+    })();
+
+    window.madrasaCarousel = madrasaCarousel;
 
 
     // SLIDER DE HADICES / CITAS INSPIRACIONALES (ROTATIVO Y ACCESIBLE)
