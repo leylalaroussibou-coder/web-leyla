@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es" class="js">
 <head>
   <meta charset="UTF-8" />
@@ -46,13 +46,18 @@
       <nav class="site-nav" id="site-nav" aria-label="Principal">
         <ul>
           <li><button onclick="app.showHome()">Inicio</button></li>
-          <li><button onclick="app.showView('view-annur')">Mezquita Annur</button></li>
-          <li><button onclick="app.showView('view-arriduan')">Proyecto Arriduan</button></li>
-          <li><button onclick="app.showView('view-madrasa')">Madrasa</button></li>
           <li><button onclick="app.showView('view-noticias')">Noticias</button></li>
-          <li><button onclick="app.showView('view-interesados')">Islam</button></li>
+          <li><button onclick="app.showView('view-nosotros')">Sobre nosotros</button></li>
+          <li><button onclick="app.showView('view-annur')">Mezquita Annur</button></li>
+          <li><button onclick="app.showView('view-madrasa')">Clases (Madrasa)</button></li>
+          <li><button onclick="app.showView('view-arriduan')">Proyecto Arriduan</button></li>
+          <li><button onclick="app.showView('view-interesados')">&iquest;Te interesa el islam?</button></li>
+          <li><button onclick="app.showView('view-contacto')">Contacto</button></li>
         </ul>
-        <button class="btn btn-gold btn-sm nav-cta" onclick="app.showView('view-arriduan', 'seccion-donar')"><i class="fa-solid fa-hand-holding-heart"></i> Donar</button>
+        <button class="btn nav-cta" onclick="app.showView('view-arriduan', 'seccion-donar')">
+          <i class="fa-solid fa-heart nav-cta-heart"></i>
+          <span>Donar</span>
+        </button>
       </nav>
     </div>
   </header>
@@ -140,7 +145,7 @@
               </div>
               <div class="hub-content">
                 <h3>Mezquita Annur</h3>
-                <p>Nuestra sede actual. Descubre los servicios de oración diaria, el Yumu'ah y orientación familiar.</p>
+                <p>Nuestra sede actual. Oraciones diarias, Yumu'ah, salas habilitadas para hombres y mujeres, y clases formativas.</p>
                 <span class="hub-action">Visitar sección <i class="fa-solid fa-arrow-right"></i></span>
               </div>
             </button>
@@ -158,7 +163,7 @@
 
             <button class="hub-card" onclick="app.showView('view-madrasa')">
               <div class="hub-img">
-                <img src="images/madrasa-portada.jpg" alt="Aula de Madrasa" loading="lazy" />
+                <img src="images/madrasa-portada.jpg" alt="Clase y formaci&oacute;n en Madrasat Iqraa" class="u-img-pos-center-38" loading="lazy" />
               </div>
               <div class="hub-content">
                 <h3>Madrasat Iqraa</h3>
@@ -169,12 +174,12 @@
 
             <button class="hub-card" onclick="app.showView('view-interesados')">
               <div class="hub-img">
-                <img src="images/descubre-islam.jpg" alt="Silueta en oración ante la ventana en la noche - Conoce el islam" class="u-img-pos-center-52" loading="lazy" />
+                <img src="images/conoce-islam.jpg" alt="Oraci&oacute;n y serenidad en la mezquita - &iquest;Te interesa el islam?" class="u-img-pos-center-60" loading="lazy" />
               </div>
               <div class="hub-content">
-                <h3>Descubre el islam</h3>
+                <h3>&iquest;Te interesa el islam?</h3>
                 <p>Tanto si buscas respuestas como si quieres conocer nuestra fe. Conversaciones sinceras y visitas guiadas.</p>
-                <span class="hub-action">Saber más <i class="fa-solid fa-arrow-right"></i></span>
+                <span class="hub-action">Saber m&aacute;s <i class="fa-solid fa-arrow-right"></i></span>
               </div>
             </button>
           </div>
@@ -185,9 +190,9 @@
       <section class="urgent-banner">
         <div class="container urgent-grid">
           <div class="urgent-content">
-            <p class="eyebrow eyebrow-light"><span class="pulse-dot"></span>Fase Actual: Cúpula y Sala de Oración</p>
+            <p class="eyebrow eyebrow-light"><span class="pulse-dot"></span>Pr&oacute;xima Fase: Instalaciones de fontaner&iacute;a y electricidad</p>
             <h2>Construye la Mezquita <em>Arriduan</em></h2>
-            <p>La futura gran mezquita de Torrejón de Ardoz necesita tu apoyo para completar su fase estructural principal. Cada ladrillo es una sadaqa yariya que servirá a la comunidad durante generaciones.</p>
+            <p>La futura gran mezquita de Torrej&oacute;n de Ardoz da un paso decisivo. Tras culminar la estructura de hormig&oacute;n y la c&uacute;pula, el proyecto avanza hacia las <strong>instalaciones generales de fontaner&iacute;a y electricidad</strong>. Tu colaboraci&oacute;n es clave en esta fase.</p>
           </div>
           <div class="urgent-action">
             <button class="btn btn-gold btn-lg" onclick="app.showView('view-arriduan', 'seccion-donar')"><i class="fa-solid fa-hand-holding-heart"></i> Donar al Proyecto</button>
@@ -241,12 +246,123 @@
         </div>
       </section>
 
-      <!-- AYAH BAND -->
-      <section class="ayah-band">
-        <div class="container ayah-inner">
-          <p class="ayah" lang="ar" dir="rtl">يَا أَيُّهَا النَّاسُ إِنَّا خَلَقْنَاكُم مِّن ذَكَرٍ وَأُنثَىٰ وَجَعَلْنَاكُمْ شُعُوبًا وَقَبَائِلَ لِتَعَارَفُوا</p>
-          <p class="ayah-translation">«¡Oh, humanos! Os hemos creado de un varón y una hembra y os hemos hecho pueblos y tribus para que os conozcáis unos a otros».</p>
-          <p class="ayah-ref">Sura Al-Hujurat · 49:13</p>
+      <!-- ==========================================
+           CANAL OFICIAL DE AVISOS Y COMUNICADOS
+           ========================================== -->
+      <section class="broadcast-channel-section u-broadcast-compact">
+        <div class="container">
+          <div class="broadcast-card broadcast-card-compact">
+            <div class="broadcast-body">
+              <span class="broadcast-badge"><i class="fa-brands fa-whatsapp"></i> Canal de Avisos</span>
+              <h2 class="broadcast-title">Toda la actualidad y horarios en tu m&oacute;vil</h2>
+              <p class="broadcast-lead">
+                S&uacute;mate a nuestro canal oficial de WhatsApp y ent&eacute;rate de todo al instante: horarios de rezo, <strong>oraciones y horarios del Eid</strong>, luna de Ramad&aacute;n, comunicados de la mezquita, avisos escolares y mucho m&aacute;s.
+              </p>
+              
+              <div class="broadcast-actions-wrap">
+                <a href="https://wa.me/34624477660?text=Hola,%20deseo%20unirme%20al%20canal%20de%20avisos%20de%20la%20Comunidad%20Islamica" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp-channel">
+                  <i class="fa-brands fa-whatsapp"></i> Unirme al Canal
+                </a>
+                <button type="button" class="btn btn-ghost-light broadcast-news-btn" onclick="app.showView('view-noticias')">
+                  <i class="fa-solid fa-newspaper"></i> Ver noticias en la web
+                </button>
+              </div>
+            </div>
+
+            <!-- Previsualizacion compacta: solo cabecera del canal sin mensajes -->
+            <div class="broadcast-mockup-wrapper">
+              <a href="https://wa.me/34624477660?text=Hola,%20deseo%20unirme%20al%20canal%20de%20avisos%20de%20la%20Comunidad%20Islamica" target="_blank" rel="noopener noreferrer" class="channel-header-card" title="Abrir canal oficial en WhatsApp">
+                <div class="channel-header-top">
+                  <div class="channel-avatar">
+                    <img src="images/logo.png" alt="Canal Comunidad Isl&aacute;mica" />
+                  </div>
+                  <div class="channel-meta">
+                    <div class="channel-name-row">
+                      <span class="channel-name">Comunidad Isl&aacute;mica</span>
+                      <i class="fa-solid fa-circle-check channel-verified-icon"></i>
+                    </div>
+                    <span class="channel-sub">Canal oficial de avisos &bull; Torrej&oacute;n de Ardoz</span>
+                  </div>
+                  <span class="channel-follow-pill"><i class="fa-solid fa-bell"></i> Seguir</span>
+                </div>
+                <div class="channel-header-desc">
+                  <p><i class="fa-solid fa-circle-info"></i> Horarios de rezo, oraci&oacute;n del Eid, Ramad&aacute;n, mezquita, madrasa y novedades.</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- BANDA INSPIRACIONAL: COMUNIDAD Y HERMANDAD (ROTATIVA) -->
+      <section class="quotes-band" id="quotesBand" aria-label="Citas inspiracionales sobre la comunidad">
+        <div class="container quotes-container">
+
+          <!-- Contenedor de Citas Rotativas -->
+          <div class="quotes-slider" id="quotesSlider">
+            
+            <!-- Cita 1: Sermón de Despedida del Profeta ﷺ (Igualdad Universal) -->
+            <article class="quote-slide is-active" data-index="0" aria-hidden="false">
+              <div class="quote-context-badge">
+                <i class="fa-solid fa-landmark-dome"></i>
+                <span>Serm&oacute;n de Despedida del Profeta Muhammad &#65018; (Jutbat al-Wada&lsquo;)</span>
+              </div>
+              <p class="quote-context-sub">El mensaje hist&oacute;rico y trascendental de igualdad proclamado ante m&aacute;s de cien mil creyentes en su &uacute;ltima peregrinaci&oacute;n</p>
+              <p class="quote-arabic" lang="ar" dir="rtl">«أَلَا لَا فَضْلَ لِعَرَبِيٍّ عَلَى أَعْجَمِيٍّ، وَلَا لِعَجَمِيٍّ عَلَى عَرَبِيٍّ، وَلَا لِأَحْمَرَ عَلَى أَسْوَدَ، وَلَا أَسْوَدَ عَلَى أَحْمَرَ إِلَّا بِالتَّقْوَى»</p>
+              <p class="quote-translation">«Sabed que no hay superioridad de un &aacute;rabe sobre un no &aacute;rabe, ni de un no &aacute;rabe sobre un &aacute;rabe, ni de un blanco sobre un negro, ni de un negro sobre un blanco, excepto por la piedad y la rectitud».</p>
+              <div class="quote-meta">
+                <span class="quote-ref"><i class="fa-solid fa-book-open"></i> Serm&oacute;n de Despedida &bull; Musnad Ahmad (23489) &bull; Sahih</span>
+              </div>
+            </article>
+
+            <!-- Cita 2: Arropar y Auxiliar al Hermano (Sahih Muslim) -->
+            <article class="quote-slide" data-index="1" aria-hidden="true">
+              <div class="quote-context-badge">
+                <i class="fa-solid fa-hand-holding-heart"></i>
+                <span>Hadiz del Amparo y la Solidaridad</span>
+              </div>
+              <p class="quote-context-sub">La recompensa divina para quien arropa, alivia y acompa&ntilde;a a sus semejantes</p>
+              <p class="quote-arabic" lang="ar" dir="rtl">«مَنْ نَفَّسَ عَنْ مُؤْمِنٍ كُرْبَةً مِنْ كُرَبِ الدُّنْيَا نَفَّسَ اللَّهُ عَنْهُ كُرْبَةً مِنْ كُرَبِ يَوْمِ الْقِيَامَةِ [...] وَاللَّهُ فِي عَوْنِ الْعَبْدِ مَا كَانَ الْعَبْدُ فِي عَوْنِ أَخِيهِ»</p>
+              <p class="quote-translation">«Quien alivie a un creyente una dificultad de este mundo, Dios le aliviar&aacute; una dificultad del D&iacute;a del Juicio; y quien ampare a un hermano, Dios le amparar&aacute; en este mundo y en el M&aacute;s All&aacute;. Dios ayuda a Su siervo mientras este ayude a su hermano».</p>
+              <div class="quote-meta">
+                <span class="quote-ref"><i class="fa-solid fa-book-open"></i> Sahih Muslim (2699)</span>
+              </div>
+            </article>
+
+            <!-- Cita 3: Un Solo Cuerpo (Sahih al-Bujari y Muslim) -->
+            <article class="quote-slide" data-index="2" aria-hidden="true">
+              <div class="quote-context-badge">
+                <i class="fa-solid fa-people-roof"></i>
+                <span>Hadiz del Cuerpo &Uacute;nico</span>
+              </div>
+              <p class="quote-context-sub">La uni&oacute;n y compasi&oacute;n viva que sostiene a la comunidad creyente</p>
+              <p class="quote-arabic" lang="ar" dir="rtl">«مَثَلُ الْمُؤْمِنِينَ فِي تَوَادِّهِمْ، وَتَرَاحُمِهِمْ، وَتَعَاطُفِهِمْ مَثَلُ الْجَسَدِ إِذَا اشْتَكَى مِنْهُ عُضْوٌ تَدَاعَى لَهُ سَائِرُ الْجَسَدِ بِالسَّهَرِ وَالْحُمَّى»</p>
+              <p class="quote-translation">«El ejemplo de los creyentes en su mutuo afecto, misericordia y compasi&oacute;n es como el de un solo cuerpo: cuando un miembro sufre, el resto del cuerpo responde con insomnio y fiebre».</p>
+              <div class="quote-meta">
+                <span class="quote-ref"><i class="fa-solid fa-book-open"></i> Sahih al-Bujari (6011) y Sahih Muslim (2586)</span>
+              </div>
+            </article>
+
+          </div>
+
+          <!-- Controles de Navegación y Puntos -->
+          <div class="quotes-controls">
+            <button type="button" class="quotes-nav-btn prev" onclick="quotesSlider.prev()" aria-label="Cita anterior">
+              <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            
+            <div class="quotes-dots" id="quotesDots" role="tablist" aria-label="Selector de citas">
+              <button type="button" class="quotes-dot is-active" onclick="quotesSlider.goTo(0)" role="tab" aria-selected="true" aria-label="Ir a cita 1: Sermón de Despedida"></button>
+              <button type="button" class="quotes-dot" onclick="quotesSlider.goTo(1)" role="tab" aria-selected="false" aria-label="Ir a cita 2: Amparar al hermano"></button>
+              <button type="button" class="quotes-dot" onclick="quotesSlider.goTo(2)" role="tab" aria-selected="false" aria-label="Ir a cita 3: Un solo cuerpo"></button>
+            </div>
+
+            <button type="button" class="quotes-nav-btn next" onclick="quotesSlider.next()" aria-label="Cita siguiente">
+              <i class="fa-solid fa-chevron-right"></i>
+            </button>
+          </div>
+
         </div>
       </section>
 
@@ -263,46 +379,192 @@
       </section>
     </div>
     <!-- FIN VISTA 1 (HOME) -->
-
-
     <!-- ==========================================
+         VISTA 2: SOBRE NOSOTROS (PUENTE ATLAS)
+         ========================================== -->
+    <div id="view-nosotros" class="view-section">
+      <button class="btn-back-global" onclick="app.goBack()"><i class="fa-solid fa-arrow-left"></i> Volver atr&aacute;s</button>
+      <div class="detail-view-wrap">
+        <section class="section about-us-section">
+          <div class="container">
+            
+            <!-- Encabezado Institucional -->
+            <header class="section-head text-center u-mb-3">
+              <div class="about-emblem-wrap">
+                <img src="images/puente-atlas.png" alt="Logotipo oficial de la Asociación Socio-Cultural Puente Atlas" class="about-emblem-img" />
+              </div>
+              <p class="eyebrow">Nuestra entidad</p>
+              <h2 class="display">Asociaci&oacute;n Socio-Cultural <em>Puente Atlas</em></h2>
+              <p class="section-intro">La entidad comunitaria y vecinal que coordina, impulsa y da soporte institucional a todas las iniciativas de nuestra comunidad en Torrej&oacute;n de Ardoz.</p>
+            </header>
+
+            <!-- Carta de Presentación -->
+            <div class="about-letter-card">
+              <div class="letter-badge"><i class="fa-solid fa-envelope-open-text"></i> Carta de presentaci&oacute;n</div>
+              <h3 class="letter-title">Un mismo equipo humano y un solo coraz&oacute;n para nuestra comunidad</h3>
+              
+              <div class="letter-content">
+                <p class="lead">Detr&aacute;s de la oraci&oacute;n diaria en la <strong>Mezquita Annur</strong>, de las 9 clases y actividades en <strong>Madrasat Iqraa</strong> y de los cimientos en construcci&oacute;n de la futura <strong>Mezquita Arriduan</strong>, est&aacute;n exactamente las mismas personas: las familias, vecinos, educadores y voluntarios de la <strong>Asociaci&oacute;n Socio-Cultural Puente Atlas</strong>.</p>
+                
+                <p>Nuestra labor comenz&oacute; hace a&ntilde;os con un objetivo com&uacute;n: dotar a la comunidad musulmana de Torrej&oacute;n de Ardoz de espacios dignos, organizados y transparentes donde compartir nuestra fe, orientar y educar a nuestros hijos con valores s&oacute;lidos, y convivir en armon&iacute;a y cooperaci&oacute;n con todos nuestros conciudadanos.</p>
+                
+                <p>No somos proyectos divididos ni iniciativas dispersas. Todo lo que hacemos es el esfuerzo conjunto de madres, padres y j&oacute;venes que dedican su tiempo de forma voluntaria para que cada d&iacute;a las puertas de la mezquita est&eacute;n abiertas, las aulas funcionen con excelencia y el sue&ntilde;o de una nueva mezquita sea una realidad cada vez m&aacute;s cercana.</p>
+                
+                <div class="letter-quote">
+                  <p>&laquo;Nuestra mayor fortaleza no son los muros ni los edificios, sino los lazos de confianza, hermandad y servicio desinteresado que unen a nuestras familias d&iacute;a tras d&iacute;a.&raquo;</p>
+                  <span>&mdash; Junta Directiva y Equipo de Voluntarios &middot; Asociaci&oacute;n Socio-Cultural Puente Atlas</span>
+                </div>
+              </div>
+
+              <!-- Tres pilares bajo un mismo techo -->
+              <div class="about-pillars-grid">
+                <div class="pillar-box" onclick="app.showView('view-annur')" role="button" tabindex="0">
+                  <div class="pillar-icon"><i class="fa-solid fa-mosque"></i></div>
+                  <h4>Mezquita Annur</h4>
+                  <p>Nuestra mezquita activa: 5 rezos diarios, Jumu'ah, salas para hombres y mujeres, y formaci&oacute;n.</p>
+                  <span class="pillar-link">Conocer mezquita <i class="fa-solid fa-arrow-right"></i></span>
+                </div>
+
+                <div class="pillar-box" onclick="app.showView('view-madrasa')" role="button" tabindex="0">
+                  <div class="pillar-icon"><i class="fa-solid fa-book-open-reader"></i></div>
+                  <h4>Madrasat Iqraa</h4>
+                  <p>Centro socioeducativo en Las Fronteras: 9 grupos formativos, lengua &aacute;rabe y cultura.</p>
+                  <span class="pillar-link">Ver academia <i class="fa-solid fa-arrow-right"></i></span>
+                </div>
+
+                <div class="pillar-box" onclick="app.showView('view-arriduan')" role="button" tabindex="0">
+                  <div class="pillar-icon"><i class="fa-solid fa-building-columns"></i></div>
+                  <h4>Proyecto Arriduan</h4>
+                  <p>El gran sue&ntilde;o constructivo: un hogar espiritual definitivo y propio para el futuro.</p>
+                  <span class="pillar-link">Ver avances de obra <i class="fa-solid fa-arrow-right"></i></span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Sección de Cronología / Trayectoria -->
+            <div class="about-timeline-section u-mt-4">
+              <header class="section-head u-mb-2">
+                <p class="eyebrow">Memoria viva</p>
+                <h3 class="u-subsection-title">Nuestra trayectoria en Torrej&oacute;n de Ardoz</h3>
+                <p class="section-intro">El camino que hemos recorrido paso a paso gracias al esfuerzo conjunto de la comunidad.</p>
+              </header>
+
+              <div class="community-timeline">
+                <div class="timeline-item">
+                  <div class="timeline-dot"><i class="fa-solid fa-people-roof"></i></div>
+                  <div class="timeline-body">
+                    <span class="timeline-tag">Fundaci&oacute;n</span>
+                    <h4>Nace la Asociaci&oacute;n Socio-Cultural Puente Atlas</h4>
+                    <p>Constituci&oacute;n formal de la asociaci&oacute;n como entidad de soporte legal, vecinal e institucional para responder a las inquietudes culturales, educativas y asistenciales de las familias.</p>
+                  </div>
+                </div>
+
+                <div class="timeline-item">
+                  <div class="timeline-dot"><i class="fa-solid fa-door-open"></i></div>
+                  <div class="timeline-body">
+                    <span class="timeline-tag">Espacio de culto activo</span>
+                    <h4>Apertura y consolidaci&oacute;n de la Mezquita Annur</h4>
+                    <p>Establecimiento de nuestra sede en Calle Manuel Sandoval, 12: celebraci&oacute;n continua de las 5 oraciones diarias, oraci&oacute;n del viernes (Jumu'ah) y centro de reuni&oacute;n comunitaria.</p>
+                  </div>
+                </div>
+
+                <div class="timeline-item">
+                  <div class="timeline-dot"><i class="fa-solid fa-graduation-cap"></i></div>
+                  <div class="timeline-body">
+                    <span class="timeline-tag">Educaci&oacute;n e infancia</span>
+                    <h4>Consolidaci&oacute;n de Madrasat Iqraa en Las Fronteras</h4>
+                    <p>Desarrollo del programa escolar y cultural con 9 grupos docentes, actividades al aire libre, excursiones, fiestas de fin de curso, charlas para padres y campa&ntilde;as de solidaridad.</p>
+                  </div>
+                </div>
+
+                <div class="timeline-item">
+                  <div class="timeline-dot"><i class="fa-solid fa-trowel-bricks"></i></div>
+                  <div class="timeline-body">
+                    <span class="timeline-tag">El gran horizonte</span>
+                    <h4>Adquisici&oacute;n y desarrollo de la Mezquita Arriduan</h4>
+                    <p>Hito hist&oacute;rico: adquisici&oacute;n del espacio, desarrollo t&eacute;cnico del proyecto, tramitaciones administrativas y ejecuci&oacute;n de las fases de obra para la futura gran mezquita.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Banner informativo para ampliación fotográfica -->
+              <div class="timeline-notice-box">
+                <div class="timeline-notice-icon"><i class="fa-solid fa-camera-retro"></i></div>
+                <div class="timeline-notice-text">
+                  <strong>Cronolog&iacute;a gr&aacute;fica y archivo hist&oacute;rico en desarrollo</strong>
+                  <p>Estamos reuniendo el archivo fotogr&aacute;fico y la memoria documental de todos los actos, excursiones, conferencias y eventos comunitarios realizados a lo largo de estos a&ntilde;os para publicarlos aqu&iacute; pr&oacute;ximamente.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Ficha de Datos Institucionales y Contacto Puente Atlas -->
+            <div class="about-contact-banner u-mt-4">
+              <div class="about-contact-info">
+                <h3>Contacto directo con la directiva</h3>
+                <p>Para consultas institucionales, colaboraciones, voluntariado o atenci&oacute;n a familias:</p>
+                <ul class="about-meta-list">
+                  <li><i class="fa-solid fa-envelope"></i> <span><strong>Correo:</strong> puenteatlas@gmail.com</span></li>
+                  <li><i class="fa-brands fa-whatsapp"></i> <span><strong>WhatsApp:</strong> +34 624 477 660</span></li>
+                  <li><i class="fa-solid fa-map-location-dot"></i> <span><strong>Sede de clases:</strong> Centro Cultural Las Fronteras &middot; C. Salvador Allende, 7, Torrej&oacute;n de Ardoz</span></li>
+                  <li><i class="fa-solid fa-mosque"></i> <span><strong>Sede mezquita:</strong> C. Manuel Sandoval, 12, Bajo, Torrej&oacute;n de Ardoz</span></li>
+                </ul>
+              </div>
+              <div class="about-contact-action">
+                <button class="btn btn-gold" onclick="app.showView('view-contacto')"><i class="fa-solid fa-paper-plane"></i> Formulario de contacto</button>
+              </div>
+            </div>
+
+          </div>
+        </section>
+      </div>
+    </div>
+
+
+
+        <!-- ==========================================
          VISTA 2: MEZQUITA ANNUR
          ========================================== -->
     <div id="view-annur" class="view-section">
-      <button class="btn-back-global" onclick="app.showHome()"><i class="fa-solid fa-arrow-left"></i> Volver al Inicio</button>
+      <button class="btn-back-global" onclick="app.goBack()"><i class="fa-solid fa-arrow-left"></i> Volver atr&aacute;s</button>
       <div class="detail-view-wrap">
         <section class="section annur">
           <div class="container annur-grid">
             <div class="annur-body">
               <header>
                 <div class="u-mb-085">
-                  <img src="images/logo.png" alt="Emblema Annur" class="u-logo-56" />
+                  <img src="images/puente-atlas.png" alt="Emblema Mezquita Annur" class="u-logo-56" />
                 </div>
                 <p class="eyebrow">Nuestra sede actual</p>
                 <h2 class="display">Mezquita <em>Annur</em></h2>
-                <p class="annur-arabic" lang="ar" dir="rtl">مسجد النور</p>
+                <p class="annur-arabic" lang="ar" dir="rtl">&#1605;&#1587;&#1580;&#1583; &#1575;&#1604;&#1606;&#1608;&#1585;</p>
               </header>
-              <p class="lead">La Mezquita Annur es hoy el corazón de la Comunidad Islámica de Torrejón de Ardoz: nuestra mezquita activa y sede, donde rezamos, aprendemos y nos encontramos cada día mientras construimos la futura Mezquita Arriduan.</p>
+              <p class="lead">La Mezquita Annur es hoy el coraz&oacute;n de la Comunidad Isl&aacute;mica de Torrej&oacute;n de Ardoz: nuestra mezquita activa y sede, donde rezamos, aprendemos y nos encontramos cada d&iacute;a mientras construimos la futura Mezquita Arriduan.</p>
+              
               <ul class="annur-list">
-                <li>
-                  <span class="annur-icon"><i class="fa-solid fa-person-praying"></i></span>
-                  <div>
-                    <h3>Salah y oración del viernes (Yumu'ah)</h3>
-                    <p>Las cinco oraciones diarias en congregación y la oración del viernes con su jutba. <button class="u-link-button-gold" onclick="app.showHome()">Ver horarios de hoy</button>.</p>
-                  </div>
-                </li>
-                <li>
-                  <span class="annur-icon"><i class="fa-solid fa-hands-holding"></i></span>
-                  <div>
-                    <h3>Orientación espiritual y reuniones</h3>
-                    <p>Acompañamiento y consejo para personas y familias, y encuentros periódicos de la comunidad.</p>
-                  </div>
-                </li>
                 <li>
                   <span class="annur-icon"><i class="fa-solid fa-door-open"></i></span>
                   <div>
-                    <h3>Horario de visitas</h3>
-                    <p>La mezquita abre cada día para las oraciones. Visitas guiadas se organizan con cita previa.</p>
+                    <h3>Horarios y funcionamiento</h3>
+                    <p><strong>Oraciones diarias:</strong> Se rezan todos los rezos en la mezquita y se abre 10 minutos antes de cada oraci&oacute;n para ello.<br />
+                    <strong>De Lunes a Jueves:</strong> Abierta tras la oraci&oacute;n de Asr.<br />
+                    <strong>Espacio:</strong> Cuenta con zona para hombres y mujeres.</p>
+                    <p style="margin-top: 0.65rem; color: var(--ink-700); font-weight: 500;">Nuestras puertas est&aacute;n abiertas para ti: en cualquiera de estos horarios ac&eacute;rcate con total confianza para lo que necesites, siempre ser&aacute;s bienvenido.</p>
+                  </div>
+                </li>
+                <li>
+                  <span class="annur-icon"><i class="fa-solid fa-mosque"></i></span>
+                  <div>
+                    <h3>Oraci&oacute;n del viernes (Jumu'ah)</h3>
+                    <p><strong style="font-size: 1.25rem; color: var(--gold); font-family: var(--font-serif); letter-spacing: 0.02em;">14:45 h</strong> <span style="color: var(--ink-700); font-size: 0.95rem; font-weight: 500; margin-left: 0.4rem;">(durante todo el a&ntilde;o)</span></p>
+                  </div>
+                </li>
+                <li id="annur-clases">
+                  <span class="annur-icon"><i class="fa-solid fa-book-quran"></i></span>
+                  <div>
+                    <h3>Clases en la Mezquita Annur</h3>
+                    <p><strong>Clases de Cor&aacute;n para ni&ntilde;os y j&oacute;venes:</strong> De lunes a jueves tras la oraci&oacute;n de Asr.<br />
+                    <strong>Clases de Cor&aacute;n e Islam para mujeres:</strong> Espacio formativo para hermanas.<br />
+                    <span class="status-pill-pending"><i class="fa-solid fa-clock"></i> Pendiente de confirmar detalles con Sanae o Iman</span></p>
                   </div>
                 </li>
               </ul>
@@ -310,15 +572,15 @@
 
             <aside class="annur-card">
               <div class="annur-card-img">
-                <img loading="lazy" src="images/annur-portada.jpg" alt="Oración en la Mezquita Annur sobre la moqueta tradicional" />
+                <img loading="lazy" src="images/annur-portada.jpg" alt="Oraci&oacute;n en la Mezquita Annur sobre la moqueta tradicional" />
               </div>
               <div class="annur-card-body">
-                <p class="eyebrow">Ubicación</p>
+                <p class="eyebrow">Ubicaci&oacute;n</p>
                 <h3>Punto de encuentro</h3>
                 <ul class="annur-facts">
-                  <li><i class="fa-solid fa-location-dot"></i><span>Torrejón de Ardoz, Madrid</span></li>
-                  <li><i class="fa-solid fa-clock"></i><span>Abierta todos los días</span></li>
-                  <li><i class="fa-solid fa-people-roof"></i><span>Sede principal</span></li>
+                  <li><i class="fa-solid fa-location-dot"></i><span>C. Manuel Sandoval, 12, Bajo, Torrej&oacute;n de Ardoz</span></li>
+                  <li><i class="fa-solid fa-clock"></i><span>Abierta todos los d&iacute;as en horas de oraci&oacute;n</span></li>
+                  <li><i class="fa-solid fa-users"></i><span>Zona para hombres y mujeres</span></li>
                 </ul>
                 <button class="btn btn-blue btn-block" onclick="app.showView('view-contacto')">Concertar visita <i class="fa-solid fa-arrow-right"></i></button>
               </div>
@@ -331,28 +593,28 @@
           <div class="container">
             <header class="section-head">
               <p class="eyebrow">Nuestros pilares</p>
-              <h2 class="display">Al servicio de la comunidad, <em>cada día</em></h2>
+              <h2 class="display">Al servicio de la comunidad, <em>cada d&iacute;a</em></h2>
             </header>
             <div class="pillar-grid">
               <article class="pillar">
                 <div class="pillar-icon"><i class="fa-solid fa-mosque"></i></div><span class="pillar-num">01</span>
-                <h3>Oraciones diarias y Yumuah</h3>
-                <p>Las cinco oraciones en congregación y la jutba semanal.</p>
+                <h3>Oraciones diarias y Yumu'ah</h3>
+                <p>Las cinco oraciones en congregaci&oacute;n y la jutba semanal.</p>
               </article>
               <article class="pillar">
                 <div class="pillar-icon"><i class="fa-solid fa-book-quran"></i></div><span class="pillar-num">02</span>
-                <h3>Educación coránica</h3>
-                <p>Madrasat Iqraa: clases para niños y adultos de árabe y Corán.</p>
+                <h3>Educaci&oacute;n cor&aacute;nica</h3>
+                <p>Clases de Cor&aacute;n para ni&ntilde;os, j&oacute;venes y mujeres.</p>
               </article>
               <article class="pillar">
-                <div class="pillar-icon"><i class="fa-solid fa-people-group"></i></div><span class="pillar-num">03</span>
-                <h3>Juventud y cultura</h3>
-                <p>Mentoría y programas deportivos para fortalecer lazos.</p>
+                <div class="pillar-icon"><i class="fa-solid fa-hand-holding-heart"></i></div><span class="pillar-num">03</span>
+                <h3>Solidaridad vecinal</h3>
+                <p>Apoyo mutuo, banco de alimentos y voluntariado activo.</p>
               </article>
               <article class="pillar">
-                <div class="pillar-icon"><i class="fa-solid fa-hand-holding-heart"></i></div><span class="pillar-num">04</span>
-                <h3>Ayuda humanitaria</h3>
-                <p>Orientación familiar y reparto de alimentos vecinal.</p>
+                <div class="pillar-icon"><i class="fa-solid fa-users"></i></div><span class="pillar-num">04</span>
+                <h3>Comunidad y familia</h3>
+                <p>Encuentros, orientaci&oacute;n y acompa&ntilde;amiento a familias.</p>
               </article>
             </div>
           </div>
@@ -360,12 +622,11 @@
       </div>
     </div>
 
-
-    <!-- ==========================================
+<!-- ==========================================
          VISTA 3: PROYECTO ARRIDUAN Y DONACIONES FUSIONADOS (APILADO LIMPIO)
          ========================================== -->
     <div id="view-arriduan" class="view-section">
-      <button class="btn-back-global" onclick="app.showHome()"><i class="fa-solid fa-arrow-left"></i> Volver al Inicio</button>
+      <button class="btn-back-global" onclick="app.goBack()"><i class="fa-solid fa-arrow-left"></i> Volver atr&aacute;s</button>
       
       <div class="detail-view-wrap">
         
@@ -470,15 +731,53 @@
 
             </div>
 
-            <!-- LÍNEA QUE ENSEÑA EL AVANCE (TIMELINE) -->
-            <ol class="timeline u-mb-2" aria-label="Fases del proyecto">
-              <li class="done"><span>Terreno y licencias</span></li>
-              <li class="done"><span>Cimentación</span></li>
-              <li class="done"><span>Estructura</span></li>
-              <li class="current"><span>Sala de oración y cúpula</span></li>
-              <li><span>Interiores</span></li>
-              <li><span>Inauguración</span></li>
-            </ol>
+            <!-- LINEA DE AVANCE (TIMELINE) -->
+            <div class="timeline-wrap u-mb-2">
+              <ol class="timeline" aria-label="Fases del proyecto">
+                <li class="done">
+                  <span class="phase-dot"><i class="fa-solid fa-check"></i></span>
+                  <div class="phase-info">
+                    <span class="phase-num">Fase 1</span>
+                    <strong class="phase-name">Terreno y licencias</strong>
+                  </div>
+                </li>
+                <li class="done">
+                  <span class="phase-dot"><i class="fa-solid fa-check"></i></span>
+                  <div class="phase-info">
+                    <span class="phase-num">Fase 2</span>
+                    <strong class="phase-name">Cimentaci&oacute;n</strong>
+                  </div>
+                </li>
+                <li class="done">
+                  <span class="phase-dot"><i class="fa-solid fa-check"></i></span>
+                  <div class="phase-info">
+                    <span class="phase-num">Fase 3</span>
+                    <strong class="phase-name">Estructura y c&uacute;pula</strong>
+                  </div>
+                </li>
+                <li class="current">
+                  <span class="phase-dot"><i class="fa-solid fa-bolt-lightning"></i></span>
+                  <div class="phase-info">
+                    <span class="phase-num">Fase 4 &middot; En curso</span>
+                    <strong class="phase-name">Fontaner&iacute;a y electricidad</strong>
+                  </div>
+                </li>
+                <li>
+                  <span class="phase-dot">5</span>
+                  <div class="phase-info">
+                    <span class="phase-num">Fase 5</span>
+                    <strong class="phase-name">Acabados interiores</strong>
+                  </div>
+                </li>
+                <li>
+                  <span class="phase-dot"><i class="fa-solid fa-mosque"></i></span>
+                  <div class="phase-info">
+                    <span class="phase-num">Fase 6</span>
+                    <strong class="phase-name">Inauguraci&oacute;n</strong>
+                  </div>
+                </li>
+              </ol>
+            </div>
           </div>
         </section>
 
@@ -503,48 +802,57 @@
 
               <div class="donations-cards-grid">
                 
-                <!-- BIZUM (DESTACADO) -->
+                <!-- BIZUM SOLIDARIO (PAGO DIRECTO MÓVIL) -->
                 <div class="donation-channel-card featured">
-                  <span class="channel-badge"><i class="fa-solid fa-bolt"></i> Más rápido</span>
+                  <span class="channel-badge"><i class="fa-solid fa-bolt"></i> M&aacute;s r&aacute;pido &bull; Donaci&oacute;n ONG</span>
                   <div class="channel-header">
                     <div class="channel-icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
                     <div>
                       <h3 class="channel-title">Bizum Solidario</h3>
-                      <p class="channel-subtitle">Donación directa desde tu app bancaria</p>
+                      <p class="channel-subtitle">C&oacute;digo oficial de causa solidaria</p>
                     </div>
-                  </div>
-                  
-                  <div class="copy-data-box u-copy-box-compact">
-                    <div>
-                      <span class="u-copy-label">CÓDIGO ONG / DONACIÓN</span>
-                      <strong class="u-copy-value-lg">04853</strong>
-                    </div>
-                    <button type="button" class="btn-copy" onclick="copyToClipboard('04853', 'Código Bizum 04853')"><i class="fa-regular fa-copy"></i> Copiar Código</button>
                   </div>
 
+                  <!-- Código ONG con botón copiar -->
+                  <div class="copy-data-box u-copy-box-compact u-mt-05">
+                    <div>
+                      <span class="u-copy-label">C&Oacute;DIGO ONG / DONACI&Oacute;N</span>
+                      <strong class="u-copy-value-lg">04853</strong>
+                    </div>
+                    <button type="button" class="btn-copy" onclick="copyToClipboard('04853', 'Código Bizum 04853')">
+                      <i class="fa-regular fa-copy"></i> Copiar C&oacute;digo
+                    </button>
+                  </div>
+
+                  <!-- Botón de Pago Directo desde el Móvil -->
+                  <button type="button" class="btn-direct-mobile-pay" onclick="copyToClipboard('04853', 'Código Bizum 04853')">
+                    <i class="fa-solid fa-hand-holding-dollar"></i>
+                    <span>Copiar c&oacute;digo 04853 para Bizum</span>
+                  </button>
+
                   <div class="channel-guide">
-                    <strong>¿Cómo donar por Bizum?</strong>
+                    <strong>Pasos r&aacute;pidos:</strong>
                     <div class="channel-guide-steps">
-                      <span>Abre tu app bancaria y entra en <strong>Bizum</strong>.</span>
-                      <span>Selecciona <strong>«Donar a ONG»</strong> o <strong>«Causa Solidaria»</strong>.</span>
-                      <span>Introduce el código <strong>04853</strong> y confirma tu aportación.</span>
+                      <span>1. Abre tu app bancaria y entra en <strong>Bizum</strong>.</span>
+                      <span>2. Elige <strong>&laquo;Donar a ONG&raquo;</strong> o &laquo;Causa Solidaria&raquo;.</span>
+                      <span>3. Pega el c&oacute;digo <strong>04853</strong> e indica tu donativo.</span>
                     </div>
                   </div>
                 </div>
 
-                <!-- BANCO SABADELL (TRANSFERENCIA) -->
+                <!-- BANCO SABADELL (TRANSFERENCIA BANCARIA) -->
                 <div class="donation-channel-card">
                   <div class="channel-header">
                     <div class="channel-icon"><i class="fa-solid fa-building-columns"></i></div>
                     <div>
                       <h3 class="channel-title">Banco Sabadell</h3>
-                      <p class="channel-subtitle">Transferencia bancaria directa</p>
+                      <p class="channel-subtitle">Transferencia bancaria</p>
                     </div>
                   </div>
 
                   <div class="copy-data-box u-mt-05">
                     <div class="u-overflow-x-auto">
-                      <span class="u-copy-label">NÚMERO DE CUENTA (IBAN)</span>
+                      <span class="u-copy-label">N&Uacute;MERO DE CUENTA (IBAN)</span>
                       <strong class="u-copy-value-iban">ES75 0081 7126 3200 0142 7953</strong>
                     </div>
                     <button type="button" class="btn-copy" onclick="copyToClipboard('ES7500817126320001427953', 'IBAN de Banco Sabadell')"><i class="fa-regular fa-copy"></i> Copiar</button>
@@ -552,54 +860,116 @@
 
                   <div class="copy-data-box">
                     <div>
-                      <span class="u-copy-label">CÓDIGO BIC / SWIFT</span>
+                      <span class="u-copy-label">C&Oacute;DIGO BIC / SWIFT</span>
                       <strong class="u-copy-value">BSABESBB</strong>
                     </div>
                     <button type="button" class="btn-copy" onclick="copyToClipboard('BSABESBB', 'Código BIC')"><i class="fa-regular fa-copy"></i> Copiar</button>
                   </div>
 
-                  <div class="channel-guide u-pt-05">
-                    <p class="u-guide-text">Concepto recomendado: <strong>«Construcción Arriduan»</strong> o tu nombre.</p>
+                  <div class="channel-guide u-mt-05">
+                    <p class="u-guide-text"><strong>Beneficiario:</strong> Comunidad Isl&aacute;mica de Torrej&oacute;n<br /><strong>Concepto:</strong> Donaci&oacute;n Mezquita Arriduan</p>
                   </div>
                 </div>
 
-                <!-- PAYPAL -->
+                <!-- PAYPAL / TARJETA (PAGO DIRECTO ONLINE) -->
                 <div class="donation-channel-card">
                   <div class="channel-header">
                     <div class="channel-icon u-channel-paypal"><i class="fa-brands fa-paypal"></i></div>
                     <div>
-                      <h3 class="channel-title">PayPal</h3>
-                      <p class="channel-subtitle">Aportación segura con saldo o tarjeta</p>
+                      <h3 class="channel-title">PayPal / Tarjeta</h3>
+                      <p class="channel-subtitle">Pago directo online en 1 clic</p>
                     </div>
                   </div>
 
+                  <!-- Botón directo de pago con tarjeta o PayPal -->
+                  <a href="https://www.paypal.com/donate/?business=islamtorrejon@gmail.com&amp;item_name=Donacion+Construccion+Mezquita+Arriduan&amp;currency_code=EUR" target="_blank" rel="noopener noreferrer" class="btn-paypal-direct u-mt-05">
+                    <i class="fa-brands fa-paypal"></i> Donar con Tarjeta o PayPal <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  </a>
+
                   <div class="copy-data-box u-copy-box-compact">
                     <div>
-                      <span class="u-copy-label">IDENTIFICADOR / CUENTA</span>
+                      <span class="u-copy-label">IDENTIFICADOR / REFERENCIA</span>
                       <strong class="u-copy-value-md">7878077</strong>
                     </div>
                     <button type="button" class="btn-copy" onclick="copyToClipboard('7878077', 'Identificador PayPal')"><i class="fa-regular fa-copy"></i> Copiar</button>
                   </div>
 
-                  <div class="channel-guide">
-                    <p class="u-guide-text">Envía tu colaboración a través de la web o app de PayPal indicando este número de referencia.</p>
+                  <div class="channel-guide u-mt-05">
+                    <p class="u-guide-text">Pasarela segura oficial de PayPal para aportaciones mediante tarjeta de cr&eacute;dito, d&eacute;bito o saldo PayPal.</p>
                   </div>
                 </div>
 
-                <!-- EN PERSONA -->
-                <div class="donation-channel-card">
+                <!-- EN PERSONA (PUNTOS OFICIALES DE RECOGIDA) -->
+                <div class="donation-channel-card in-person-card">
+                  <span class="channel-badge in-person-badge"><i class="fa-solid fa-location-dot"></i> Presencial</span>
+                  
                   <div class="channel-header">
-                    <div class="channel-icon"><i class="fa-solid fa-mosque"></i></div>
+                    <div class="channel-icon"><i class="fa-solid fa-hand-holding-heart"></i></div>
                     <div>
-                      <h3 class="channel-title">En Persona</h3>
-                      <p class="channel-subtitle">Mezquita Annur · Torrejón de Ardoz</p>
+                      <h3 class="channel-title">Donaci&oacute;n en Persona</h3>
+                      <p class="channel-subtitle">Puntos oficiales en Torrej&oacute;n de Ardoz</p>
                     </div>
                   </div>
 
-                  <div class="channel-guide u-pt-05">
-                    <p class="u-guide-text-lead">Puedes entregar tu donativo en mano o en las huchas oficiales habilitadas en la <strong>Mezquita Annur</strong> tras cualquiera de las 5 oraciones diarias.</p>
-                    <span class="u-guide-open-hours"><i class="fa-solid fa-door-open"></i> Abierto todos los días</span>
+                  <div class="in-person-locations">
+                    
+                    <!-- Sede 1: Mezquita Annur -->
+                    <div class="in-person-loc-box">
+                      <div class="in-person-loc-head">
+                        <div class="in-person-loc-title">
+                          <i class="fa-solid fa-mosque"></i>
+                          <strong>Mezquita Annur</strong>
+                        </div>
+                        <a href="https://maps.google.com/?q=Calle+Manuel+Sandoval+12+Torrejon+de+Ardoz" target="_blank" rel="noopener noreferrer" class="btn-maps-link-sm" title="Ver en Google Maps">
+                          <i class="fa-solid fa-map-location-dot"></i> Maps <i class="fa-solid fa-arrow-up-right-from-square u-fs-07"></i>
+                        </a>
+                      </div>
+
+                      <div class="in-person-loc-body">
+                        <div class="in-person-addr-row">
+                          <span class="in-person-addr">Calle Manuel Sandoval, 12, Bajo, 28850</span>
+                          <button type="button" class="btn-copy-mini" onclick="copyToClipboard('Calle Manuel Sandoval, 12, Bajo, 28850 Torrejon de Ardoz, Madrid', 'Direccion de Mezquita Annur')" title="Copiar direccion">
+                            <i class="fa-regular fa-copy"></i> Copiar
+                          </button>
+                        </div>
+                        <div class="in-person-hours">
+                          <i class="fa-solid fa-clock"></i>
+                          <span><strong>Horarios:</strong> Abierta todos los d&iacute;as en los 5 rezos (apertura 10 min antes), tras Asr (Lunes a Jueves) y en el Yumu'ah (Viernes 14:45 h).</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Sede 2: Madrasat Iqraa / Centro Cultural Las Fronteras -->
+                    <div class="in-person-loc-box">
+                      <div class="in-person-loc-head">
+                        <div class="in-person-loc-title">
+                          <i class="fa-solid fa-graduation-cap"></i>
+                          <strong>Madrasat Iqraa (C.C. Las Fronteras)</strong>
+                        </div>
+                        <a href="https://www.google.com/maps/place//data=!4m2!3m1!1s0xd42371ea26bff2d:0x5ddb297c7e46137d?sa=X&ved=1t:8290&ictx=111" target="_blank" rel="noopener noreferrer" class="btn-maps-link-sm" title="Ver en Google Maps">
+                          <i class="fa-solid fa-map-location-dot"></i> Maps <i class="fa-solid fa-arrow-up-right-from-square u-fs-07"></i>
+                        </a>
+                      </div>
+
+                      <div class="in-person-loc-body">
+                        <div class="in-person-addr-row">
+                          <span class="in-person-addr">C. Salvador Allende, 7, 28850</span>
+                          <button type="button" class="btn-copy-mini" onclick="copyToClipboard('C. Salvador Allende, 7, 28850 Torrejon de Ardoz, Madrid', 'Direccion de Madrasat Iqraa')" title="Copiar direccion">
+                            <i class="fa-regular fa-copy"></i> Copiar
+                          </button>
+                        </div>
+                        <div class="in-person-hours">
+                          <i class="fa-solid fa-clock"></i>
+                          <span><strong>Horarios:</strong> S&aacute;bados y domingos de 10:45 a 15:00 h (Turno 1: 10:45 - 12:45 h &bull; Turno 2: 12:55 - 15:00 h).</span>
+                        </div>
+                      </div>
+                    </div>
+
                   </div>
+
+                  <p class="u-guide-text-lead u-mt-05">
+                    Puedes realizar tu aportaci&oacute;n en mano directamente con los responsables o depositarla en las huchas oficiales habilitadas.
+                  </p>
                 </div>
 
               </div>
@@ -621,92 +991,227 @@
     </div>
 
 
-    <!-- ==========================================
+        <!-- ==========================================
          VISTA 4: MADRASAT IQRAA + VIDA COMUNITARIA
          ========================================== -->
     <div id="view-madrasa" class="view-section">
-      <button class="btn-back-global" onclick="app.showHome()"><i class="fa-solid fa-arrow-left"></i> Volver al Inicio</button>
+      <button class="btn-back-global" onclick="app.goBack()"><i class="fa-solid fa-arrow-left"></i> Volver atr&aacute;s</button>
       <div class="detail-view-wrap">
         
         <!-- Bloque Madrasa -->
         <section class="section madrasa">
           <div class="container">
             <header class="section-head">
-              <div class="u-logo-row-mb-085">
-                <img src="images/logo.png" alt="Emblema Madrasat Iqraa" class="u-logo-64" />
-              </div>
-              <p class="eyebrow">Educación y Cultura</p>
+              <p class="eyebrow">Educaci&oacute;n y Cultura</p>
               <h2 class="display">Madrasat <em>Iqraa</em> y Comunidad</h2>
-              <p class="madrasa-arabic" lang="ar" dir="rtl">مدرسة اقرأ</p>
-              <p class="section-intro">Una escuela para todas las edades y una comunidad viva donde compartimos, aprendemos y servimos juntos a lo largo de todo el año.</p>
+              <p class="madrasa-arabic" lang="ar" dir="rtl">&#1605;&#1583;&#1585;&#1587;&#1577; &#1575;&#1602;&#1585;&#1571;</p>
+              <p class="section-intro">Una escuela para todas las edades y una comunidad viva donde compartimos, aprendemos y servimos juntos a lo largo de todo el a&ntilde;o.</p>
             </header>
 
-              <!-- PORTADA SHOWCASE MADRASAT IQRAA -->
-              <div class="madrasa-showcase-wrap u-madrasa-showcase">
-                <img src="images/madrasa-portada.jpg" alt="Alumnos participando en actividades dinámicas y educativas en Madrasat Iqraa" class="u-madrasa-showcase-img" />
-                <div class="u-madrasa-showcase-caption">
-                  <div>
-                    <span class="u-badge-gold-pill">Vida Escolar y Dinámicas</span>
-                    <p class="u-caption-lead">Aprendizaje interactivo, valores y convivencia comunitaria</p>
-                  </div>
-                  <span class="u-chip-glass"><i class="fa-solid fa-shapes u-text-gold"></i> Talleres prácticos</span>
+            <!-- PORTADA SHOWCASE MADRASAT IQRAA -->
+            <div class="madrasa-showcase-wrap u-madrasa-showcase">
+              <img src="images/madrasa-portada.jpg" alt="Clase y formaci&oacute;n en Madrasat Iqraa" class="u-madrasa-showcase-img" />
+              <div class="u-madrasa-showcase-caption">
+                <div>
+                  <span class="u-badge-gold-pill">Vida Escolar y Din&aacute;micas</span>
+                  <p class="u-caption-lead">Aprendizaje interactivo, valores y convivencia comunitaria</p>
                 </div>
+                <span class="u-chip-glass"><i class="fa-solid fa-shapes u-text-gold"></i> Talleres pr&aacute;cticos</span>
               </div>
+            </div>
 
-              <div class="program-grid">
+            <!-- PROGRAMAS FORMATIVOS -->
+            <div class="program-grid">
               <article class="program">
                 <span class="program-icon"><i class="fa-solid fa-language"></i></span>
-                <h3>Lengua árabe</h3>
-                <p>Lectoescritura y comunicación en árabe, desde el alfabeto hasta fluidez.</p>
+                <h3>Lengua &aacute;rabe</h3>
+                <p>Aprender a hablar, entender, leer y escribir en &aacute;rabe, desde las bases hasta desenvolverse con soltura.</p>
               </article>
               <article class="program">
                 <span class="program-icon"><i class="fa-solid fa-scroll"></i></span>
-                <h3>Estudios islámicos</h3>
-                <p>Fundamentos de fe, práctica religiosa y moral (ajlaq) del día a día.</p>
+                <h3>Estudios isl&aacute;micos</h3>
+                <p>Fundamentos de fe, pr&aacute;ctica religiosa y moral (ajlaq) del d&iacute;a a d&iacute;a.</p>
               </article>
               <article class="program">
                 <span class="program-icon"><i class="fa-solid fa-book-quran"></i></span>
-                <h3>Memorización Corán</h3>
-                <p>Círculos de memorización y recitación con las reglas del tayuid.</p>
+                <h3>Memorizaci&oacute;n Cor&aacute;n</h3>
+                <p>C&iacute;rculos de memorizaci&oacute;n y recitaci&oacute;n con las reglas del tayuid.</p>
               </article>
             </div>
 
-            <!-- Fusión Bloque Actividades dentro de Madrasa -->
-            <h3 class="u-subsection-title">Vida y actividades sociales</h3>
-            <div class="activity-grid">
-              <article class="activity">
-                <i class="fa-solid fa-lightbulb"></i>
-                <h3>Talleres juveniles</h3>
-                <p>Talleres, deporte y espacios de debate para jóvenes.</p>
-              </article>
-              <article class="activity">
-                <i class="fa-solid fa-mug-saucer"></i>
-                <h3>Encuentros comunitarios</h3>
-                <p>Iftares en Ramadán, celebraciones de Eid y reuniones familiares.</p>
-              </article>
-              <article class="activity">
-                <i class="fa-solid fa-handshake"></i>
-                <h3>Puentes culturales</h3>
-                <p>Jornadas de puertas abiertas y visitas escolares.</p>
-              </article>
-              <article class="activity">
-                <i class="fa-solid fa-hand-holding-heart"></i>
-                <h3>Solidaridad</h3>
-                <p>Recogida de alimentos y un equipo de voluntarios vecinal.</p>
-              </article>
+            <!-- ESTRUCTURA ACADÃ‰MICA Y HORARIOS MADRASAT IQRAA -->
+            <div class="madrasa-structure-block">
+              <header class="section-head u-mb-2">
+                <p class="eyebrow">Organizaci&oacute;n acad&eacute;mica</p>
+                <h3 class="u-subsection-title">Estructura y Horarios</h3>
+              </header>
+
+              <div class="academic-grid">
+                <!-- Tarjeta Estructura AcadÃ©mica -->
+                <div class="academic-card">
+                  <div class="academic-card-header">
+                    <h4>Estructura acad&eacute;mica</h4>
+                    <span class="academic-badge-num"><i class="fa-solid fa-graduation-cap"></i> 9 Grupos</span>
+                  </div>
+                  <ul class="academic-groups-list">
+                    <li>
+                      <div class="group-icon-wrap"><i class="fa-solid fa-shapes"></i></div>
+                      <div class="group-info">
+                        <strong>Educaci&oacute;n Infantil</strong>
+                      </div>
+                      <span class="group-count-pill">2 grupos</span>
+                    </li>
+                    <li>
+                      <div class="group-icon-wrap"><i class="fa-solid fa-book-open"></i></div>
+                      <div class="group-info">
+                        <strong>Educaci&oacute;n Primaria</strong>
+                      </div>
+                      <span class="group-count-pill">6 grupos</span>
+                    </li>
+                    <li>
+                      <div class="group-icon-wrap"><i class="fa-solid fa-users"></i></div>
+                      <div class="group-info">
+                        <strong>Clases especiales</strong>
+                        <span>Para j&oacute;venes, adultos y perfiles espec&iacute;ficos</span>
+                      </div>
+                      <span class="group-count-pill">2 grupos</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- Tarjeta Horarios Academia -->
+                <div class="academic-card">
+                  <div class="academic-card-header">
+                    <div>
+                      <h4>Horarios</h4>
+                      <span style="display: block; font-size: 0.88rem; font-weight: 700; color: var(--gold); margin-top: 0.2rem;"><i class="fa-regular fa-calendar-check" style="margin-right: 0.35rem;"></i>S&aacute;bados y domingos</span>
+                    </div>
+                    <span class="academic-badge-num"><i class="fa-solid fa-clock"></i> 2 Turnos</span>
+                  </div>
+                  <div class="academic-turns-list" style="margin-top: 0.5rem;">
+                    <div class="turn-box">
+                      <div class="turn-header" style="margin-bottom: 0;">
+                        <span class="turn-chip">Primer Turno</span>
+                        <span class="turn-hours"><i class="fa-solid fa-clock"></i> 10:45 a 12:45</span>
+                      </div>
+                    </div>
+                    <div class="turn-box">
+                      <div class="turn-header" style="margin-bottom: 0;">
+                        <span class="turn-chip">Segundo Turno</span>
+                        <span class="turn-hours"><i class="fa-solid fa-clock"></i> 12:55 a 15:00</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Banner / BotÃ³n de enlace a Clases en Mezquita Annur -->
+              <div class="madrasa-annur-banner">
+                <div class="madrasa-annur-banner-main">
+                  <div class="madrasa-annur-banner-icon">
+                    <i class="fa-solid fa-mosque"></i>
+                  </div>
+                  <div class="madrasa-annur-banner-text">
+                    <div class="madrasa-annur-banner-eyebrow">
+                      <span class="u-badge-teal-soft"><i class="fa-solid fa-chalkboard-user"></i> Formaci&oacute;n continua</span>
+                      <span class="madrasa-annur-subtag">Lunes a Jueves &bull; Mezquita Annur</span>
+                    </div>
+                    <h4>&iquest;Buscas clases de Cor&aacute;n entre semana o para mujeres?</h4>
+                    <p>En la <strong>Mezquita Annur</strong> tambi&eacute;n disponemos de <strong>clases de Cor&aacute;n e Islam para mujeres</strong> y <strong>clases de Cor&aacute;n para ni&ntilde;os y j&oacute;venes</strong> (de lunes a jueves tras la oraci&oacute;n de Asr).</p>
+                  </div>
+                </div>
+                <button type="button" class="btn btn-gold btn-sm madrasa-annur-banner-btn" onclick="app.showView('view-annur', 'annur-clases')">
+                  <span>Ver clases en Annur</span> <i class="fa-solid fa-arrow-right"></i>
+                </button>
+              </div>
             </div>
 
-            <!-- Bloque final de inscripción -->
+            <!-- Actividades dentro de Madrasa -->
+            <div class="u-mt-4">
+              <header class="section-head u-mb-2">
+                <p class="eyebrow">Comunidad</p>
+                <h3 class="u-subsection-title">Vida comunitaria y actividades sociales</h3>
+              </header>
+
+              <div class="activity-pro-grid">
+                <article class="activity-pro-card">
+                  <span class="activity-pro-icon"><i class="fa-solid fa-compass"></i></span>
+                  <div class="activity-pro-content">
+                    <h4>Excursiones</h4>
+                    <p>Salidas y convivencia al aire libre.</p>
+                  </div>
+                </article>
+
+                <article class="activity-pro-card">
+                  <span class="activity-pro-icon"><i class="fa-solid fa-star"></i></span>
+                  <div class="activity-pro-content">
+                    <h4>D&iacute;as especiales</h4>
+                    <p>Celebraciones y fechas se&ntilde;aladas.</p>
+                  </div>
+                </article>
+
+                <article class="activity-pro-card">
+                  <span class="activity-pro-icon"><i class="fa-solid fa-award"></i></span>
+                  <div class="activity-pro-content">
+                    <h4>Fiesta de fin de curso</h4>
+                    <p>Clausura escolar, premios y entrega de diplomas.</p>
+                  </div>
+                </article>
+
+                <article class="activity-pro-card">
+                  <span class="activity-pro-icon"><i class="fa-solid fa-people-roof"></i></span>
+                  <div class="activity-pro-content">
+                    <h4>Encuentros comunitarios</h4>
+                    <p>Convivencia y hermandad entre familias.</p>
+                  </div>
+                </article>
+
+                <article class="activity-pro-card">
+                  <span class="activity-pro-icon"><i class="fa-solid fa-chalkboard-user"></i></span>
+                  <div class="activity-pro-content">
+                    <h4>Charlas con especialistas</h4>
+                    <p>Para ni&ntilde;os y familias: educaci&oacute;n y religi&oacute;n.</p>
+                  </div>
+                </article>
+
+                <article class="activity-pro-card">
+                  <span class="activity-pro-icon"><i class="fa-solid fa-landmark"></i></span>
+                  <div class="activity-pro-content">
+                    <h4>Jornadas culturales</h4>
+                    <p>Historia, patrimonio y divulgaci&oacute;n.</p>
+                  </div>
+                </article>
+
+                <article class="activity-pro-card">
+                  <span class="activity-pro-icon"><i class="fa-solid fa-hand-holding-heart"></i></span>
+                  <div class="activity-pro-content">
+                    <h4>Actividades solidarias</h4>
+                    <p>Voluntariado y apoyo a la comunidad.</p>
+                  </div>
+                </article>
+
+                <article class="activity-pro-card">
+                  <span class="activity-pro-icon"><i class="fa-solid fa-users"></i></span>
+                  <div class="activity-pro-content">
+                    <h4>Ni&ntilde;os y j&oacute;venes</h4>
+                    <p>Talleres formativos y din&aacute;micas activas.</p>
+                  </div>
+                </article>
+              </div>
+            </div>
+
+            <!-- Bloque final de inscripciÃ³n -->
             <div class="enrol u-mt-4">
               <div class="enrol-info">
-                <h3>Inscripción y participación</h3>
+                <h3>Inscripci&oacute;n y participaci&oacute;n</h3>
                 <ul class="enrol-list">
-                  <li><i class="fa-regular fa-calendar"></i><span><strong>Cursos:</strong> calendario escolar regular.</span></li>
-                  <li><i class="fa-solid fa-users"></i><span><strong>Grupos:</strong> por edad y nivel (niños, jóvenes, adultos).</span></li>
+                  <li><i class="fa-regular fa-calendar"></i><span><strong>Cursos:</strong> S&aacute;bados y domingos (calendario escolar).</span></li>
+                  <li><i class="fa-regular fa-clock"></i><span><strong>Horarios:</strong> 1.&ordm; Turno: 10:45 a 12:45 h &bull; 2.&ordm; Turno: 12:55 a 15:00 h.</span></li>
+                  <li><i class="fa-solid fa-users"></i><span><strong>Grupos:</strong> por edad y nivel (infantil, primaria, adultos y perfiles espec&iacute;ficos).</span></li>
                 </ul>
               </div>
               <div class="enrol-cta">
-                <p>¿Quieres inscribirte en clases o sumarte a nuestro equipo de voluntarios? Escríbenos.</p>
+                <p>&iquest;Quieres inscribirte en clases o sumarte a nuestro equipo de voluntarios? Escr&iacute;benos.</p>
                 <button class="btn btn-gold" onclick="app.showView('view-contacto')"><i class="fa-solid fa-pen-to-square"></i> Solicitar info</button>
               </div>
             </div>
@@ -716,20 +1221,34 @@
       </div>
     </div>
 
-
-    <!-- ==========================================
+<!-- ==========================================
          VISTA 5: INTERESADOS EN EL ISLAM
          ========================================== -->
     <div id="view-interesados" class="view-section">
-      <button class="btn-back-global" onclick="app.showHome()"><i class="fa-solid fa-arrow-left"></i> Volver al Inicio</button>
+      <button class="btn-back-global" onclick="app.goBack()"><i class="fa-solid fa-arrow-left"></i> Volver atr&aacute;s</button>
       <div class="detail-view-wrap">
         <section class="section interested">
           <div class="container interested-grid">
             <div class="interested-media">
-              <img loading="lazy" src="images/te-marroqui.jpg" alt="Té tradicional marroquí servido con hierbabuena fresca" />
-              <div class="media-card">
-                <i class="fa-solid fa-mug-hot"></i>
-                <p><strong>El té siempre corre de nuestra cuenta.</strong> Pásate, sin cita previa.</p>
+              <!-- FOTO PRINCIPAL: Oracion y recogimiento en la mezquita -->
+              <div class="interested-primary-wrap">
+                <img loading="lazy" src="images/islam-principal.jpg" alt="Momento de oraci&oacute;n, recogimiento y paz en la mezquita" class="interested-primary-img" />
+                <div class="media-card media-card-primary">
+                  <i class="fa-solid fa-mosque"></i>
+                  <p><strong>Puertas abiertas y serenidad.</strong> Conoce nuestra comunidad a tu propio ritmo.</p>
+                </div>
+              </div>
+
+              <!-- FOTO SECUNDARIA: Hospitalidad y te marroqui -->
+              <div class="tea-secondary-card">
+                <div class="tea-secondary-thumb">
+                  <img loading="lazy" src="images/te-marroqui.jpg" alt="T&eacute; tradicional marroqu&iacute; servido con hierbabuena fresca" />
+                </div>
+                <div class="tea-secondary-info">
+                  <span class="tea-secondary-badge"><i class="fa-solid fa-mug-hot"></i> Hospitalidad</span>
+                  <h4>El t&eacute; siempre corre de nuestra cuenta</h4>
+                  <p>P&aacute;sate cualquier d&iacute;a sin cita previa a charlar con nosotros.</p>
+                </div>
               </div>
             </div>
 
@@ -967,16 +1486,13 @@
          VISTA 6: NOTICIAS Y COMUNICADOS
          ========================================== -->
     <div id="view-noticias" class="view-section">
-      <button class="btn-back-global" onclick="app.showHome()"><i class="fa-solid fa-arrow-left"></i> Volver al Inicio</button>
+      <button class="btn-back-global" onclick="app.goBack()"><i class="fa-solid fa-arrow-left"></i> Volver atr&aacute;s</button>
       
       <div class="detail-view-wrap">
         <section class="section news-hub">
           <div class="container">
             
             <header class="section-head u-intro-800-center">
-              <div class="u-logo-row-mb-1">
-                <img src="images/logo.png" alt="Emblema Comunidad Islámica" class="u-logo-68" />
-              </div>
               <p class="eyebrow">Actualidad y vida comunitaria</p>
               <h2 class="display">Noticias y <em>comunicados</em></h2>
               <p class="section-intro">Toda la actualidad oficial y comunicados de la Comunidad Islámica de Torrejón de Ardoz: anuncios escolares de Madrasat Iqraa, asambleas comunitarias, oraciones extraordinarias y horarios de rezo.</p>
@@ -1103,7 +1619,7 @@
          VISTA 7: CONTACTO COMPLETO
          ========================================== -->
     <div id="view-contacto" class="view-section">
-      <button class="btn-back-global" onclick="app.showHome()"><i class="fa-solid fa-arrow-left"></i> Volver al Inicio</button>
+      <button class="btn-back-global" onclick="app.goBack()"><i class="fa-solid fa-arrow-left"></i> Volver atr&aacute;s</button>
       <div class="detail-view-wrap">
         <section class="section contact">
           <div class="container contact-grid">
@@ -1114,10 +1630,10 @@
               
               <!-- CONTACTO ACTUALIZADO CON EMAIL Y WHATSAPP -->
               <ul class="contact-list">
-                <li><i class="fa-solid fa-location-dot"></i><div><strong>Mezquita Annur</strong><span>Torrejón de Ardoz, Madrid</span></div></li>
+                <li><i class="fa-solid fa-mosque"></i><div><strong>Mezquita Annur</strong><span>C. Manuel Sandoval, 12, Bajo &bull; Abierta en los 5 rezos diarios</span></div></li>
+                <li><i class="fa-solid fa-graduation-cap"></i><div><strong>Madrasat Iqraa (C.C. Las Fronteras)</strong><span>C. Salvador Allende, 7 &bull; S&aacute;bados y domingos (10:45 a 15:00 h)</span></div></li>
                 <li><i class="fa-solid fa-envelope"></i><div><strong>Email Mezquita</strong><span><a href="mailto:islamtorrejon@gmail.com" class="u-text-ink-700">islamtorrejon@gmail.com</a></span></div></li>
                 <li><i class="fa-brands fa-whatsapp"></i><div><strong>WhatsApp Puente Atlas / Madrasa</strong><span><a href="https://wa.me/34624477660" target="_blank" rel="noopener noreferrer" class="u-text-ink-700">+34 624 477 660</a></span></div></li>
-                <li><i class="fa-solid fa-clock"></i><div><strong>Abierto todos los días</strong><span>Para las cinco oraciones</span></div></li>
               </ul>
               
               <div class="map-wrap">
@@ -1172,12 +1688,14 @@
       <div>
         <h4>Explora</h4>
         <ul>
-          <li><button onclick="app.showHome()">Inicio & Horarios</button></li>
-          <li><button onclick="app.showView('view-annur')">Mezquita Annur</button></li>
-          <li><button onclick="app.showView('view-arriduan')">Proyecto Arriduan</button></li>
-          <li><button onclick="app.showView('view-madrasa')">Madrasat Iqraa</button></li>
+          <li><button onclick="app.showHome()">Inicio</button></li>
           <li><button onclick="app.showView('view-noticias')">Noticias y Actualidad</button></li>
-          <li><button onclick="app.showView('view-interesados')">¿Te interesa el islam?</button></li>
+          <li><button onclick="app.showView('view-nosotros')">Sobre nosotros</button></li>
+          <li><button onclick="app.showView('view-annur')">Mezquita Annur</button></li>
+          <li><button onclick="app.showView('view-madrasa')">Clases (Madrasa)</button></li>
+          <li><button onclick="app.showView('view-arriduan')">Proyecto Arriduan</button></li>
+          <li><button onclick="app.showView('view-interesados')">&iquest;Te interesa el islam?</button></li>
+          <li><button onclick="app.showView('view-contacto')">Contacto</button></li>
         </ul>
       </div>
       

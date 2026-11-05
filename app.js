@@ -1,8 +1,39 @@
+﻿    if ('scrollRestoration' in history) { history.scrollRestoration = 'manual'; }
     // === LÓGICA DE SPA Y SCROLLING ===
     const app = {
-      views: ['view-home', 'view-annur', 'view-arriduan', 'view-madrasa', 'view-interesados', 'view-noticias', 'view-contacto'],
+      views: ['view-home', 'view-nosotros', 'view-annur', 'view-arriduan', 'view-madrasa', 'view-interesados', 'view-noticias', 'view-contacto'],
+      historyStack: [],
+      currentView: 'view-home',
+      viewScrollPositions: {},
+      isRestoringScroll: false,
       
-      showView: function(viewId, anchorId = null) {
+      showView: function(viewId, anchorId = null, recordHistory = true, restoreScrollY = null) {
+        if (!this.views.includes(viewId)) return;
+
+        // Registrar la posicion exacta del scroll donde estaba el usuario al hacer clic
+        const currentScroll = window.pageYOffset || document.documentElement.scrollTop || window.scrollY || 0;
+        if (this.currentView) {
+          this.viewScrollPositions[this.currentView] = currentScroll;
+        }
+
+        if (recordHistory && this.currentView && (this.currentView !== viewId || anchorId)) {
+          this.historyStack.push({
+            viewId: this.currentView,
+            scrollY: currentScroll
+          });
+        }
+        this.currentView = viewId;
+
+        // Sincronizar URL hash de forma segura
+        try {
+          if (recordHistory && window.history && window.history.pushState) {
+            const slug = viewId === 'view-home' ? '' : '#' + viewId.replace('view-', '');
+            window.history.pushState({ viewId: viewId, scrollY: currentScroll }, '', slug || window.location.pathname);
+          }
+        } catch (e) {
+          // Entornos locales restrictivos continuan sin error
+        }
+
         // Ocultar todas las vistas
         this.views.forEach(id => {
           const el = document.getElementById(id);
@@ -19,12 +50,12 @@
           if (viewId === 'view-home') activeView.classList.remove('is-hidden');
         }
 
-        // Si salimos de Arriduan, reiniciar el vídeo para detener audio
+        // Si salimos de Arriduan, reiniciar el video para detener audio
         if (viewId !== 'view-arriduan') {
           this.resetTributeVideo();
         }
         
-        // Cerrar menú móvil si está abierto
+        // Cerrar menu movil si esta abierto
         const nav = document.getElementById('site-nav');
         const toggle = document.querySelector('.nav-toggle');
         if (nav && nav.classList.contains('is-open')) {
@@ -35,23 +66,62 @@
           toggle.setAttribute('aria-expanded', 'false');
         }
 
-        // Lógica de Scroll (con retraso sutil para permitir que el DOM se dibuje)
-        setTimeout(() => {
-          if (anchorId) {
+        // LÓGICA DE SCROLL: Regresar exactamente al punto donde estaba
+        if (restoreScrollY !== null && restoreScrollY !== undefined) {
+          this.isRestoringScroll = true;
+          const exactY = Math.max(0, Math.round(restoreScrollY));
+
+          const applyExactScroll = () => {
+            window.scrollTo({ top: exactY, behavior: 'instant' });
+          };
+
+          // Aplicar inmediatamente y en ciclos sucesivos para asegurar que el DOM mantiene la posicion
+          applyExactScroll();
+          requestAnimationFrame(applyExactScroll);
+          setTimeout(applyExactScroll, 30);
+          setTimeout(applyExactScroll, 80);
+          setTimeout(() => {
+            applyExactScroll();
+            this.isRestoringScroll = false;
+            this.refreshScrollReveal();
+          }, 150);
+        } else if (anchorId) {
+          setTimeout(() => {
             const targetEl = document.getElementById(anchorId);
             if (targetEl) {
-              // Offset por la cabecera fija
               const y = targetEl.getBoundingClientRect().top + window.scrollY - 100;
               window.scrollTo({ top: y, behavior: 'smooth' });
+              targetEl.classList.add('anchor-highlight');
+              setTimeout(() => {
+                targetEl.classList.remove('anchor-highlight');
+              }, 2200);
             }
-          } else {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-          }
-          this.refreshScrollReveal();
-        }, 50);
+            this.refreshScrollReveal();
+          }, 60);
+        } else {
+          window.scrollTo({ top: 0, behavior: 'instant' });
+          setTimeout(() => {
+            this.refreshScrollReveal();
+          }, 50);
+        }
       },
-      showHome: function() {
-        this.showView('view-home');
+
+      goBack: function() {
+        if (this.historyStack && this.historyStack.length > 0) {
+          const prevState = this.historyStack.pop();
+          this.showView(prevState.viewId, null, false, prevState.scrollY);
+        } else {
+          const savedHomeScroll = this.viewScrollPositions['view-home'] || 0;
+          this.showView('view-home', null, false, savedHomeScroll);
+        }
+      },
+
+      showHome: function(recordHistory = true) {
+        if (this.currentView === 'view-home') {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+          return;
+        }
+        this.showView('view-home', null, recordHistory);
       },
       playTributeVideo: function() {
         const container = document.getElementById('tribute-video-container');
@@ -99,7 +169,7 @@
           if (card) {
             card.style.transition = 'box-shadow 0.4s ease, border-color 0.4s ease';
             card.style.borderColor = 'var(--gold)';
-            card.style.boxShadow = '0 0 0 3px rgba(179, 145, 83, 0.45), var(--shadow-lg)';
+            card.style.boxShadow = '0 0 0 3px rgba(78, 51, 33, 0.45), var(--shadow-lg)';
             setTimeout(() => {
               card.style.borderColor = '';
               card.style.boxShadow = '';
@@ -360,8 +430,33 @@
       e.target.reset();
     });
 
+    // Registrar continuamente la posicion de scroll en la vista activa
+    window.addEventListener('scroll', function() {
+      if (app && app.currentView && !app.isRestoringScroll) {
+        app.viewScrollPositions[app.currentView] = window.pageYOffset || document.documentElement.scrollTop || window.scrollY || 0;
+      }
+    }, { passive: true });
+
+    // Soporte para boton atras/adelante del navegador
+    window.addEventListener('popstate', function(event) {
+      if (event.state && event.state.viewId) {
+        app.showView(event.state.viewId, null, false, event.state.scrollY || 0);
+      } else {
+        const hash = window.location.hash.replace('#', '');
+        const targetView = (hash && app.views.includes('view-' + hash)) ? ('view-' + hash) : 'view-home';
+        const savedY = app.viewScrollPositions[targetView] || 0;
+        app.showView(targetView, null, false, savedY);
+      }
+    });
+
     // === HORARIOS DE REZO API ===
     document.addEventListener("DOMContentLoaded", () => {
+      // Cargar vista inicial si la URL contiene un hash especifico
+      const initialHash = window.location.hash.replace('#', '');
+      if (initialHash && app.views.includes('view-' + initialHash)) {
+        app.showView('view-' + initialHash, null, false);
+      }
+
       async function iniciarHorariosRezo() {
         const fechaGregEl = document.getElementById('fecha-gregoriana');
         const fechaIslEl = document.getElementById('fecha-islamica');
@@ -382,10 +477,26 @@
             const t = data.data.timings;
             horarios24 = { fajr: t.Fajr.slice(0, 5), shuruq: t.Sunrise.slice(0, 5), dhuhr: t.Dhuhr.slice(0, 5), asr: t.Asr.slice(0, 5), maghrib: t.Maghrib.slice(0, 5), isha: t.Isha.slice(0, 5) };
             const h = data.data.date.hijri;
-            if(fechaIslEl) fechaIslEl.textContent = `${h.day} ${h.month.en} ${h.year} H`;
+            const mesesHijriEs = {
+              1: 'Muhárram',
+              2: 'Sáfar',
+              3: 'Rabí al-Áwwal',
+              4: 'Rabí al-Ájir',
+              5: 'Yumada al-Ula',
+              6: 'Yumada al-Ájira',
+              7: 'Ráyab',
+              8: 'Sha\'bán',
+              9: 'Ramadán',
+              10: 'Shawwal',
+              11: 'Du al-Qi\'dah',
+              12: 'Du al-Híyyah'
+            };
+            const mesNombre = (h.month && mesesHijriEs[h.month.number]) ? mesesHijriEs[h.month.number] : (h.month ? h.month.en : '');
+            const mesAr = (h.month && h.month.ar) ? ` · ${h.month.ar}` : '';
+            if(fechaIslEl) fechaIslEl.textContent = `${h.day} de ${mesNombre} de ${h.year} H${mesAr}`;
           }
         } catch (e) {
-          if(fechaIslEl) fechaIslEl.textContent = 'Calendario Islámico';
+          if(fechaIslEl) fechaIslEl.textContent = 'Calendario Islámico (Hégira)';
         }
 
         function formato12(hm) {
@@ -573,5 +684,82 @@
         prev: prev,
         goTo: goTo,
         toggleFinal: toggleFinal
+      };
+    })();
+
+
+    // SLIDER DE HADICES / CITAS INSPIRACIONALES (ROTATIVO Y ACCESIBLE)
+    const quotesSlider = (function() {
+      let currentIndex = 0;
+      let timer = null;
+      let isPaused = false;
+      const intervalMs = 13500;
+      const slides = document.querySelectorAll('.quote-slide');
+      const dots = document.querySelectorAll('.quotes-dot');
+      const container = document.getElementById('quotesBand');
+      const total = slides.length;
+
+      if (!total) return { next: function(){}, prev: function(){}, goTo: function(){} };
+
+      function updateUI() {
+        slides.forEach(function(s, idx) {
+          if (idx === currentIndex) {
+            s.classList.add('is-active');
+            s.setAttribute('aria-hidden', 'false');
+          } else {
+            s.classList.remove('is-active');
+            s.setAttribute('aria-hidden', 'true');
+          }
+        });
+
+        dots.forEach(function(d, idx) {
+          if (idx === currentIndex) {
+            d.classList.add('is-active');
+            d.setAttribute('aria-selected', 'true');
+          } else {
+            d.classList.remove('is-active');
+            d.setAttribute('aria-selected', 'false');
+          }
+        });
+      }
+
+      function goTo(index) {
+        currentIndex = ((index % total) + total) % total;
+        updateUI();
+        startTimer();
+      }
+
+      function next() {
+        goTo(currentIndex + 1);
+      }
+
+      function prev() {
+        goTo(currentIndex - 1);
+      }
+
+      function startTimer() {
+        if (timer) clearInterval(timer);
+        timer = setInterval(function() {
+          if (!isPaused) {
+            next();
+          }
+        }, intervalMs);
+      }
+
+      if (container) {
+        container.addEventListener('mouseenter', function() { isPaused = true; });
+        container.addEventListener('mouseleave', function() { isPaused = false; });
+        container.addEventListener('touchstart', function() { isPaused = true; }, { passive: true });
+        container.addEventListener('touchend', function() { isPaused = false; }, { passive: true });
+      }
+
+      // Iniciar estado
+      updateUI();
+      startTimer();
+
+      return {
+        next: next,
+        prev: prev,
+        goTo: goTo
       };
     })();
