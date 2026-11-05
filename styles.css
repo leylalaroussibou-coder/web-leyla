@@ -1,29 +1,29 @@
-    /* ============ GUIA DE COLOR: ARMONIA AZUL ISLAMICA #3D7893 ============
-       Fusion equilibrada, limpia y elegante basada en el azul oficial de la mezquita:
-       - Protagonista / Base: #3D7893 (azul sereno, mineral y claramente azulado)
-       - Superficies y fondos suaves: #E6F0F5 (bruma azulada clara y luminosa)
-       - Acento calido y badges: #D4C7A7 (arena dorado andalusi)
-       - Ancla de contraste y botones: #6F5241 (marron tierra calido)
+    /* ============ GUIA DE COLOR: ARMONIA DE IDENTIDAD CON EL LOGO #558284 ============
+       Fusion cromatica exacta extraida del logotipo oficial de la mezquita:
+       - Protagonista / Base: #558284 (azul pizarra / teal mineral sereno del logo)
+       - Superficies suaves: #E8F0F0 (bruma mineral clara, limpia y aireada)
+       - Acento calido y badges: #D4C7A7 (arena dorado andalusi del emblema)
+       - Ancla de contraste y botones: #6F5241 (marron tierra calido del logo)
        ============================================================================= */
     :root {
-      /* Familia #3D7893: Azul Oficial de la Mezquita (CLARAMENTE AZULADO) */
-      --primary: #3D7893;          /* El azul mezquita sereno, noble y azulado */
-      --primary-light: #6097B0;    /* Azul iluminado para realces y acentos */
-      --primary-soft: #E6F0F5;     /* Fondo suave bruma azulada para tarjetas y badges */
-      --primary-medium: #2F637A;   /* Tono intermedio para degradados armoniosos */
-      --primary-hover: #265266;    /* Tono profundo de interaccion hover */
-      --primary-deep: #1A3B4A;     /* Maxima legibilidad y contraste en lectura */
-      --primary-dark: #244C5E;     /* Azul profundo para cabecera, rezo y tarjetas */
-      --primary-darker: #132731;   /* Fondo profundo para hero y pie */
+      /* Familia de Identidad del Logo: Azul Pizarra Mineral (PROTAGONISTA) */
+      --primary: #558284;          /* El azul pizarra oficial del logotipo */
+      --primary-light: #72A2A4;    /* Tono iluminado para realces y acentos */
+      --primary-soft: #E8F0F0;     /* Fondo suave bruma mineral para tarjetas y badges */
+      --primary-medium: #42696B;   /* Tono intermedio para degradados armoniosos */
+      --primary-hover: #385B5D;    /* Tono profundo de interaccion hover */
+      --primary-deep: #213C3E;     /* Maxima legibilidad y contraste en lectura */
+      --primary-dark: #2A4846;     /* Azul pizarra profundo para cabecera, rezo y tarjetas */
+      --primary-darker: #162827;   /* Fondo profundo para hero y pie */
       
-      /* Marron Tierra (#6F5241): Identidad y Contraste Calido */
+      /* Marron Tierra (#6F5241): Identidad y Contraste Calido del Logo */
       --gold: #6F5241;             /* Marron tierra calido / mocha oficial */
       --gold-hover: #5A4234;       /* Tono tierra profundo en hover */
-      --gold-light: #E6F0F5;       /* Superficie suave complementaria */
+      --gold-light: #E8F0F0;       /* Superficie suave complementaria */
       --gold-glow: rgba(111, 82, 65, 0.28);
       --gold-deep: #826B3B;        /* Oro oscuro para textos de alta legibilidad */
       
-      /* Arena Dorado (#D4C7A7): Elegancia y Acentos Andalusies */
+      /* Arena Dorado (#D4C7A7): Elegancia y Fondo del Emblema del Logo */
       --sand-gold: #D4C7A7;        /* Arena dorado suave exacto */
       --accent: #D4C7A7;           /* Acentos refinados */
       
@@ -34,15 +34,15 @@
       
       /* Superficies Limpias, Luminosas y Acogedoras */
       --bg-white: #FAF9F6;         /* Fondo blanco roto limpio y luminoso */
-      --surface-light: #E6F0F5;    /* Superficie suave bruma azulada clara */
+      --surface-light: #E8F0F0;    /* Superficie suave bruma mineral clara */
       --surface-card: #FFFFFF;     /* Tarjetas nitidas de alto contraste */
       --border-color: #D4C7A7;     /* Borde arena dorado sutil */
       --border-subtle: rgba(212, 199, 167, 0.45); /* Separador fino */
 
       /* Tipografia con Maxima Legibilidad */
-      --ink-900: #101E24;          /* Tinta azul-carbon muy oscura y nitida */
-      --ink-700: #223842;          /* Texto lectura equilibrado */
-      --ink-500: #4B6370;          /* Metadatos y notas */
+      --ink-900: #122223;          /* Tinta pizarra muy oscura y nitida */
+      --ink-700: #263C3D;          /* Texto lectura equilibrado */
+      --ink-500: #4E6869;          /* Metadatos y notas */
       --white: #FFFFFF;
 
       --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
@@ -220,15 +220,15 @@
     }
     
     .btn-blue, .btn-green {
-      background: linear-gradient(135deg, #3D7893 0%, #265266 100%);
+      background: linear-gradient(135deg, #558284 0%, #385B5D 100%);
       color: var(--white);
       font-weight: 700;
       letter-spacing: 0.02em;
-      border: 1px solid rgba(61, 120, 147, 0.45);
-      box-shadow: 0 6px 20px rgba(36, 76, 94, 0.35);
+      border: 1px solid rgba(85, 130, 132, 0.45);
+      box-shadow: 0 6px 20px rgba(42, 72, 70, 0.35);
     } 
     .btn-blue:hover, .btn-green:hover {
-      background: linear-gradient(135deg, #265266 0%, #1A3B4A 100%);
+      background: linear-gradient(135deg, #385B5D 0%, #213C3E 100%);
       transform: translateY(-2px);
       box-shadow: 0 10px 26px rgba(26, 59, 74, 0.45);
       color: var(--white);
@@ -246,15 +246,15 @@
       transform: translateY(-2px);
     }
 
-    /* ============ HEADER & NAV (TONO OSCURO SOLEMNE CON REALCES EN #3D7893 Y ARENA DORADO) ============ */
+    /* ============ HEADER & NAV (TONO OSCURO SOLEMNE CON REALCES EN #558284 Y ARENA DORADO) ============ */
     .site-header {
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: linear-gradient(135deg, rgba(36, 76, 94, 0.98) 0%, rgba(27, 58, 71, 0.97) 50%, rgba(19, 39, 49, 0.98) 100%);
+      background: linear-gradient(135deg, rgba(42, 72, 70, 0.98) 0%, rgba(32, 56, 54, 0.97) 50%, rgba(22, 40, 39, 0.98) 100%);
       backdrop-filter: blur(14px);
       -webkit-backdrop-filter: blur(14px);
-      border-top: 1px solid rgba(61, 120, 147, 0.35);
+      border-top: 1px solid rgba(85, 130, 132, 0.35);
       border-bottom: 2px solid var(--sand-gold);
       padding: 0.45rem 0;
       box-shadow: 0 4px 24px rgba(14, 24, 22, 0.4);
@@ -533,9 +533,9 @@
       line-height: 1.6;
     }
 
-    /* ============ HORARIOS DE REZO (TONO SOLEMNE CON REALCES EN #3D7893 Y ARENA DORADO) ============ */
+    /* ============ HORARIOS DE REZO (TONO SOLEMNE CON REALCES EN #558284 Y ARENA DORADO) ============ */
     .prayer {
-      background: linear-gradient(135deg, #265266 0%, #3D7893 50%, #265266 100%);
+      background: linear-gradient(135deg, #385B5D 0%, #558284 50%, #385B5D 100%);
       color: var(--white);
       padding: 3.5rem 0;
       border-top: 2px solid var(--sand-gold);
@@ -606,8 +606,8 @@
     @media (max-width: 520px) { .prayer-grid { grid-template-columns: repeat(2, 1fr); gap: 0.65rem; } }
     
     .rezo-caja {
-      background: rgba(61, 120, 147, 0.10);
-      border: 1px solid rgba(61, 120, 147, 0.25);
+      background: rgba(85, 130, 132, 0.10);
+      border: 1px solid rgba(85, 130, 132, 0.25);
       border-radius: var(--radius-md);
       padding: 1.35rem 0.5rem;
       text-align: center;
@@ -637,7 +637,7 @@
       margin-left: 0.2rem;
     }
     .rezo-caja:hover {
-      background: rgba(61, 120, 147, 0.20);
+      background: rgba(85, 130, 132, 0.20);
       border-color: var(--primary-light);
       transform: translateY(-4px);
     }
@@ -923,7 +923,7 @@
       background: var(--primary);
       color: #FFFFFF;
       border-color: var(--primary);
-      box-shadow: 0 4px 14px rgba(61, 120, 147, 0.35);
+      box-shadow: 0 4px 14px rgba(85, 130, 132, 0.35);
     }
     .filter-pill i { font-size: 0.8rem; }
 
@@ -996,7 +996,7 @@
       letter-spacing: 0.08em;
       padding: 0.3rem 0.75rem;
       border-radius: 99px;
-      background: rgba(61, 120, 147, 0.15);
+      background: rgba(85, 130, 132, 0.15);
       color: var(--primary-dark);
     }
     .news-featured-body h3 {
@@ -1100,7 +1100,7 @@
     }
     .category-pill.madrasa { background: rgba(45, 72, 67, 0.9); color: var(--gold-light); }
     .category-pill.obras { background: rgba(111, 82, 65, 0.92); color: #FFFFFF; }
-    .category-pill.comunidad { background: rgba(61, 120, 147, 0.92); color: #FFFFFF; }
+    .category-pill.comunidad { background: rgba(85, 130, 132, 0.92); color: #FFFFFF; }
     .category-pill.avisos { background: rgba(111, 82, 65, 0.95); color: #FFFFFF; }
 
     .article-body {
@@ -1430,10 +1430,10 @@
       transform: none;
     }
 
-    /* ============ AYAH BAND (FONDO SOLEMNE CON MOSAICO Y REALCES EN #3D7893) ============ */
+    /* ============ AYAH BAND (FONDO SOLEMNE CON MOSAICO Y REALCES EN #558284) ============ */
     .ayah-band {
       background:
-        linear-gradient(135deg, rgba(27, 58, 71, 0.96) 0%, rgba(61, 120, 147, 0.92) 50%, rgba(27, 58, 71, 0.96) 100%),
+        linear-gradient(135deg, rgba(32, 56, 54, 0.96) 0%, rgba(85, 130, 132, 0.92) 50%, rgba(32, 56, 54, 0.96) 100%),
         url('images/mosaico.png') center/400px repeat;
       color: var(--white);
       padding: 5.5rem 0;
@@ -1684,7 +1684,7 @@
       text-transform: uppercase;
       letter-spacing: 0.08em;
       color: var(--primary-dark);
-      background: rgba(61, 120, 147, 0.15);
+      background: rgba(85, 130, 132, 0.15);
       padding: 0.35rem 0.75rem;
       border-radius: 99px;
     }
@@ -1878,7 +1878,7 @@
       left: calc(100% / 12);
       width: 50%;
       height: 4px;
-      background: linear-gradient(90deg, #3D7893 0%, #6F5241 100%);
+      background: linear-gradient(90deg, #558284 0%, #6F5241 100%);
       border-radius: 99px;
       z-index: 2;
     }
@@ -1933,12 +1933,12 @@
 
     /* Estados del avance */
     .timeline li.done .phase-dot {
-      background: #3D7893;
-      border-color: #3D7893;
+      background: #558284;
+      border-color: #558284;
       color: #FFFFFF;
     }
     .timeline li.done .phase-num {
-      color: #3D7893;
+      color: #558284;
     }
 
     .timeline li.current .phase-dot {
@@ -2134,7 +2134,7 @@
       font-family: var(--font-serif);
       font-size: 2.2rem;
       font-weight: 700;
-      color: rgba(61, 120, 147, 0.15);
+      color: rgba(85, 130, 132, 0.15);
       line-height: 1;
     }
     .pillar-tag {
@@ -2194,11 +2194,11 @@
     .program-tags li {
       font-size: 0.8rem;
       font-weight: 700;
-      background: rgba(61, 120, 147, 0.08);
+      background: rgba(85, 130, 132, 0.08);
       color: var(--primary-dark);
       padding: 0.25rem 0.75rem;
       border-radius: 99px;
-      border: 1px solid rgba(61, 120, 147, 0.2);
+      border: 1px solid rgba(85, 130, 132, 0.2);
     }
     
     .enrol {
@@ -2746,7 +2746,7 @@
     .btn-copy {
       background: linear-gradient(135deg, #28413C 0%, #3D6059 100%);
       color: #FFFFFF;
-      border: 1px solid rgba(61, 120, 147, 0.4);
+      border: 1px solid rgba(85, 130, 132, 0.4);
       padding: 0.45rem 0.9rem;
       border-radius: 8px;
       font-size: 0.82rem;
@@ -2847,7 +2847,7 @@
     .field input:focus, .field select:focus, .field textarea:focus {
       outline: none;
       border-color: var(--primary);
-      box-shadow: 0 0 0 3px rgba(61, 120, 147, 0.15);
+      box-shadow: 0 0 0 3px rgba(85, 130, 132, 0.15);
     }
 
     /* ============ FOOTER (AZUL NOCHE & LOGO EMBLEMA) ============ */
@@ -3233,7 +3233,7 @@
   flex-wrap: wrap !important;
 }
 .u-chip-location {
-  background: rgba(61, 120, 147, 0.12) !important;
+  background: rgba(85, 130, 132, 0.12) !important;
   color: var(--primary-dark) !important;
   font-size: 0.78rem !important;
   font-weight: 700 !important;
@@ -3804,7 +3804,7 @@
   width: 44px;
   height: 44px;
   border-radius: 12px;
-  background: rgba(61, 120, 147, 0.15);
+  background: rgba(85, 130, 132, 0.15);
   color: var(--primary);
   display: flex;
   align-items: center;
@@ -4082,7 +4082,7 @@
   width: 44px;
   height: 44px;
   border-radius: 12px;
-  background: rgba(61, 120, 147, 0.15);
+  background: rgba(85, 130, 132, 0.15);
   color: var(--primary);
   display: flex;
   align-items: center;
@@ -4336,8 +4336,8 @@
    ======================================================== */
 .madrasa-annur-banner {
   margin-top: 2rem;
-  background: linear-gradient(135deg, rgba(61, 120, 147, 0.1) 0%, rgba(212, 199, 167, 0.08) 100%), #FFFFFF;
-  border: 1.5px solid rgba(61, 120, 147, 0.25);
+  background: linear-gradient(135deg, rgba(85, 130, 132, 0.1) 0%, rgba(212, 199, 167, 0.08) 100%), #FFFFFF;
+  border: 1.5px solid rgba(85, 130, 132, 0.25);
   border-radius: var(--radius-lg);
   padding: 1.35rem 1.6rem;
   display: flex;
@@ -4372,7 +4372,7 @@
   justify-content: center;
   font-size: 1.35rem;
   flex-shrink: 0;
-  box-shadow: 0 4px 12px rgba(61, 120, 147, 0.25);
+  box-shadow: 0 4px 12px rgba(85, 130, 132, 0.25);
 }
 
 .madrasa-annur-banner-text {
@@ -4393,7 +4393,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  background: rgba(61, 120, 147, 0.14);
+  background: rgba(85, 130, 132, 0.14);
   color: var(--primary-deep);
   font-size: 0.76rem;
   font-weight: 700;
@@ -4746,9 +4746,9 @@
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  background: rgba(61, 120, 147, 0.12);
+  background: rgba(85, 130, 132, 0.12);
   color: var(--primary-deep);
-  border: 1px solid rgba(61, 120, 147, 0.25);
+  border: 1px solid rgba(85, 130, 132, 0.25);
   padding: 0.35rem 0.75rem;
   border-radius: 99px;
   font-size: 0.82rem;
@@ -4821,7 +4821,7 @@
 
 /* DonaciÃ³n en persona: Sedes y horarios */
 .in-person-card {
-  border-color: rgba(61, 120, 147, 0.35);
+  border-color: rgba(85, 130, 132, 0.35);
 }
 
 .in-person-badge {
@@ -4846,7 +4846,7 @@
 
 .in-person-loc-box:hover {
   border-color: var(--primary);
-  box-shadow: 0 4px 12px rgba(19, 39, 49, 0.08);
+  box-shadow: 0 4px 12px rgba(22, 40, 39, 0.08);
 }
 
 .in-person-loc-head {
@@ -5359,7 +5359,7 @@
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: rgba(61, 120, 147, 0.35);
+  background: rgba(85, 130, 132, 0.35);
   border: none;
   padding: 0;
   cursor: pointer;
