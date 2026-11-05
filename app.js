@@ -180,7 +180,7 @@
           if (card) {
             card.style.transition = 'box-shadow 0.4s ease, border-color 0.4s ease';
             card.style.borderColor = 'var(--gold)';
-            card.style.boxShadow = '0 0 0 3px rgba(102, 137, 131, 0.45), var(--shadow-lg)';
+            card.style.boxShadow = '0 0 0 3px rgba(61, 120, 147, 0.45), var(--shadow-lg)';
             setTimeout(() => {
               card.style.borderColor = '';
               card.style.boxShadow = '';
