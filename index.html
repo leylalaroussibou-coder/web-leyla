@@ -46,7 +46,7 @@
       <nav class="site-nav" id="site-nav" aria-label="Principal">
         <ul>
           <li><button onclick="app.showHome()">Inicio</button></li>
-          <li><button onclick="app.showView('view-noticias')">Noticias</button></li>
+          <li><button onclick="app.showView('view-noticias')">Noticias y Actividades</button></li>
           <li><button onclick="app.showView('view-nosotros')">Sobre nosotros</button></li>
           <li><button onclick="app.showView('view-annur')">Mezquita Annur</button></li>
           <li><button onclick="app.showView('view-madrasa')">Clases (Madrasa)</button></li>
@@ -209,7 +209,7 @@
               <h2 class="display u-news-head-title">Últimas <em>noticias</em></h2>
             </div>
             <button class="btn btn-ghost-light u-btn-ghost-news" onclick="app.showView('view-noticias')">
-              Ver todas las noticias <i class="fa-solid fa-arrow-right u-icon-gold-after"></i>
+              Ver todas las noticias y actividades <i class="fa-solid fa-arrow-right u-icon-gold-after"></i>
             </button>
           </header>
           <div class="news-grid" id="homeNewsGrid">
@@ -229,12 +229,12 @@
                 <span class="u-news-card-link"><i class="fa-solid fa-expand"></i> Ver en grande y descargar</span>
               </div>
             </button>
-            <button onclick="app.openNewsModal('images/noticia-asamblea-general.jpg', 'Convocatoria a la Asamblea General en el Centro Islámico', 'Convocatoria oficial para toda la comunidad a la Asamblea General prevista en el Centro Islámico de Torrejón de Ardoz el día 15 de febrero de 2026. El encuentro tendrá lugar entre las oraciones del Maghrib y el Isha\'a.', 'https://goo.gl/maps', 'Ver mapa y ubicación')" class="news-card u-news-card-btn">
-              <div class="news-img"><img src="images/noticia-asamblea-general.jpg" alt="Convocatoria oficial a la Asamblea General" class="u-img-pos-top" loading="lazy"></div>
+            <button onclick="app.openNewsModal('images/madrasa-dia-arabe.jpg', 'D&iacute;a Mundial de la Lengua &Aacute;rabe &middot; Madrasat Iqraa', 'Exposici&oacute;n escolar y proyectos elaborados por los alumnos de Madrasat Iqraa en conmemoraci&oacute;n del D&iacute;a Mundial de la Lengua &Aacute;rabe (18 de diciembre), destacando el amor por la lengua del Cor&aacute;n, la caligraf&iacute;a y la literatura bajo el lema &laquo;&#1604;&#1594;&#1578;&#1610; &#1607;&#1608;&#1610;&#1578;&#1610; - Mi lengua es mi identidad&raquo;.', 'images/madrasa-dia-arabe.jpg', 'Ver mural en alta resoluci&oacute;n')" class="news-card u-news-card-btn">
+              <div class="news-img"><img src="images/madrasa-dia-arabe.jpg" alt="Mural del D&iacute;a de la Lengua &Aacute;rabe elaborado por los alumnos" class="u-img-pos-center-60" loading="lazy" /></div>
               <div class="news-body">
-                <div class="news-meta"><span class="u-text-brown-earth">Centro Islámico</span> <time>15 Febrero 2026</time></div>
-                <h3>Convocatoria oficial a la Asamblea General en el Centro Islámico</h3>
-                <span class="u-news-card-link"><i class="fa-solid fa-expand"></i> Ver en grande y descargar</span>
+                <div class="news-meta"><span class="u-text-brown-earth">Actividades Escolares</span> <time>18 Diciembre</time></div>
+                <h3>Celebraci&oacute;n del D&iacute;a Mundial de la Lengua &Aacute;rabe</h3>
+                <span class="u-news-card-link"><i class="fa-solid fa-expand"></i> Ver mural y fotos</span>
               </div>
             </button>
           </div>
@@ -1259,6 +1259,13 @@
                   </div>
                 </article>
               </div>
+
+              <!-- Enlace a la crÃ³nica fotogrÃ¡fica de actividades -->
+              <div class="u-center-mt-15">
+                <button type="button" class="btn btn-ghost-dark" onclick="app.showView('view-noticias')">
+                  <i class="fa-solid fa-camera u-icon-mr-04"></i> Ver fotos y cr&oacute;nicas completas en Noticias y Actividades <i class="fa-solid fa-arrow-right"></i>
+                </button>
+              </div>
             </div>
 
             <!-- Bloque final de inscripciÃ³n -->
@@ -1555,33 +1562,97 @@
             
             <header class="section-head u-intro-800-center">
               <p class="eyebrow">Actualidad y vida comunitaria</p>
-              <h2 class="display">Noticias y <em>comunicados</em></h2>
-              <p class="section-intro">Toda la actualidad oficial y comunicados de la Comunidad Islámica de Torrejón de Ardoz: anuncios escolares de Madrasat Iqraa, asambleas comunitarias, oraciones extraordinarias y horarios de rezo.</p>
+              <h2 class="display">Noticias y <em>actividades</em></h2>
+              <p class="section-intro">Toda la actualidad oficial, cr&oacute;nicas de actividades escolares de Madrasat Iqraa, talleres creativos, asambleas comunitarias y horarios de rezo de la Comunidad Isl&aacute;mica de Torrej&oacute;n de Ardoz.</p>
               
-              <!-- Filtros interactivos de categorías -->
+              <!-- Filtros interactivos de categor&iacute;as -->
               <div class="news-filters-bar" id="newsFilters">
-                <button type="button" class="filter-pill active" onclick="app.filterNews('all', this)"><i class="fa-solid fa-layer-group"></i> Todos los avisos</button>
+                <button type="button" class="filter-pill active" onclick="app.filterNews('all', this)"><i class="fa-solid fa-layer-group"></i> Todos</button>
+                <button type="button" class="filter-pill" onclick="app.filterNews('actividades', this)"><i class="fa-solid fa-shapes"></i> Actividades y Talleres</button>
                 <button type="button" class="filter-pill" onclick="app.filterNews('madrasa', this)"><i class="fa-solid fa-book-quran"></i> Madrasat Iqraa</button>
                 <button type="button" class="filter-pill" onclick="app.filterNews('comunidad', this)"><i class="fa-solid fa-people-roof"></i> Comunidad</button>
-                <button type="button" class="filter-pill" onclick="app.filterNews('avisos', this)"><i class="fa-solid fa-bullhorn"></i> Avisos y Horarios</button>
+                <button type="button" class="filter-pill" onclick="app.filterNews('avisos', this)"><i class="fa-solid fa-bullhorn"></i> Horarios y Avisos</button>
               </div>
             </header>
 
-            <!-- GRID COMPLETO DE NOTICIAS -->
+            <!-- GRID COMPLETO DE NOTICIAS Y ACTIVIDADES -->
             <div class="news-full-grid" id="newsFullGrid">
               
-              <!-- Noticia 1: Horarios Mensuales de Oración (REAL) -->
-              <article class="news-article-card news-item" id="noticia-horarios-mes" data-category="avisos" onclick="app.openNewsModal('images/noticia-horarios-octubre.png', 'Tabla oficial de horarios de oración · Octubre 2026', 'Horarios mensuales completos calculados para Torrejón de Ardoz durante todo el mes de octubre de 2026 (Rabi\' al-Akhir y Yumada al-Wula 1448). Incluye el ajuste oficial del horario de invierno a partir del día 25.', 'images/noticia-horarios-octubre.png', 'Ver tabla en alta resolución')" role="button" tabindex="0">
+              <!-- 1. ACTIVIDAD: DÃ­a Mundial de la Lengua Ãrabe -->
+              <article class="news-article-card news-item" data-category="actividades madrasa" onclick="app.openNewsModal('images/madrasa-dia-arabe.jpg', 'D&iacute;a Mundial de la Lengua &Aacute;rabe &middot; Madrasat Iqraa', 'Exposici&oacute;n escolar y proyectos elaborados por los alumnos de Madrasat Iqraa en conmemoraci&oacute;n del D&iacute;a Mundial de la Lengua &Aacute;rabe (18 de diciembre), destacando el amor por la lengua del Cor&aacute;n, la caligraf&iacute;a y la literatura bajo el lema &laquo;&#1604;&#1594;&#1578;&#1610; &#1607;&#1608;&#1610;&#1578;&#1610; - Mi lengua es mi identidad&raquo;.', 'images/madrasa-dia-arabe.jpg', 'Ver mural en alta resoluci&oacute;n')" role="button" tabindex="0">
                 <div class="article-img">
-                  <img src="images/noticia-horarios-octubre.png" alt="Tabla oficial de horarios mensuales de oración en Torrejón de Ardoz" class="u-img-pos-top" loading="lazy">
+                  <img src="images/madrasa-dia-arabe.jpg" alt="Mural del D&iacute;a Mundial de la Lengua &Aacute;rabe elaborado por los alumnos" class="u-img-pos-center-60" loading="lazy" />
+                  <span class="category-pill actividades">D&iacute;a de la Lengua &Aacute;rabe</span>
+                </div>
+                <div class="article-body">
+                  <div class="article-meta">
+                    <time><i class="fa-regular fa-calendar"></i> 18 Diciembre &bull; Madrasat Iqraa</time>
+                  </div>
+                  <h4>Celebraci&oacute;n del D&iacute;a Mundial de la Lengua &Aacute;rabe en Madrasat Iqraa</h4>
+                  <p>Murales, caligraf&iacute;as y poes&iacute;as elaborados por los alumnos bajo el lema &laquo;Mi lengua es mi identidad&raquo;. Una hermosa jornada de orgullo ling&uuml;&iacute;stico y cultural.</p>
+                  <div class="article-actions u-article-actions-row">
+                    <span class="article-link u-article-link-gold"><i class="fa-solid fa-expand"></i> Ver mural en grande</span>
+                    <button type="button" class="btn-card-dl" onclick="event.stopPropagation(); app.downloadNewsFile('images/madrasa-dia-arabe.jpg', 'Mural Dia Lengua Arabe');" title="Descargar imagen">
+                      <i class="fa-solid fa-download"></i> Descargar
+                    </button>
+                  </div>
+                </div>
+              </article>
+
+              <!-- 2. ACTIVIDAD: Taller de Maquetas de Mezquitas -->
+              <article class="news-article-card news-item" data-category="actividades madrasa" onclick="app.openNewsModal('images/madrasa-maqueta.jpg', 'Exposici&oacute;n de Maquetas de Mezquitas &middot; Madrasat Iqraa', 'Muestra de maquetas artesanales elaboradas por los alumnos de Madrasat Iqraa en talleres creativos, recreando con gran destreza minaretes, c&uacute;pulas y lugares sagrados como la Kaaba, fomentando el trabajo cooperativo y la destreza manual.', 'images/madrasa-maqueta.jpg', 'Ver maqueta en alta resoluci&oacute;n')" role="button" tabindex="0">
+                <div class="article-img">
+                  <img src="images/madrasa-maqueta.jpg" alt="Maqueta artesanal de mezquita elaborada por alumnos" class="u-img-pos-center-60" loading="lazy" />
+                  <span class="category-pill actividades">Talleres Creativos</span>
+                </div>
+                <div class="article-body">
+                  <div class="article-meta">
+                    <time><i class="fa-solid fa-shapes"></i> Taller Did&aacute;ctico &bull; Alumnos</time>
+                  </div>
+                  <h4>Concurso y exposici&oacute;n de maquetas artesanales de mezquitas</h4>
+                  <p>Los alumnos de la escuela construyeron maquetas a escala de mezquitas y lugares sagrados, aprendiendo arquitectura isl&aacute;mica, geometr&iacute;a y trabajo en equipo.</p>
+                  <div class="article-actions u-article-actions-row">
+                    <span class="article-link u-article-link-gold"><i class="fa-solid fa-expand"></i> Ver maqueta en grande</span>
+                    <button type="button" class="btn-card-dl" onclick="event.stopPropagation(); app.downloadNewsFile('images/madrasa-maqueta.jpg', 'Maqueta Mezquita Alumnos');" title="Descargar imagen">
+                      <i class="fa-solid fa-download"></i> Descargar
+                    </button>
+                  </div>
+                </div>
+              </article>
+
+              <!-- 3. ACTIVIDAD: Conferencia y OrientaciÃ³n AcadÃ©mica -->
+              <article class="news-article-card news-item" data-category="actividades comunidad" onclick="app.openNewsModal('images/madrasa-conferencia.jpg', 'Jornada de Orientaci&oacute;n Acad&eacute;mica y Familiar', 'Encuentro celebrado en el auditorio con ponentes y especialistas educativos, enfocado en el acompa&ntilde;amiento a las familias, motivaci&oacute;n escolar y orientaci&oacute;n para j&oacute;venes en su camino hacia la universidad.', 'images/madrasa-conferencia.jpg', 'Ver fotograf&iacute;a en alta resoluci&oacute;n')" role="button" tabindex="0">
+                <div class="article-img">
+                  <img src="images/madrasa-conferencia.jpg" alt="Jornada de orientaci&oacute;n con especialistas en el auditorio" loading="lazy" />
+                  <span class="category-pill actividades">Charlas y Formaci&oacute;n</span>
+                </div>
+                <div class="article-body">
+                  <div class="article-meta">
+                    <time><i class="fa-solid fa-graduation-cap"></i> Auditorio &bull; Orientaci&oacute;n</time>
+                  </div>
+                  <h4>Jornada formativa y orientaci&oacute;n acad&eacute;mica para familias y j&oacute;venes</h4>
+                  <p>Encuentro en el auditorio con ponentes especializados para orientar a los j&oacute;venes en su etapa escolar y acceso a la universidad, reforzando el apoyo familiar.</p>
+                  <div class="article-actions u-article-actions-row">
+                    <span class="article-link u-article-link-gold"><i class="fa-solid fa-expand"></i> Ver en grande</span>
+                    <button type="button" class="btn-card-dl" onclick="event.stopPropagation(); app.downloadNewsFile('images/madrasa-conferencia.jpg', 'Conferencia Auditorio Orientacion');" title="Descargar imagen">
+                      <i class="fa-solid fa-download"></i> Descargar
+                    </button>
+                  </div>
+                </div>
+              </article>
+
+              <!-- 4. Noticia: Horarios Mensuales de OraciÃ³n -->
+              <article class="news-article-card news-item" id="noticia-horarios-mes" data-category="avisos" onclick="app.openNewsModal('images/noticia-horarios-octubre.png', 'Tabla oficial de horarios de oraci&oacute;n &middot; Octubre 2026', 'Horarios mensuales completos calculados para Torrej&oacute;n de Ardoz durante todo el mes de octubre de 2026 (Rabi\' al-Akhir y Yumada al-Wula 1448). Incluye el ajuste oficial del horario de invierno a partir del d&iacute;a 25.', 'images/noticia-horarios-octubre.png', 'Ver tabla en alta resoluci&oacute;n')" role="button" tabindex="0">
+                <div class="article-img">
+                  <img src="images/noticia-horarios-octubre.png" alt="Tabla oficial de horarios mensuales de oraci&oacute;n en Torrej&oacute;n de Ardoz" class="u-img-pos-top" loading="lazy" />
                   <span class="category-pill avisos">Horarios Oficiales</span>
                 </div>
                 <div class="article-body">
                   <div class="article-meta">
                     <time><i class="fa-regular fa-calendar"></i> Octubre 2026</time>
                   </div>
-                  <h4>Tabla oficial de horarios de oración para el mes de Octubre</h4>
-                  <p>Calendario completo día a día de Fajr, Shuruq, Dhuhr, Asr, Maghrib e Isha'a en Torrejón de Ardoz, con el cambio de hora de invierno (25 oct).</p>
+                  <h4>Tabla oficial de horarios de oraci&oacute;n para el mes de Octubre</h4>
+                  <p>Calendario completo d&iacute;a a d&iacute;a de Fajr, Shuruq, Dhuhr, Asr, Maghrib e Isha'a en Torrej&oacute;n de Ardoz, con el cambio de hora de invierno (25 oct).</p>
                   <div class="article-actions u-article-actions-row">
                     <span class="article-link u-article-link-gold"><i class="fa-solid fa-expand"></i> Ver en grande</span>
                     <button type="button" class="btn-card-dl" onclick="event.stopPropagation(); app.downloadNewsFile('images/noticia-horarios-octubre.png', 'Horarios Rezo Octubre 2026');" title="Descargar horario">
@@ -1591,10 +1662,10 @@
                 </div>
               </article>
 
-              <!-- Noticia 2: Madrasat Iqraa Matrículas (REAL) -->
-              <article class="news-article-card news-item" data-category="madrasa" onclick="app.openNewsModal('images/noticia-madrasa-matriculas.jpg', 'Matriculaciones y libros 2026/2027 · Madrasat Iqraa', 'Comunicado oficial de la Asociación socio-cultural Puente Atlas (Madrasat Iqraa) informando del comienzo de matriculaciones y compra de libros para el curso 2026/2027 en el Centro Cultural Las Fronteras de Torrejón de Ardoz los días 26 y 27 de septiembre. Plazas limitadas. Inicio de clases el sábado 3 de octubre de 2026.', 'https://wa.me/34624477660', 'Contactar por WhatsApp (+34 624 477 660)')" role="button" tabindex="0">
+              <!-- 5. Noticia: Madrasat Iqraa MatrÃ­culas -->
+              <article class="news-article-card news-item" data-category="madrasa avisos" onclick="app.openNewsModal('images/noticia-madrasa-matriculas.jpg', 'Matriculaciones y libros 2026/2027 &middot; Madrasat Iqraa', 'Comunicado oficial de la Asociaci&oacute;n socio-cultural Puente Atlas (Madrasat Iqraa) informando del comienzo de matriculaciones y compra de libros para el curso 2026/2027 en el Centro Cultural Las Fronteras de Torrej&oacute;n de Ardoz los d&iacute;as 26 y 27 de septiembre. Plazas limitadas. Inicio de clases el s&aacute;bado 3 de octubre de 2026.', 'https://wa.me/34624477660', 'Contactar por WhatsApp (+34 624 477 660)')" role="button" tabindex="0">
                 <div class="article-img">
-                  <img src="images/noticia-madrasa-matriculas.jpg" alt="Comunicado oficial de matrículas y libros Madrasat Iqraa" class="u-img-pos-top" loading="lazy">
+                  <img src="images/noticia-madrasa-matriculas.jpg" alt="Comunicado oficial de matr&iacute;culas y libros Madrasat Iqraa" class="u-img-pos-top" loading="lazy" />
                   <span class="category-pill madrasa">Madrasat Iqraa</span>
                 </div>
                 <div class="article-body">
@@ -1602,7 +1673,7 @@
                     <time><i class="fa-regular fa-calendar"></i> Sep / Oct 2026</time>
                   </div>
                   <h4>Matriculaciones y venta de libros para el curso 2026/2027</h4>
-                  <p>Inscripciones y adquisición de libros en el Centro Cultural Las Fronteras. Plazas limitadas. Inicio de clases el 3 de octubre. Tel: 624 477 660.</p>
+                  <p>Inscripciones y adquisici&oacute;n de libros en el Centro Cultural Las Fronteras. Plazas limitadas. Inicio de clases el 3 de octubre. Tel: 624 477 660.</p>
                   <div class="article-actions u-article-actions-row">
                     <span class="article-link u-article-link-gold"><i class="fa-solid fa-expand"></i> Ver en grande</span>
                     <button type="button" class="btn-card-dl" onclick="event.stopPropagation(); app.downloadNewsFile('images/noticia-madrasa-matriculas.jpg', 'Madrasat Iqraa Matriculaciones');" title="Descargar comunicado">
@@ -1612,10 +1683,10 @@
                 </div>
               </article>
 
-              <!-- Noticia 3: Convocatoria Asamblea General (REAL) -->
-              <article class="news-article-card news-item" data-category="comunidad" onclick="app.openNewsModal('images/noticia-asamblea-general.jpg', 'Convocatoria a la Asamblea General en el Centro Islámico', 'Convocatoria oficial para toda la comunidad a la Asamblea General prevista en el Centro Islámico de Torrejón de Ardoz el día 15 de febrero de 2026. El encuentro tendrá lugar entre las oraciones del Maghrib y el Isha\'a.', 'https://goo.gl/maps', 'Ver mapa y ubicación')" role="button" tabindex="0">
+              <!-- 6. Noticia: Convocatoria Asamblea General -->
+              <article class="news-article-card news-item" data-category="comunidad avisos" onclick="app.openNewsModal('images/noticia-asamblea-general.jpg', 'Convocatoria a la Asamblea General en el Centro Isl&aacute;mico', 'Convocatoria oficial para toda la comunidad a la Asamblea General prevista en el Centro Isl&aacute;mico de Torrej&oacute;n de Ardoz el d&iacute;a 15 de febrero de 2026. El encuentro tendr&aacute; lugar entre las oraciones del Maghrib y el Isha\'a.', 'https://goo.gl/maps', 'Ver mapa y ubicaci&oacute;n')" role="button" tabindex="0">
                 <div class="article-img">
-                  <img src="images/noticia-asamblea-general.jpg" alt="Convocatoria Asamblea General Centro Islámico" class="u-img-pos-top" loading="lazy">
+                  <img src="images/noticia-asamblea-general.jpg" alt="Convocatoria Asamblea General Centro Isl&aacute;mico" class="u-img-pos-top" loading="lazy" />
                   <span class="category-pill comunidad">Asamblea General</span>
                 </div>
                 <div class="article-body">
@@ -1623,7 +1694,7 @@
                     <time><i class="fa-regular fa-calendar"></i> 15 Febrero 2026</time>
                   </div>
                   <h4>Convocatoria oficial a la Asamblea General de la Comunidad</h4>
-                  <p>Invitación a todos los miembros de la comunidad en el Centro Islámico de Torrejón de Ardoz, fijada entre las oraciones de Maghrib e Isha'a.</p>
+                  <p>Invitaci&oacute;n a todos los miembros de la comunidad en el Centro Isl&aacute;mico de Torrej&oacute;n de Ardoz, fijada entre las oraciones de Maghrib e Isha'a.</p>
                   <div class="article-actions u-article-actions-row">
                     <span class="article-link u-article-link-gold"><i class="fa-solid fa-expand"></i> Ver en grande</span>
                     <button type="button" class="btn-card-dl" onclick="event.stopPropagation(); app.downloadNewsFile('images/noticia-asamblea-general.jpg', 'Convocatoria Asamblea General');" title="Descargar comunicado">
@@ -1633,18 +1704,18 @@
                 </div>
               </article>
 
-              <!-- Noticia 4: Oración de Eid al-Fitr (REAL) -->
-              <article class="news-article-card news-item" data-category="avisos" onclick="app.openNewsModal('images/noticia-eid-fitr.jpg', 'Celebración de la oración de Eid al-Fitr 1447/2026', 'Convocatoria oficial de la Comunidad Islámica de Torrejón de Ardoz (Mezquita Annur) para la oración de Eid al-Fitr en el musalla habilitado en el aparcamiento cubierto de la estación de tren (C. Hemisferio, 28850 Torrejón de Ardoz). Rezo a las 08:15 h. Rogamos a los fieles llevar su propia alfombra.', 'https://goo.gl/maps', 'Ver ubicación del musalla')" role="button" tabindex="0">
+              <!-- 7. Noticia: OraciÃ³n de Eid al-Fitr -->
+              <article class="news-article-card news-item" data-category="avisos comunidad" onclick="app.openNewsModal('images/noticia-eid-fitr.jpg', 'Celebraci&oacute;n de la oraci&oacute;n de Eid al-Fitr 1447/2026', 'Convocatoria oficial de la Comunidad Isl&aacute;mica de Torrej&oacute;n de Ardoz (Mezquita Annur) para la oraci&oacute;n de Eid al-Fitr en el musalla habilitado en el aparcamiento cubierto de la estaci&oacute;n de tren (C. Hemisferio, 28850 Torrej&oacute;n de Ardoz). Rezo a las 08:15 h. Rogamos a los fieles llevar su propia alfombra.', 'https://goo.gl/maps', 'Ver ubicaci&oacute;n del musalla')" role="button" tabindex="0">
                 <div class="article-img">
-                  <img src="images/noticia-eid-fitr.jpg" alt="Celebración del Eid al-Fitr en el musalla de Torrejón" class="u-img-pos-center-25" loading="lazy">
+                  <img src="images/noticia-eid-fitr.jpg" alt="Celebraci&oacute;n del Eid al-Fitr en el musalla de Torrej&oacute;n" class="u-img-pos-center-25" loading="lazy" />
                   <span class="category-pill avisos">Eid al-Fitr</span>
                 </div>
                 <div class="article-body">
                   <div class="article-meta">
-                    <time><i class="fa-regular fa-calendar"></i> Eid 1447 / 2026 · 08:15 h</time>
+                    <time><i class="fa-regular fa-calendar"></i> Eid 1447 / 2026 &bull; 08:15 h</time>
                   </div>
-                  <h4>Gran oración de Eid al-Fitr en el musalla cubierto de la estación</h4>
-                  <p>La Mezquita Annur convoca la oración comunitaria en el aparcamiento de la estación (C. Hemisferio) a las 08:15 h. Acudir con alfombra propia.</p>
+                  <h4>Gran oraci&oacute;n de Eid al-Fitr en el musalla cubierto de la estaci&oacute;n</h4>
+                  <p>La Mezquita Annur convoca la oraci&oacute;n comunitaria en el aparcamiento de la estaci&oacute;n (C. Hemisferio) a las 08:15 h. Acudir con alfombra propia.</p>
                   <div class="article-actions u-article-actions-row">
                     <span class="article-link u-article-link-gold"><i class="fa-solid fa-expand"></i> Ver en grande</span>
                     <button type="button" class="btn-card-dl" onclick="event.stopPropagation(); app.downloadNewsFile('images/noticia-eid-fitr.jpg', 'Rezo Eid al-Fitr');" title="Descargar comunicado">
@@ -1653,9 +1724,8 @@
                   </div>
                 </div>
               </article>
-
             </div>
-
+            
             <!-- BANNER CANAL DE COMUNICACIÓN DIRECTA -->
             <div class="news-subscribe-box">
               <div class="subscribe-text">
@@ -1750,7 +1820,7 @@
         <h4>Explora</h4>
         <ul>
           <li><button onclick="app.showHome()">Inicio</button></li>
-          <li><button onclick="app.showView('view-noticias')">Noticias y Actualidad</button></li>
+          <li><button onclick="app.showView('view-noticias')">Noticias y Actividades</button></li>
           <li><button onclick="app.showView('view-nosotros')">Sobre nosotros</button></li>
           <li><button onclick="app.showView('view-annur')">Mezquita Annur</button></li>
           <li><button onclick="app.showView('view-madrasa')">Clases (Madrasa)</button></li>

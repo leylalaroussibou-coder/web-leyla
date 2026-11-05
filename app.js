@@ -195,7 +195,7 @@
         
         const items = document.querySelectorAll('.news-item');
         items.forEach(item => {
-          if (category === 'all' || item.getAttribute('data-category') === category) {
+          if (category === 'all' || (item.getAttribute('data-category') || '').split(' ').indexOf(category) !== -1) {
             item.style.display = '';
             item.style.animation = 'fadeIn 0.35s ease forwards';
           } else {
