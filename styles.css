@@ -3122,6 +3122,12 @@
 .u-img-pos-center-60 {
   object-position: center 60% !important;
 }
+.u-img-pos-center-62 {
+  object-position: center 62% !important;
+}
+.u-img-pos-center-65 {
+  object-position: center 65% !important;
+}
 .u-img-pos-center-52 {
   object-position: center 52% !important;
 }
@@ -5227,8 +5233,8 @@
   left: 0;
   right: 0;
   z-index: 4;
-  background: linear-gradient(180deg, rgba(16, 28, 25, 0) 0%, rgba(16, 28, 25, 0.55) 35%, rgba(16, 28, 25, 0.94) 100%);
-  padding: 2.4rem 2rem 1.5rem;
+  background: linear-gradient(180deg, rgba(16, 28, 25, 0) 0%, rgba(16, 28, 25, 0.32) 40%, rgba(16, 28, 25, 0.85) 100%);
+  padding: 1.6rem 2rem 1.25rem;
   color: #FFFFFF;
   display: flex;
   justify-content: space-between;
