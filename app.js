@@ -146,7 +146,7 @@
             <div style="position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; background: #1B2321; color: #FFFFFF; padding: 1.5rem; text-align: center;">
               <i class="fa-brands fa-youtube" style="font-size: 2.8rem; color: #E62117; margin-bottom: 0.8rem;"></i>
               <strong style="font-size: 1.05rem; color: #FFFFFF;">Vídeo abierto en YouTube</strong>
-              <p style="font-size: 0.85rem; color: #C3B291; margin-top: 0.4rem; max-width: 480px; line-height: 1.5;">Al abrir la web como archivo local (file://), las normas de seguridad de YouTube exigen verlo en su web. En cuanto tu web esté publicada en internet o en un servidor local, se reproducirá aquí directamente.</p>
+              <p style="font-size: 0.85rem; color: #D4C7A7; margin-top: 0.4rem; max-width: 480px; line-height: 1.5;">Al abrir la web como archivo local (file://), las normas de seguridad de YouTube exigen verlo en su web. En cuanto tu web esté publicada en internet o en un servidor local, se reproducirá aquí directamente.</p>
               <div style="margin-top: 1rem; display: flex; gap: 0.75rem; flex-wrap: wrap; justify-content: center;">
                 <a href="https://www.youtube.com/watch?v=1Kh6tzEc15o&t=63s" target="_blank" rel="noopener noreferrer" class="btn btn-gold btn-sm"><i class="fa-solid fa-play"></i> Volver a abrir vídeo</a>
                 <button onclick="app.resetTributeVideo()" class="btn btn-sm" style="background: rgba(255,255,255,0.15); color: #fff; border: 1px solid rgba(255,255,255,0.3);"><i class="fa-solid fa-rotate-left"></i> Restablecer portada</button>
@@ -180,7 +180,7 @@
           if (card) {
             card.style.transition = 'box-shadow 0.4s ease, border-color 0.4s ease';
             card.style.borderColor = 'var(--gold)';
-            card.style.boxShadow = '0 0 0 3px rgba(78, 51, 33, 0.45), var(--shadow-lg)';
+            card.style.boxShadow = '0 0 0 3px rgba(77, 139, 128, 0.45), var(--shadow-lg)';
             setTimeout(() => {
               card.style.borderColor = '';
               card.style.boxShadow = '';

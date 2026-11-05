@@ -1,44 +1,46 @@
-    /* ============ GUÍA DE COLOR: ARMONÍA OSCURA Y LUMINOSA #668983 ============
-       Fusión equilibrada de tonos oscuros nobles y solemnes con el #668983 claro:
-       - Tonos oscuros (#152421 / #2D4843): aportan presencia, solemnidad y profundidad
-       - Tono claro de la marca (#668983): acentos luminosos, bordes, badges y realces
-       - Blanco roto (#F0EEE6) en fondos y ocre (#B39153) que lidera
+    /* ============ GUIA DE COLOR: ARMONIA OFICIAL #4D8B80 ============
+       Fusion equilibrada, limpia y elegante basada en la paleta oficial:
+       - Protagonista: #4D8B80 (verde salvia / mezquita institucional)
+       - Superficies y fondos suaves: #E5F2F0 (tono menta / salvia claro)
+       - Acento calido y badges: #D4C7A7 (arena dorado andalusi)
+       - Ancla de contraste y botones: #6F5241 (marron tierra calido)
        ============================================================================= */
     :root {
-      /* Familia #668983: Azul Oficial de la Mezquita */
-      --primary: #668983;          /* El azul oficial (#668983) base de la mezquita */
-      --primary-light: #82A7A1;    /* Azul iluminado para realces y acentos */
-      --primary-soft: #E8EEED;     /* Fondo suave para detalles y badges secundarios */
-      --primary-medium: #557973;   /* Tono intermedio para degradados armoniosos */
-      --primary-hover: #4A6560;    /* Tono profundo de interacción hover */
-      --primary-deep: #3A514D;     /* Máxima legibilidad y contraste en lectura */
-      --primary-dark: #4A6560;     /* Azul mezquita para cabecera, rezo y tarjetas */
-      --primary-darker: #2D423E;   /* Fondo profundo para hero y pie */
+      /* Familia #4D8B80: Verde Sabiduria / Azul Mezquita (PROTAGONISTA) */
+      --primary: #4D8B80;          /* El protagonista verde salvia / mezquita */
+      --primary-light: #6BA89D;    /* Tono iluminado para realces y acentos */
+      --primary-soft: #E5F2F0;     /* Fondo suave menta / salvia para tarjetas y badges */
+      --primary-medium: #3E736A;   /* Tono intermedio para degradados armoniosos */
+      --primary-hover: #37635B;    /* Tono profundo de interaccion hover */
+      --primary-deep: #21433D;     /* Maxima legibilidad y contraste en lectura */
+      --primary-dark: #274D46;     /* Verde profundo para cabecera, rezo y tarjetas */
+      --primary-darker: #152B27;   /* Fondo profundo para hero y pie */
       
-      /* El Marrón de Identidad (#4E3321) en sustitución del dorado */
-      --gold: #4E3321;             /* Marrón ciruela/mocha oficial del logotipo */
-      --gold-hover: #67442D;       /* Marrón cálido iluminado */
-      --gold-light: #F4EFEA;       /* Fondo crema marfil suave */
-      --gold-glow: rgba(78, 51, 33, 0.35);
+      /* Marron Tierra (#6F5241): Identidad y Contraste Calido */
+      --gold: #6F5241;             /* Marron tierra calido / mocha de identidad */
+      --gold-hover: #5A4234;       /* Tono tierra profundo en hover */
+      --gold-light: #E5F2F0;       /* Superficie suave complementaria */
+      --gold-glow: rgba(111, 82, 65, 0.28);
+      --gold-deep: #826B3B;        /* Oro oscuro para textos de alta legibilidad */
       
-      /* El Crudo que Respira (#C3B291) */
-      --sand-gold: #C3B291;        /* Crudo / arena exacto del manual */
-      --accent: #C3B291;           /* Crudo andalusí suave */
+      /* Arena Dorado (#D4C7A7): Elegancia y Acentos Andalusies */
+      --sand-gold: #D4C7A7;        /* Arena dorado suave exacto */
+      --accent: #D4C7A7;           /* Acentos refinados */
       
-      /* Ciruela (#4E3321) y Marrón Tierra (#6F5241) */
-      --ciruela: #4E3321;          /* Ciruela / marrón umber exacto del manual */
-      --brown-mocha: #4E3321;      /* Ciruela umber */
-      --brown-earth: #6F5241;      /* Marrón tierra exacto del manual */
+      /* Marron Tierra (#6F5241) */
+      --ciruela: #6F5241;          /* Marron tierra */
+      --brown-mocha: #6F5241;      /* Marron tierra calido */
+      --brown-earth: #6F5241;      /* Marron tierra exacto */
       
-      /* Blanco Roto del Fondo (#F0EEE6) y Superficies Acogedoras */
-      --bg-white: #F0EEE6;         /* Código exacto del blanco roto del fondo */
-      --surface-light: #E7E3D8;    /* Superficie suave complementaria */
-      --surface-card: #FFFFFF;     /* Tarjetas nítidas de alto contraste */
-      --border-color: #DDD6C6;     /* Borde crudo sutil */
-      --border-subtle: #E8E3D5;    /* Separador fino */
+      /* Superficies Limpias, Luminosas y Acogedoras (#E5F2F0 y #FAF9F6) */
+      --bg-white: #FAF9F6;         /* Fondo blanco roto limpio y luminoso */
+      --surface-light: #E5F2F0;    /* Superficie suave verde menta / salvia */
+      --surface-card: #FFFFFF;     /* Tarjetas nitidas de alto contraste */
+      --border-color: #D4C7A7;     /* Borde arena dorado sutil */
+      --border-subtle: rgba(212, 199, 167, 0.45); /* Separador fino */
 
-      /* Tipografía con Máxima Legibilidad */
-      --ink-900: #14201E;          /* Tinta muy oscura y nítida */
+      /* Tipografia con Maxima Legibilidad */
+      --ink-900: #14201E;          /* Tinta muy oscura y nitida */
       --ink-700: #2C3C39;          /* Texto lectura equilibrado */
       --ink-500: #556663;          /* Metadatos y notas */
       --white: #FFFFFF;
@@ -56,7 +58,7 @@
       --shadow-sm: 0 4px 16px rgba(14, 24, 22, 0.06);
       --shadow-md: 0 10px 28px rgba(14, 24, 22, 0.09);
       --shadow-lg: 0 22px 50px rgba(14, 24, 22, 0.13);
-      --shadow-gold: 0 8px 24px rgba(78, 51, 33, 0.3);
+      --shadow-gold: 0 8px 24px rgba(111, 82, 65, 0.25);
     }
 
     /* ============ BASE & RESET ============ */
@@ -206,27 +208,27 @@
     .btn-block { display: flex; width: 100%; }
     
     .btn-gold {
-      background: linear-gradient(135deg, #4E3321 0%, #6F5241 100%);
+      background: linear-gradient(135deg, #6F5241 0%, #5A4234 100%);
       color: var(--white);
-      box-shadow: 0 6px 20px rgba(78, 51, 33, 0.35);
+      box-shadow: 0 6px 20px rgba(111, 82, 65, 0.35);
     }
     .btn-gold:hover {
       transform: translateY(-2px);
-      box-shadow: 0 10px 28px rgba(78, 51, 33, 0.5);
-      background: linear-gradient(135deg, #67442D 0%, #4E3321 100%);
+      box-shadow: 0 10px 28px rgba(111, 82, 65, 0.5);
+      background: linear-gradient(135deg, #84634E 0%, #6F5241 100%);
       color: #FFFFFF;
     }
     
     .btn-blue, .btn-green {
-      background: linear-gradient(135deg, #668983 0%, #4A6560 100%);
+      background: linear-gradient(135deg, #4D8B80 0%, #37635B 100%);
       color: var(--white);
       font-weight: 700;
       letter-spacing: 0.02em;
-      border: 1px solid rgba(102, 137, 131, 0.45);
-      box-shadow: 0 6px 20px rgba(74, 101, 96, 0.35);
+      border: 1px solid rgba(77, 139, 128, 0.45);
+      box-shadow: 0 6px 20px rgba(55, 99, 91, 0.35);
     } 
     .btn-blue:hover, .btn-green:hover {
-      background: linear-gradient(135deg, #53756F 0%, #3D5550 100%);
+      background: linear-gradient(135deg, #37635B 0%, #274D46 100%);
       transform: translateY(-2px);
       box-shadow: 0 10px 26px rgba(58, 81, 77, 0.45);
       color: var(--white);
@@ -244,16 +246,16 @@
       transform: translateY(-2px);
     }
 
-    /* ============ HEADER & NAV (TONO OSCURO SOLEMNE CON REALCES EN #668983 Y OCRE) ============ */
+    /* ============ HEADER & NAV (TONO OSCURO SOLEMNE CON REALCES EN #4D8B80 Y ARENA DORADO) ============ */
     .site-header {
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: linear-gradient(135deg, rgba(74, 101, 96, 0.98) 0%, rgba(60, 85, 80, 0.97) 50%, rgba(45, 66, 62, 0.98) 100%);
+      background: linear-gradient(135deg, rgba(55, 99, 91, 0.98) 0%, rgba(45, 83, 76, 0.97) 50%, rgba(33, 67, 61, 0.98) 100%);
       backdrop-filter: blur(14px);
       -webkit-backdrop-filter: blur(14px);
-      border-top: 1px solid rgba(102, 137, 131, 0.35);
-      border-bottom: 2px solid var(--gold);
+      border-top: 1px solid rgba(77, 139, 128, 0.35);
+      border-bottom: 2px solid var(--sand-gold);
       padding: 0.45rem 0;
       box-shadow: 0 4px 24px rgba(14, 24, 22, 0.4);
       transition: background 0.3s ease;
@@ -446,7 +448,7 @@
         flex-direction: column;
         align-items: stretch;
         padding: 1.75rem 1.5rem;
-        border-bottom: 2px solid var(--gold);
+        border-bottom: 2px solid var(--sand-gold);
         display: none;
         box-shadow: 0 14px 30px rgba(0,0,0,0.35);
       }
@@ -500,7 +502,7 @@
     .hero-crest-img {
       height: 108px;
       width: auto;
-      filter: drop-shadow(0 4px 18px rgba(0, 0, 0, 0.7)) drop-shadow(0 0 20px rgba(78, 51, 33, 0.5));
+      filter: drop-shadow(0 4px 18px rgba(0, 0, 0, 0.7)) drop-shadow(0 0 20px rgba(111, 82, 65, 0.5));
       transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
     .hero-crest-img:hover { transform: scale(1.08); }
@@ -510,7 +512,7 @@
       color: var(--gold);
       margin-bottom: 0.85rem;
       letter-spacing: 0.02em;
-      text-shadow: 0 2px 14px rgba(0, 0, 0, 0.7), 0 0 20px rgba(78, 51, 33, 0.3);
+      text-shadow: 0 2px 14px rgba(0, 0, 0, 0.7), 0 0 20px rgba(111, 82, 65, 0.3);
     }
     .hero h1 {
       font-family: var(--font-serif);
@@ -531,13 +533,13 @@
       line-height: 1.6;
     }
 
-    /* ============ HORARIOS DE REZO (NOCHE SOLEMNE CON REALCES EN #668983 Y OCRE) ============ */
+    /* ============ HORARIOS DE REZO (TONO SOLEMNE CON REALCES EN #4D8B80 Y ARENA DORADO) ============ */
     .prayer {
-      background: linear-gradient(135deg, #4A6560 0%, #668983 50%, #4A6560 100%);
+      background: linear-gradient(135deg, #37635B 0%, #4D8B80 50%, #37635B 100%);
       color: var(--white);
       padding: 3.5rem 0;
-      border-top: 2px solid var(--gold);
-      border-bottom: 2px solid var(--gold);
+      border-top: 2px solid var(--sand-gold);
+      border-bottom: 2px solid var(--sand-gold);
       position: relative;
       box-shadow: 0 10px 30px rgba(14, 24, 22, 0.35);
     }
@@ -566,7 +568,7 @@
     }
     .prayer-countdown {
       background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(78, 51, 33, 0.45);
+      border: 1px solid rgba(111, 82, 65, 0.45);
       padding: 0.7rem 1.4rem;
       border-radius: 99px;
       display: inline-flex;
@@ -591,7 +593,7 @@
       font-weight: 700;
       color: var(--gold);
       letter-spacing: 0.08em;
-      text-shadow: 0 0 12px rgba(78, 51, 33, 0.45);
+      text-shadow: 0 0 12px rgba(111, 82, 65, 0.45);
     }
     
     .prayer-grid {
@@ -604,8 +606,8 @@
     @media (max-width: 520px) { .prayer-grid { grid-template-columns: repeat(2, 1fr); gap: 0.65rem; } }
     
     .rezo-caja {
-      background: rgba(102, 137, 131, 0.10);
-      border: 1px solid rgba(102, 137, 131, 0.25);
+      background: rgba(77, 139, 128, 0.10);
+      border: 1px solid rgba(77, 139, 128, 0.25);
       border-radius: var(--radius-md);
       padding: 1.35rem 0.5rem;
       text-align: center;
@@ -635,16 +637,16 @@
       margin-left: 0.2rem;
     }
     .rezo-caja:hover {
-      background: rgba(102, 137, 131, 0.20);
+      background: rgba(77, 139, 128, 0.20);
       border-color: var(--primary-light);
       transform: translateY(-4px);
     }
     @keyframes pulseActiveRezo {
       0%, 100% {
-        box-shadow: 0 0 0 3px rgba(78, 51, 33, 0.4), 0 12px 32px rgba(0, 0, 0, 0.45), 0 0 24px rgba(78, 51, 33, 0.45);
+        box-shadow: 0 0 0 3px rgba(111, 82, 65, 0.4), 0 12px 32px rgba(0, 0, 0, 0.45), 0 0 24px rgba(111, 82, 65, 0.45);
       }
       50% {
-        box-shadow: 0 0 0 5px rgba(78, 51, 33, 0.7), 0 16px 38px rgba(0, 0, 0, 0.55), 0 0 36px rgba(78, 51, 33, 0.7);
+        box-shadow: 0 0 0 5px rgba(111, 82, 65, 0.7), 0 16px 38px rgba(0, 0, 0, 0.55), 0 0 36px rgba(111, 82, 65, 0.7);
       }
     }
     .rezo-caja:not(.activo) {
@@ -654,7 +656,7 @@
       opacity: 1;
     }
     .rezo-caja.activo {
-      background: linear-gradient(180deg, rgba(78, 51, 33, 0.38) 0%, rgba(60, 95, 88, 0.58) 100%) !important;
+      background: linear-gradient(180deg, rgba(111, 82, 65, 0.38) 0%, rgba(60, 95, 88, 0.58) 100%) !important;
       border: 2.5px solid var(--gold) !important;
       transform: translateY(-5px) scale(1.06) !important;
       animation: pulseActiveRezo 2.5s infinite ease-in-out;
@@ -667,7 +669,7 @@
       top: -12px;
       left: 50%;
       transform: translateX(-50%);
-      background: linear-gradient(135deg, #67442D 0%, var(--gold) 100%);
+      background: linear-gradient(135deg, #6F5241 0%, #5A4234 100%);
       color: #FFFFFF;
       font-family: var(--font-sans);
       font-size: 0.68rem;
@@ -675,7 +677,7 @@
       letter-spacing: 0.12em;
       padding: 0.22rem 0.85rem;
       border-radius: 99px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4), 0 0 14px rgba(78, 51, 33, 0.6);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4), 0 0 14px rgba(111, 82, 65, 0.6);
       white-space: nowrap;
       z-index: 2;
     }
@@ -691,7 +693,7 @@
       color: #FFFFFF !important;
       font-size: 1.85rem !important;
       font-weight: 800 !important;
-      text-shadow: 0 2px 14px rgba(0, 0, 0, 0.8), 0 0 20px rgba(78, 51, 33, 0.6) !important;
+      text-shadow: 0 2px 14px rgba(0, 0, 0, 0.8), 0 0 20px rgba(111, 82, 65, 0.6) !important;
     }
     .rezo-caja.activo .ampm {
       color: var(--gold-light) !important;
@@ -784,14 +786,14 @@
     /* ============ BANNER DONACIÓN URGENTE (CHOCOLATE & MOSAICO) ============ */
     .urgent-banner {
       background:
-        linear-gradient(135deg, rgba(78, 51, 33, 0.96) 0%, rgba(30, 18, 10, 0.98) 100%),
+        linear-gradient(135deg, rgba(111, 82, 65, 0.96) 0%, rgba(30, 18, 10, 0.98) 100%),
         url('images/mosaico.png') center/450px repeat;
       color: var(--white);
       padding: 5rem 0;
       position: relative;
       overflow: hidden;
-      border-top: 2px solid var(--gold);
-      border-bottom: 2px solid var(--gold);
+      border-top: 2px solid var(--sand-gold);
+      border-bottom: 2px solid var(--sand-gold);
       box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
     }
     .urgent-banner::before {
@@ -801,7 +803,7 @@
       right: -20%;
       width: 60%;
       height: 200%;
-      background: radial-gradient(circle, rgba(78, 51, 33, 0.15) 0%, rgba(78, 51, 33, 0) 70%);
+      background: radial-gradient(circle, rgba(111, 82, 65, 0.15) 0%, rgba(111, 82, 65, 0) 70%);
       pointer-events: none;
     }
     .urgent-grid {
@@ -836,13 +838,13 @@
       background: var(--gold);
       border-radius: 50%;
       margin-right: 0.5rem;
-      box-shadow: 0 0 0 rgba(78, 51, 33, 0.7);
+      box-shadow: 0 0 0 rgba(111, 82, 65, 0.7);
       animation: pulseDot 1.6s infinite;
     }
     @keyframes pulseDot {
-      0% { box-shadow: 0 0 0 0 rgba(78, 51, 33, 0.7); }
-      70% { box-shadow: 0 0 0 10px rgba(78, 51, 33, 0); }
-      100% { box-shadow: 0 0 0 0 rgba(78, 51, 33, 0); }
+      0% { box-shadow: 0 0 0 0 rgba(111, 82, 65, 0.7); }
+      70% { box-shadow: 0 0 0 10px rgba(111, 82, 65, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(111, 82, 65, 0); }
     }
 
     /* ============ NOTICIAS COMPACTAS ============ */
@@ -993,7 +995,7 @@
       letter-spacing: 0.08em;
       padding: 0.3rem 0.75rem;
       border-radius: 99px;
-      background: rgba(102, 137, 131, 0.15);
+      background: rgba(77, 139, 128, 0.15);
       color: var(--primary-dark);
     }
     .news-featured-body h3 {
@@ -1096,9 +1098,9 @@
       letter-spacing: 0.08em;
     }
     .category-pill.madrasa { background: rgba(45, 72, 67, 0.9); color: var(--gold-light); }
-    .category-pill.obras { background: rgba(78, 51, 33, 0.92); color: #FFFFFF; }
-    .category-pill.comunidad { background: rgba(102, 137, 131, 0.92); color: #FFFFFF; }
-    .category-pill.avisos { background: rgba(78, 51, 33, 0.95); color: #FFFFFF; }
+    .category-pill.obras { background: rgba(111, 82, 65, 0.92); color: #FFFFFF; }
+    .category-pill.comunidad { background: rgba(77, 139, 128, 0.92); color: #FFFFFF; }
+    .category-pill.avisos { background: rgba(111, 82, 65, 0.95); color: #FFFFFF; }
 
     .article-body {
       padding: 1.5rem;
@@ -1226,7 +1228,7 @@
       justify-content: space-between;
       padding: 0.75rem 1.25rem;
       background: #14201D;
-      border-bottom: 1px solid rgba(78, 51, 33, 0.3);
+      border-bottom: 1px solid rgba(111, 82, 65, 0.3);
       color: #fff;
       flex-shrink: 0;
     }
@@ -1335,7 +1337,7 @@
       letter-spacing: 0.03em;
       pointer-events: none;
       backdrop-filter: blur(4px);
-      border: 1px solid rgba(78, 51, 33, 0.3);
+      border: 1px solid rgba(111, 82, 65, 0.3);
     }
     .news-modal-info {
       padding: 2rem;
@@ -1359,7 +1361,7 @@
       margin-bottom: 1.25rem;
     }
     .news-modal-download-box {
-      background: rgba(78, 51, 33, 0.08);
+      background: rgba(111, 82, 65, 0.08);
       border: 1px dashed var(--gold);
       border-radius: 16px;
       padding: 1.25rem;
@@ -1380,9 +1382,9 @@
 
     /* Botón de descarga en cada tarjeta de noticias */
     .btn-card-dl {
-      background: rgba(78, 51, 33, 0.12);
+      background: rgba(111, 82, 65, 0.12);
       color: var(--primary-deep);
-      border: 1px solid rgba(78, 51, 33, 0.35);
+      border: 1px solid rgba(111, 82, 65, 0.35);
       border-radius: var(--radius-full);
       padding: 0.35rem 0.85rem;
       font-size: 0.78rem;
@@ -1427,16 +1429,16 @@
       transform: none;
     }
 
-    /* ============ AYAH BAND (FONDO NOCHE SOLEMNE CON MOSAICO Y REALCES #668983) ============ */
+    /* ============ AYAH BAND (FONDO SOLEMNE CON MOSAICO Y REALCES EN #4D8B80) ============ */
     .ayah-band {
       background:
-        linear-gradient(135deg, rgba(60, 85, 80, 0.96) 0%, rgba(102, 137, 131, 0.92) 50%, rgba(60, 85, 80, 0.96) 100%),
+        linear-gradient(135deg, rgba(45, 83, 76, 0.96) 0%, rgba(77, 139, 128, 0.92) 50%, rgba(45, 83, 76, 0.96) 100%),
         url('images/mosaico.png') center/400px repeat;
       color: var(--white);
       padding: 5.5rem 0;
       text-align: center;
-      border-top: 2px solid var(--gold);
-      border-bottom: 2px solid var(--gold);
+      border-top: 2px solid var(--sand-gold);
+      border-bottom: 2px solid var(--sand-gold);
       position: relative;
       overflow: hidden;
       box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.4);
@@ -1448,7 +1450,7 @@
       color: var(--gold-light);
       line-height: 1.9;
       margin-bottom: 1.25rem;
-      text-shadow: 0 2px 10px rgba(0,0,0,0.5), 0 0 20px rgba(78, 51, 33, 0.25);
+      text-shadow: 0 2px 10px rgba(0,0,0,0.5), 0 0 20px rgba(111, 82, 65, 0.25);
     }
     .ayah-translation {
       font-family: var(--font-serif);
@@ -1483,7 +1485,7 @@
       display: inline-flex;
       align-items: center;
       gap: 0.85rem;
-      background: linear-gradient(135deg, #4E3321 0%, #6F5241 100%);
+      background: linear-gradient(135deg, #6F5241 0%, #5A4234 100%);
       color: #FFFFFF;
       font-weight: 800;
       font-size: 1rem;
@@ -1491,14 +1493,14 @@
       border-radius: 99px;
       border: 1px solid rgba(255, 255, 255, 0.3);
       cursor: pointer;
-      box-shadow: 0 6px 20px rgba(78, 51, 33, 0.4), 0 2px 6px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 6px 20px rgba(111, 82, 65, 0.4), 0 2px 6px rgba(0, 0, 0, 0.08);
       letter-spacing: 0.02em;
       transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .btn-cozy-donate:hover {
       transform: translateY(-3px) scale(1.02);
-      box-shadow: 0 10px 28px rgba(78, 51, 33, 0.52);
-      background: linear-gradient(135deg, #67442D 0%, #4E3321 100%);
+      box-shadow: 0 10px 28px rgba(111, 82, 65, 0.52);
+      background: linear-gradient(135deg, #84634E 0%, #6F5241 100%);
       color: #FFFFFF;
     }
     .btn-cozy-donate .btn-heart-icon {
@@ -1538,10 +1540,10 @@
       text-transform: uppercase;
       letter-spacing: 0.12em;
       color: var(--gold);
-      background: rgba(78, 51, 33, 0.12);
+      background: rgba(111, 82, 65, 0.12);
       padding: 0.35rem 0.9rem;
       border-radius: 99px;
-      border: 1px solid rgba(78, 51, 33, 0.35);
+      border: 1px solid rgba(111, 82, 65, 0.35);
       margin-bottom: 0.75rem;
     }
     .badge-urgent .pulse {
@@ -1550,7 +1552,7 @@
       height: 8px;
       background: var(--gold);
       border-radius: 50%;
-      box-shadow: 0 0 0 rgba(78, 51, 33, 0.7);
+      box-shadow: 0 0 0 rgba(111, 82, 65, 0.7);
       animation: pulseDot 1.6s infinite;
     }
 
@@ -1575,14 +1577,14 @@
       width: 52px;
       height: 52px;
       border-radius: 14px;
-      background: rgba(78, 51, 33, 0.15);
+      background: rgba(111, 82, 65, 0.15);
       color: var(--brown-earth);
       display: inline-flex;
       align-items: center;
       justify-content: center;
       font-size: 1.35rem;
       flex-shrink: 0;
-      border: 1px solid rgba(78, 51, 33, 0.25);
+      border: 1px solid rgba(111, 82, 65, 0.25);
     }
     .annur-list h3 { font-size: 1.18rem; margin-bottom: 0.35rem; color: var(--ink-900); }
     .annur-list p { font-size: 1rem; color: var(--ink-700); font-weight: 500; line-height: 1.55; }
@@ -1618,20 +1620,20 @@
 
     /* Columna Izquierda: Homenaje al Sr. Ahmad Elayaati + Vídeo */
     .arriduan-video-card {
-      background: #FAF8F3;
-      border: 1px solid #DCD5C5;
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
       border-left: 4px solid var(--gold);
       border-radius: var(--radius-lg);
       padding: 1.75rem;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      box-shadow: 0 4px 20px rgba(78, 51, 33, 0.06);
+      box-shadow: 0 4px 20px rgba(111, 82, 65, 0.06);
       transition: box-shadow 0.3s ease, border-color 0.3s ease;
     }
     .arriduan-video-card:hover {
-      box-shadow: 0 8px 26px rgba(78, 51, 33, 0.09);
-      border-color: #D0C6B2;
+      box-shadow: 0 8px 26px rgba(111, 82, 65, 0.09);
+      border-color: var(--primary);
     }
     .arriduan-video-card .tribute-text {
       font-size: 1rem;
@@ -1649,20 +1651,20 @@
 
     /* Columna Derecha: Carrusel interactivo cronológico */
     .arriduan-carousel-card {
-      background: #FAF8F3;
-      border: 1px solid #DCD5C5;
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
       border-left: 4px solid var(--gold);
       border-radius: var(--radius-lg);
       padding: 1.75rem;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      box-shadow: 0 4px 20px rgba(78, 51, 33, 0.06);
+      box-shadow: 0 4px 20px rgba(111, 82, 65, 0.06);
       transition: box-shadow 0.3s ease, border-color 0.3s ease;
     }
     .arriduan-carousel-card:hover {
-      box-shadow: 0 8px 26px rgba(78, 51, 33, 0.09);
-      border-color: #D0C6B2;
+      box-shadow: 0 8px 26px rgba(111, 82, 65, 0.09);
+      border-color: var(--primary);
     }
     .arr-carousel-top {
       display: flex;
@@ -1681,7 +1683,7 @@
       text-transform: uppercase;
       letter-spacing: 0.08em;
       color: var(--primary-dark);
-      background: rgba(102, 137, 131, 0.15);
+      background: rgba(77, 139, 128, 0.15);
       padding: 0.35rem 0.75rem;
       border-radius: 99px;
     }
@@ -1694,7 +1696,7 @@
     }
     .btn-subtle-final {
       background: #FFFFFF;
-      border: 1px solid rgba(78, 51, 33, 0.35);
+      border: 1px solid rgba(111, 82, 65, 0.35);
       color: var(--primary-dark);
       padding: 0.38rem 0.85rem;
       border-radius: 99px;
@@ -1721,7 +1723,7 @@
       border-radius: var(--radius-md);
       overflow: hidden;
       background: #14221E;
-      border: 1px solid rgba(78, 51, 33, 0.25);
+      border: 1px solid rgba(111, 82, 65, 0.25);
       cursor: pointer;
       user-select: none;
     }
@@ -1766,7 +1768,7 @@
       letter-spacing: 0.08em;
       padding: 0.35rem 0.7rem;
       border-radius: 6px;
-      border: 1px solid rgba(78, 51, 33, 0.4);
+      border: 1px solid rgba(111, 82, 65, 0.4);
     }
 
     /* Flechas del carrusel */
@@ -1875,7 +1877,7 @@
       left: calc(100% / 12);
       width: 50%;
       height: 4px;
-      background: linear-gradient(90deg, #668983 0%, #4E3321 100%);
+      background: linear-gradient(90deg, #4D8B80 0%, #6F5241 100%);
       border-radius: 99px;
       z-index: 2;
     }
@@ -1930,26 +1932,26 @@
 
     /* Estados del avance */
     .timeline li.done .phase-dot {
-      background: #668983;
-      border-color: #668983;
+      background: #4D8B80;
+      border-color: #4D8B80;
       color: #FFFFFF;
     }
     .timeline li.done .phase-num {
-      color: #668983;
+      color: #4D8B80;
     }
 
     .timeline li.current .phase-dot {
-      background: #4E3321;
-      border-color: #4E3321;
+      background: #6F5241;
+      border-color: #6F5241;
       color: #FFFFFF;
-      box-shadow: 0 0 0 3px rgba(78, 51, 33, 0.2);
+      box-shadow: 0 0 0 3px rgba(111, 82, 65, 0.2);
     }
     .timeline li.current .phase-num {
-      color: #4E3321;
+      color: #6F5241;
       font-weight: 800;
     }
     .timeline li.current .phase-name {
-      color: #4E3321;
+      color: #6F5241;
       font-weight: 800;
     }
 
@@ -1996,7 +1998,7 @@
 
     /* ESTILOS MENSAJE Y VÍDEO (CÁLIDO Y SOLEMNE) */
     .tribute-box {
-      background: #F0EEE6;
+      background: var(--surface-light);
       border: 1px solid var(--border-color);
       border-left: 4px solid var(--gold);
       padding: 2.75rem 2.25rem;
@@ -2070,7 +2072,7 @@
     }
     .video-preview-facade:hover .video-play-btn {
       transform: scale(1.12);
-      box-shadow: 0 12px 32px rgba(78, 51, 33, 0.55);
+      box-shadow: 0 12px 32px rgba(111, 82, 65, 0.55);
     }
     .video-preview-title {
       position: relative;
@@ -2131,13 +2133,13 @@
       font-family: var(--font-serif);
       font-size: 2.2rem;
       font-weight: 700;
-      color: rgba(102, 137, 131, 0.15);
+      color: rgba(77, 139, 128, 0.15);
       line-height: 1;
     }
     .pillar-tag {
       display: inline-block;
       align-self: flex-start;
-      background: rgba(78, 51, 33, 0.18);
+      background: rgba(111, 82, 65, 0.18);
       color: var(--brown-earth);
       font-size: 0.8rem;
       font-weight: 800;
@@ -2177,13 +2179,13 @@
       width: 54px;
       height: 54px;
       border-radius: 14px;
-      background: rgba(78, 51, 33, 0.18);
+      background: rgba(111, 82, 65, 0.18);
       color: var(--brown-earth);
       display: inline-flex;
       align-items: center;
       justify-content: center;
       font-size: 1.45rem;
-      border: 1px solid rgba(78, 51, 33, 0.28);
+      border: 1px solid rgba(111, 82, 65, 0.28);
     }
     .program h3 { font-size: 1.3rem; color: var(--ink-900); }
     .program p { font-size: 1rem; color: var(--ink-700); font-weight: 500; line-height: 1.55; }
@@ -2191,11 +2193,11 @@
     .program-tags li {
       font-size: 0.8rem;
       font-weight: 700;
-      background: rgba(102, 137, 131, 0.08);
+      background: rgba(77, 139, 128, 0.08);
       color: var(--primary-dark);
       padding: 0.25rem 0.75rem;
       border-radius: 99px;
-      border: 1px solid rgba(102, 137, 131, 0.2);
+      border: 1px solid rgba(77, 139, 128, 0.2);
     }
     
     .enrol {
@@ -2210,7 +2212,7 @@
       box-shadow: var(--shadow-lg);
       position: relative;
       overflow: hidden;
-      border: 1px solid rgba(78, 51, 33, 0.35);
+      border: 1px solid rgba(111, 82, 65, 0.35);
     }
     .enrol::before {
       content: "";
@@ -2332,7 +2334,7 @@
       color: var(--ink-900);
       padding: 0.95rem 1.2rem;
       border-radius: var(--radius-md);
-      border: 1px solid rgba(78, 51, 33, 0.4);
+      border: 1px solid rgba(111, 82, 65, 0.4);
       display: flex;
       align-items: center;
       gap: 0.9rem;
@@ -2345,7 +2347,7 @@
     /* Tarjeta secundaria: TÃ© marroquÃ­ de bienvenida */
     .tea-secondary-card {
       background: #ffffff;
-      border: 1px solid rgba(78, 51, 33, 0.25);
+      border: 1px solid rgba(111, 82, 65, 0.25);
       border-radius: var(--radius-lg);
       padding: 0.75rem 0.9rem;
       display: flex;
@@ -2365,7 +2367,7 @@
       flex-shrink: 0;
       border-radius: var(--radius-md);
       overflow: hidden;
-      border: 1px solid rgba(78, 51, 33, 0.2);
+      border: 1px solid rgba(111, 82, 65, 0.2);
     }
     .tea-secondary-thumb img {
       width: 100%;
@@ -2390,7 +2392,7 @@
       text-transform: uppercase;
       letter-spacing: 0.05em;
       color: var(--gold-dark);
-      background: rgba(195, 178, 145, 0.2);
+      background: rgba(212, 199, 167, 0.2);
       padding: 0.15rem 0.5rem;
       border-radius: 999px;
       margin-bottom: 0.25rem;
@@ -2418,7 +2420,7 @@
     /* Tarjeta cálida de introducción: Qué significa ser musulmán */
     .islam-intro-card {
       background: linear-gradient(135deg, rgba(255, 255, 255, 0.92) 0%, rgba(244, 238, 226, 0.85) 100%);
-      border: 1px solid rgba(78, 51, 33, 0.35);
+      border: 1px solid rgba(111, 82, 65, 0.35);
       border-left: 4px solid var(--gold);
       border-radius: var(--radius-md);
       padding: 1.75rem;
@@ -2460,7 +2462,7 @@
     }
     .pilar-card {
       background: #FFFFFF;
-      border: 1px solid rgba(78, 51, 33, 0.25);
+      border: 1px solid rgba(111, 82, 65, 0.25);
       border-radius: var(--radius-sm);
       padding: 0.85rem 0.85rem;
       transition: all 0.25s ease;
@@ -2470,7 +2472,7 @@
     .pilar-card:hover {
       transform: translateY(-2px);
       border-color: var(--gold);
-      box-shadow: 0 6px 16px rgba(78, 51, 33, 0.16);
+      box-shadow: 0 6px 16px rgba(111, 82, 65, 0.16);
     }
     .pilar-header {
       display: flex;
@@ -2482,7 +2484,7 @@
       width: 26px;
       height: 26px;
       border-radius: 50%;
-      background: rgba(78, 51, 33, 0.15);
+      background: rgba(111, 82, 65, 0.15);
       color: var(--primary-deep);
       display: flex;
       align-items: center;
@@ -2552,7 +2554,7 @@
     .recom-card:hover {
       transform: translateY(-3px);
       border-color: var(--gold);
-      box-shadow: 0 8px 20px rgba(78, 51, 33, 0.18);
+      box-shadow: 0 8px 20px rgba(111, 82, 65, 0.18);
     }
     .recom-card-top {
       display: flex;
@@ -2564,14 +2566,14 @@
       width: 40px;
       height: 40px;
       border-radius: 50%;
-      background: rgba(78, 51, 33, 0.14);
+      background: rgba(111, 82, 65, 0.14);
       color: var(--primary-deep);
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 1rem;
       flex-shrink: 0;
-      border: 1px solid rgba(78, 51, 33, 0.3);
+      border: 1px solid rgba(111, 82, 65, 0.3);
     }
     .recom-name {
       font-size: 0.95rem;
@@ -2678,8 +2680,8 @@
     }
     .donation-channel-card.featured {
       border: 2px solid var(--gold);
-      background: linear-gradient(180deg, #FFFFFF 0%, #FDFBF7 100%);
-      box-shadow: 0 10px 32px rgba(78, 51, 33, 0.16);
+      background: linear-gradient(180deg, #FFFFFF 0%, #F5FAF9 100%);
+      box-shadow: 0 10px 32px rgba(111, 82, 65, 0.16);
     }
     .channel-badge {
       position: absolute;
@@ -2693,7 +2695,7 @@
       border-radius: 20px;
       letter-spacing: 0.04em;
       text-transform: uppercase;
-      box-shadow: 0 3px 10px rgba(78, 51, 33, 0.3);
+      box-shadow: 0 3px 10px rgba(111, 82, 65, 0.3);
       display: inline-flex;
       align-items: center;
       gap: 0.35rem;
@@ -2713,9 +2715,9 @@
       flex-shrink: 0;
     }
     .donation-channel-card.featured .channel-icon {
-      background: rgba(78, 51, 33, 0.15);
+      background: rgba(111, 82, 65, 0.15);
       color: var(--gold);
-      border-color: rgba(78, 51, 33, 0.35);
+      border-color: rgba(111, 82, 65, 0.35);
     }
     .channel-title { font-size: 1.25rem; color: var(--ink-900); font-weight: 700; margin: 0; }
     .channel-subtitle { font-size: 0.88rem; color: var(--ink-500); font-weight: 500; margin-top: 0.15rem; }
@@ -2743,7 +2745,7 @@
     .btn-copy {
       background: linear-gradient(135deg, #28413C 0%, #3D6059 100%);
       color: #FFFFFF;
-      border: 1px solid rgba(102, 137, 131, 0.4);
+      border: 1px solid rgba(77, 139, 128, 0.4);
       padding: 0.45rem 0.9rem;
       border-radius: 8px;
       font-size: 0.82rem;
@@ -2780,7 +2782,7 @@
       flex-wrap: wrap;
     }
     .hadith {
-      background: #F0EEE6;
+      background: var(--surface-light);
       border-left: 4px solid var(--gold);
       padding: 1.85rem;
       border-radius: var(--radius-md);
@@ -2844,15 +2846,15 @@
     .field input:focus, .field select:focus, .field textarea:focus {
       outline: none;
       border-color: var(--primary);
-      box-shadow: 0 0 0 3px rgba(102, 137, 131, 0.15);
+      box-shadow: 0 0 0 3px rgba(77, 139, 128, 0.15);
     }
 
     /* ============ FOOTER (AZUL NOCHE & LOGO EMBLEMA) ============ */
     .site-footer {
-      background: #2D423E;
+      background: var(--primary-darker);
       color: rgba(255, 255, 255, 0.9);
       padding: 4.5rem 0 2.25rem;
-      border-top: 4px solid var(--gold);
+      border-top: 4px solid var(--sand-gold);
       position: relative;
     }
     .footer-grid {
@@ -2943,7 +2945,7 @@
       border-color: var(--gold);
       color: #FFFFFF;
       transform: translateY(-3px);
-      box-shadow: 0 4px 14px rgba(78, 51, 33, 0.4);
+      box-shadow: 0 4px 14px rgba(111, 82, 65, 0.4);
     }
     
     .footer-contact-col ul { display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1rem; }
@@ -3230,7 +3232,7 @@
   flex-wrap: wrap !important;
 }
 .u-chip-location {
-  background: rgba(102, 137, 131, 0.12) !important;
+  background: rgba(77, 139, 128, 0.12) !important;
   color: var(--primary-dark) !important;
   font-size: 0.78rem !important;
   font-weight: 700 !important;
@@ -3499,11 +3501,11 @@
   color: var(--ink-700) !important;
   margin-top: 0.85rem !important;
   font-style: italic !important;
-  border-top: 1px dashed rgba(78, 51, 33,0.3) !important;
+  border-top: 1px dashed rgba(111, 82, 65,0.3) !important;
   padding-top: 0.65rem !important;
 }
 .u-guide-recommend {
-  background: rgba(78, 51, 33, 0.08) !important;
+  background: rgba(111, 82, 65, 0.08) !important;
   border: 1px dashed var(--gold) !important;
   border-radius: var(--radius-md) !important;
   padding: 1.1rem 1.35rem !important;
@@ -3598,10 +3600,10 @@
   cursor: pointer !important;
 }
 .u-badge-gold-soft {
-  background: rgba(78, 51, 33, 0.25) !important;
+  background: rgba(111, 82, 65, 0.25) !important;
   color: var(--gold) !important;
   font-weight: 700 !important;
-  border: 1px solid rgba(78, 51, 33, 0.4) !important;
+  border: 1px solid rgba(111, 82, 65, 0.4) !important;
 }
 .u-text-muted-light {
   color: rgba(255,255,255,0.75) !important;
@@ -3762,13 +3764,13 @@
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  background: rgba(78, 51, 33, 0.1);
+  background: rgba(111, 82, 65, 0.1);
   color: var(--gold);
   padding: 0.35rem 0.85rem;
   border-radius: 99px;
   font-size: 0.85rem;
   font-weight: 800;
-  border: 1px solid rgba(78, 51, 33, 0.2);
+  border: 1px solid rgba(111, 82, 65, 0.2);
 }
 .academic-card-sub {
   color: var(--ink-700);
@@ -3801,7 +3803,7 @@
   width: 44px;
   height: 44px;
   border-radius: 12px;
-  background: rgba(102, 137, 131, 0.15);
+  background: rgba(77, 139, 128, 0.15);
   color: var(--primary);
   display: flex;
   align-items: center;
@@ -3893,9 +3895,9 @@
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  background: rgba(78, 51, 33, 0.08);
+  background: rgba(111, 82, 65, 0.08);
   color: var(--gold);
-  border: 1px solid rgba(78, 51, 33, 0.22);
+  border: 1px solid rgba(111, 82, 65, 0.22);
   padding: 0.25rem 0.75rem;
   border-radius: 99px;
   font-size: 0.82rem;
@@ -3936,9 +3938,9 @@
   width: 48px;
   height: 48px;
   border-radius: 12px;
-  background: rgba(78, 51, 33, 0.08);
+  background: rgba(111, 82, 65, 0.08);
   color: var(--gold);
-  border: 1px solid rgba(78, 51, 33, 0.15);
+  border: 1px solid rgba(111, 82, 65, 0.15);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -3982,7 +3984,7 @@
   width: auto;
   max-width: 100%;
   object-fit: contain;
-  filter: drop-shadow(0 4px 14px rgba(78, 51, 33, 0.18));
+  filter: drop-shadow(0 4px 14px rgba(111, 82, 65, 0.18));
 }
 .about-letter-card {
   background: var(--surface-card);
@@ -3997,9 +3999,9 @@
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
-  background: rgba(78, 51, 33, 0.08);
+  background: rgba(111, 82, 65, 0.08);
   color: var(--gold);
-  border: 1px solid rgba(78, 51, 33, 0.22);
+  border: 1px solid rgba(111, 82, 65, 0.22);
   padding: 0.35rem 0.95rem;
   border-radius: 99px;
   font-size: 0.82rem;
@@ -4079,7 +4081,7 @@
   width: 44px;
   height: 44px;
   border-radius: 12px;
-  background: rgba(102, 137, 131, 0.15);
+  background: rgba(77, 139, 128, 0.15);
   color: var(--primary);
   display: flex;
   align-items: center;
@@ -4202,8 +4204,8 @@
 
 /* Banner de aviso de archivo fotogrÃ¡fico */
 .timeline-notice-box {
-  background: rgba(78, 51, 33, 0.06);
-  border: 1px dashed rgba(78, 51, 33, 0.3);
+  background: rgba(111, 82, 65, 0.06);
+  border: 1px dashed rgba(111, 82, 65, 0.3);
   border-radius: var(--radius-md);
   padding: 1.25rem 1.5rem;
   display: flex;
@@ -4333,8 +4335,8 @@
    ======================================================== */
 .madrasa-annur-banner {
   margin-top: 2rem;
-  background: linear-gradient(135deg, rgba(102, 137, 131, 0.1) 0%, rgba(195, 178, 145, 0.08) 100%), #FFFFFF;
-  border: 1.5px solid rgba(102, 137, 131, 0.25);
+  background: linear-gradient(135deg, rgba(77, 139, 128, 0.1) 0%, rgba(212, 199, 167, 0.08) 100%), #FFFFFF;
+  border: 1.5px solid rgba(77, 139, 128, 0.25);
   border-radius: var(--radius-lg);
   padding: 1.35rem 1.6rem;
   display: flex;
@@ -4369,7 +4371,7 @@
   justify-content: center;
   font-size: 1.35rem;
   flex-shrink: 0;
-  box-shadow: 0 4px 12px rgba(102, 137, 131, 0.25);
+  box-shadow: 0 4px 12px rgba(77, 139, 128, 0.25);
 }
 
 .madrasa-annur-banner-text {
@@ -4390,7 +4392,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  background: rgba(102, 137, 131, 0.14);
+  background: rgba(77, 139, 128, 0.14);
   color: var(--primary-deep);
   font-size: 0.76rem;
   font-weight: 700;
@@ -4424,7 +4426,7 @@
 .madrasa-annur-banner-btn {
   flex-shrink: 0;
   white-space: nowrap;
-  box-shadow: 0 4px 14px rgba(78, 51, 33, 0.18);
+  box-shadow: 0 4px 14px rgba(111, 82, 65, 0.18);
   font-weight: 700;
   display: inline-flex;
   align-items: center;
@@ -4451,9 +4453,9 @@
 
 /* Efecto de resaltado suave al navegar a un ancla interna */
 @keyframes anchorPulse {
-  0% { box-shadow: 0 0 0 0 rgba(195, 178, 145, 0.7); }
-  50% { box-shadow: 0 0 0 6px rgba(195, 178, 145, 0.45); }
-  100% { box-shadow: 0 0 0 0 rgba(195, 178, 145, 0); }
+  0% { box-shadow: 0 0 0 0 rgba(212, 199, 167, 0.7); }
+  50% { box-shadow: 0 0 0 6px rgba(212, 199, 167, 0.45); }
+  100% { box-shadow: 0 0 0 0 rgba(212, 199, 167, 0); }
 }
 .anchor-highlight {
   animation: anchorPulse 2s ease forwards;
@@ -4471,7 +4473,7 @@
 
 .broadcast-card-compact {
   background: linear-gradient(135deg, #1C2B27 0%, #243833 60%, #1A2824 100%);
-  border: 1.5px solid rgba(195, 178, 145, 0.28);
+  border: 1.5px solid rgba(212, 199, 167, 0.28);
   border-radius: var(--radius-lg);
   padding: 2.2rem 2.6rem;
   box-shadow: 0 12px 32px rgba(22, 37, 33, 0.2);
@@ -4490,7 +4492,7 @@
   right: -60px;
   width: 240px;
   height: 240px;
-  background: radial-gradient(circle, rgba(195, 178, 145, 0.12) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(212, 199, 167, 0.12) 0%, transparent 70%);
   border-radius: 50%;
   pointer-events: none;
 }
@@ -4743,9 +4745,9 @@
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  background: rgba(102, 137, 131, 0.12);
+  background: rgba(77, 139, 128, 0.12);
   color: var(--primary-deep);
-  border: 1px solid rgba(102, 137, 131, 0.25);
+  border: 1px solid rgba(77, 139, 128, 0.25);
   padding: 0.35rem 0.75rem;
   border-radius: 99px;
   font-size: 0.82rem;
@@ -4818,7 +4820,7 @@
 
 /* DonaciÃ³n en persona: Sedes y horarios */
 .in-person-card {
-  border-color: rgba(102, 137, 131, 0.35);
+  border-color: rgba(77, 139, 128, 0.35);
 }
 
 .in-person-badge {
@@ -4837,13 +4839,13 @@
   border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
   padding: 0.85rem 1rem;
-  box-shadow: 0 2px 6px rgba(78, 51, 33, 0.04);
+  box-shadow: 0 2px 6px rgba(111, 82, 65, 0.04);
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .in-person-loc-box:hover {
   border-color: var(--primary);
-  box-shadow: 0 4px 12px rgba(45, 66, 62, 0.08);
+  box-shadow: 0 4px 12px rgba(33, 67, 61, 0.08);
 }
 
 .in-person-loc-head {
@@ -4970,8 +4972,8 @@
       padding: 4.75rem 0 4.5rem;
       position: relative;
       overflow: hidden;
-      border-top: 1px solid rgba(195, 178, 145, 0.25);
-      border-bottom: 1px solid rgba(195, 178, 145, 0.25);
+      border-top: 1px solid rgba(212, 199, 167, 0.25);
+      border-bottom: 1px solid rgba(212, 199, 167, 0.25);
       box-shadow: inset 0 2px 14px rgba(0, 0, 0, 0.25);
     }
 
@@ -5032,8 +5034,8 @@
       display: inline-flex;
       align-items: center;
       gap: 0.45rem;
-      background: rgba(195, 178, 145, 0.16);
-      border: 1px solid rgba(195, 178, 145, 0.42);
+      background: rgba(212, 199, 167, 0.16);
+      border: 1px solid rgba(212, 199, 167, 0.42);
       color: #F1E5D1;
       font-size: 0.84rem;
       font-weight: 700;
@@ -5085,18 +5087,18 @@
       display: inline-flex;
       align-items: center;
       gap: 0.45rem;
-      color: #C3B291;
+      color: #D4C7A7;
       font-size: 0.8rem;
       font-weight: 700;
       letter-spacing: 0.05em;
       background: rgba(0, 0, 0, 0.22);
-      border: 1px solid rgba(195, 178, 145, 0.25);
+      border: 1px solid rgba(212, 199, 167, 0.25);
       padding: 0.35rem 0.85rem;
       border-radius: 99px;
     }
 
     .quote-ref i {
-      color: #C3B291;
+      color: #D4C7A7;
       font-size: 0.78rem;
     }
 
@@ -5125,8 +5127,8 @@
     }
 
     .quotes-nav-btn:hover {
-      background: rgba(195, 178, 145, 0.3);
-      border-color: #C3B291;
+      background: rgba(212, 199, 167, 0.3);
+      border-color: #D4C7A7;
       transform: scale(1.08);
     }
 
@@ -5153,8 +5155,8 @@
 
     .quotes-dot.is-active {
       width: 28px;
-      background: #C3B291;
-      box-shadow: 0 0 8px rgba(195, 178, 145, 0.4);
+      background: #D4C7A7;
+      box-shadow: 0 0 8px rgba(212, 199, 167, 0.4);
     }
 
     @media (max-width: 600px) {
@@ -5356,7 +5358,7 @@
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: rgba(102, 137, 131, 0.35);
+  background: rgba(77, 139, 128, 0.35);
   border: none;
   padding: 0;
   cursor: pointer;
@@ -5425,8 +5427,8 @@
 
 /* Estilos para categorÃ­a actividades y botÃ³n enlace */
 .category-pill.actividades {
-  background: rgba(195, 178, 145, 0.95) !important;
-  color: #1F2E2B !important;
+  background: rgba(212, 199, 167, 0.95) !important;
+  color: #36261B !important;
   font-weight: 800 !important;
 }
 
