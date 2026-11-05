@@ -49,6 +49,16 @@
       --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
       --font-serif: 'Playfair Display', Georgia, serif;
       --font-arabic: 'Amiri', serif;
+      --font-heading: 'Playfair Display', Georgia, serif;
+
+      /* Variables complementarias de compatibilidad y nitidez */
+      --radius-full: 9999px;
+      --gold-dark: #5A4234;
+      --green-900: #101E1F;
+      --emerald-deep: #223835;
+      --ink-800: #192B29;
+      --surface: var(--bg-white);
+      --teal-medium: #4A706C;
 
       --radius-xs: 6px;
       --radius-sm: 10px;
@@ -169,7 +179,7 @@
       color: var(--gold);
       margin-bottom: 0.65rem;
     }
-    .eyebrow-light { color: var(--gold-light); }
+    .eyebrow-light { color: var(--sand-gold); }
     .lead {
       font-size: clamp(1.1rem, 1.5vw, 1.25rem);
       color: var(--ink-700);
@@ -326,7 +336,7 @@
       left: 50%;
       width: 0;
       height: 2px;
-      background: #E2AE40;
+      background: var(--sand-gold);
       border-radius: 2px;
       transition: width 0.25s ease, left 0.25s ease;
     }
@@ -510,10 +520,10 @@
     .hero-arabic {
       font-family: var(--font-arabic);
       font-size: clamp(1.8rem, 3.2vw, 2.5rem);
-      color: var(--gold);
+      color: var(--sand-gold);
       margin-bottom: 0.85rem;
       letter-spacing: 0.02em;
-      text-shadow: 0 2px 14px rgba(0, 0, 0, 0.7), 0 0 20px rgba(111, 82, 65, 0.3);
+      text-shadow: 0 2px 14px rgba(0, 0, 0, 0.7), 0 0 20px rgba(212, 199, 167, 0.4);
     }
     .hero h1 {
       font-family: var(--font-serif);
@@ -523,7 +533,7 @@
       line-height: 1.15;
       text-shadow: 0 4px 28px rgba(0,0,0,0.85);
     }
-    .hero h1 em { color: var(--gold-light); font-weight: 500; }
+    .hero h1 em { color: var(--sand-gold); font-weight: 500; }
     .hero-sub {
       font-size: clamp(1.05rem, 1.8vw, 1.25rem);
       color: rgba(255, 255, 255, 0.95);
@@ -569,7 +579,7 @@
     }
     .prayer-countdown {
       background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(111, 82, 65, 0.45);
+      border: 1px solid rgba(212, 199, 167, 0.45);
       padding: 0.7rem 1.4rem;
       border-radius: 99px;
       display: inline-flex;
@@ -592,9 +602,9 @@
       font-family: monospace;
       font-size: 1.45rem;
       font-weight: 700;
-      color: var(--gold);
+      color: var(--sand-gold);
       letter-spacing: 0.08em;
-      text-shadow: 0 0 12px rgba(111, 82, 65, 0.45);
+      text-shadow: 0 0 12px rgba(212, 199, 167, 0.5);
     }
     
     .prayer-grid {
@@ -787,7 +797,7 @@
     /* ============ BANNER DONACIÓN URGENTE (CHOCOLATE & MOSAICO) ============ */
     .urgent-banner {
       background:
-        linear-gradient(135deg, rgba(111, 82, 65, 0.96) 0%, rgba(30, 18, 10, 0.98) 100%),
+        linear-gradient(135deg, rgba(111, 82, 65, 0.96) 0%, rgba(74, 52, 38, 0.98) 100%),
         url('images/mosaico.png') center/450px repeat;
       color: var(--white);
       padding: 5rem 0;
@@ -823,7 +833,7 @@
       color: var(--white);
       margin-bottom: 1rem;
     }
-    .urgent-content h2 em { color: var(--gold-light); font-style: italic; }
+    .urgent-content h2 em { color: var(--sand-gold); font-style: italic; }
     .urgent-content p {
       font-size: 1.15rem;
       color: rgba(255,255,255,0.92);
@@ -836,15 +846,15 @@
       display: inline-block;
       width: 10px;
       height: 10px;
-      background: var(--gold);
+      background: var(--sand-gold);
       border-radius: 50%;
       margin-right: 0.5rem;
-      box-shadow: 0 0 0 rgba(111, 82, 65, 0.7);
+      box-shadow: 0 0 0 rgba(212, 199, 167, 0.7);
       animation: pulseDot 1.6s infinite;
     }
     @keyframes pulseDot {
-      0% { box-shadow: 0 0 0 0 rgba(111, 82, 65, 0.7); }
-      70% { box-shadow: 0 0 0 10px rgba(111, 82, 65, 0); }
+      0% { box-shadow: 0 0 0 0 rgba(212, 199, 167, 0.7); }
+      70% { box-shadow: 0 0 0 10px rgba(212, 199, 167, 0); }
       100% { box-shadow: 0 0 0 0 rgba(111, 82, 65, 0); }
     }
 
@@ -1579,14 +1589,14 @@
       width: 52px;
       height: 52px;
       border-radius: 14px;
-      background: rgba(111, 82, 65, 0.15);
-      color: var(--brown-earth);
+      background: rgba(74, 112, 108, 0.12);
+      color: var(--primary);
       display: inline-flex;
       align-items: center;
       justify-content: center;
       font-size: 1.35rem;
       flex-shrink: 0;
-      border: 1px solid rgba(111, 82, 65, 0.25);
+      border: 1px solid rgba(74, 112, 108, 0.25);
     }
     .annur-list h3 { font-size: 1.18rem; margin-bottom: 0.35rem; color: var(--ink-900); }
     .annur-list p { font-size: 1rem; color: var(--ink-700); font-weight: 500; line-height: 1.55; }
@@ -2745,7 +2755,7 @@
       border-color: var(--gold);
     }
     .btn-copy {
-      background: linear-gradient(135deg, #28413C 0%, #3D6059 100%);
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
       color: #FFFFFF;
       border: 1px solid rgba(74, 112, 108, 0.4);
       padding: 0.45rem 0.9rem;
@@ -2761,7 +2771,7 @@
       flex-shrink: 0;
     }
     .btn-copy:hover {
-      background: linear-gradient(135deg, #1C302C 0%, #2F4D47 100%);
+      background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary) 100%);
       color: #FFFFFF;
       transform: translateY(-1px);
     }
@@ -4474,8 +4484,8 @@
 }
 
 .broadcast-card-compact {
-  background: linear-gradient(135deg, #1C2B27 0%, #243833 60%, #1A2824 100%);
-  border: 1.5px solid rgba(212, 199, 167, 0.28);
+  background: linear-gradient(135deg, #2A403C 0%, #385653 60%, #223835 100%);
+  border: 1.5px solid var(--sand-gold);
   border-radius: var(--radius-lg);
   padding: 2.2rem 2.6rem;
   box-shadow: 0 12px 32px rgba(22, 37, 33, 0.2);
@@ -4969,13 +4979,13 @@
        (FONDO SOLEMNE CON MOSAICO MUY LIGERO Y MÃXIMA LEGIBILIDAD)
        ======================================================== */
     .quotes-band {
-      background: linear-gradient(180deg, #1C2E2B 0%, #152422 100%);
+      background: linear-gradient(180deg, #2C423E 0%, #203431 100%);
       color: #FFFFFF;
       padding: 4.75rem 0 4.5rem;
       position: relative;
       overflow: hidden;
-      border-top: 1px solid rgba(212, 199, 167, 0.25);
-      border-bottom: 1px solid rgba(212, 199, 167, 0.25);
+      border-top: 2px solid var(--sand-gold);
+      border-bottom: 2px solid var(--sand-gold);
       box-shadow: inset 0 2px 14px rgba(0, 0, 0, 0.25);
     }
 
@@ -5048,7 +5058,7 @@
     }
 
     .quote-context-badge i {
-      color: #D4AF37;
+      color: var(--sand-gold);
     }
 
     .quote-context-sub {
@@ -5450,7 +5460,7 @@
 }
 .btn-ghost-dark:hover {
   background: var(--surface-light);
-  border-color: var(--gold);
-  color: var(--gold);
+  border-color: var(--primary);
+  color: var(--primary);
   transform: translateY(-2px);
 }
