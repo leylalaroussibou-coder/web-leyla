@@ -1,21 +1,21 @@
-    /* ============ GUIA DE COLOR: ARMONIA OFICIAL AZUL VERDOSO #668983 ============
+    /* ============ GUIA DE COLOR: ARMONIA OFICIAL AZUL VERDOSO #4A706C ============
    Identidad visual luminosa, limpia y elegante basada en el azul verdoso del fondo de horarios de rezo:
-   - Protagonista / Base: #668983 (azul verdoso exacto y luminoso de la mezquita y los horarios de rezo)
-   - Realce / Iluminado: #82A7A1 (tono fresco y claro para hover y acentos luminosos)
+   - Protagonista / Base: #4A706C (azul verdoso exacto y luminoso de la mezquita y los horarios de rezo)
+   - Realce / Iluminado: #638C88 (tono fresco para hover y acentos luminosos)
    - Superficies suaves: #E5F2F0 (bruma azul verdosa clara, limpia y aireada)
    - Acento calido y molduras: #D4C7A7 (arena dorado andalusi de los bordes de rezo y logo)
    - Ancla de contraste y botones: #6F5241 (marron tierra calido para llamadas a donacion)
    ============================================================================= */
     :root {
       /* Familia Azul Verdoso Luminosa de los Horarios de Rezo (PROTAGONISTA GENERAL) */
-      --primary: #668983;          /* El azul verdoso luminoso de los horarios de rezo y el logo */
-      --primary-light: #82A7A1;    /* Azul verdoso iluminado para realces y hover */
+      --primary: #4A706C;          /* El azul verdoso luminoso de los horarios de rezo y el logo */
+      --primary-light: #638C88;    /* Azul verdoso iluminado para realces y hover */
       --primary-soft: #E5F2F0;     /* Superficie suave bruma azulada limpia para tarjetas y badges */
-      --primary-medium: #557973;   /* Tono intermedio para degradados armoniosos */
-      --primary-hover: #4A6560;    /* Tono de interaccion hover noble y elegante */
-      --primary-deep: #2A403C;     /* Maxima legibilidad y contraste en lectura (WCAG AAA) */
-      --primary-dark: #4A6560;     /* Azul verdoso sereno para cabecera, rezo y tarjetas */
-      --primary-darker: #2D423E;   /* Fondo noble slate-teal profundo para pie */
+      --primary-medium: #3F615D;   /* Tono intermedio para degradados armoniosos */
+      --primary-hover: #385653;    /* Tono de interaccion hover noble y definido */
+      --primary-deep: #223835;     /* Maxima legibilidad y contraste en lectura (WCAG AAA) */
+      --primary-dark: #385653;     /* Azul verdoso noble para cabecera, rezo y tarjetas */
+      --primary-darker: #243835;   /* Fondo slate-teal profundo para pie */
       
       /* Marron Tierra (#6F5241): Identidad y Contraste Calido */
       --gold: #6F5241;             /* Marron tierra calido / mocha oficial */
@@ -221,17 +221,17 @@
     }
     
     .btn-blue, .btn-green {
-      background: linear-gradient(135deg, #668983 0%, #4A6560 100%);
+      background: linear-gradient(135deg, #4A706C 0%, #4A6560 100%);
       color: var(--white);
       font-weight: 700;
       letter-spacing: 0.02em;
-      border: 1px solid rgba(102, 137, 131, 0.45);
-      box-shadow: 0 6px 20px rgba(74, 101, 96, 0.35);
+      border: 1px solid rgba(74, 112, 108, 0.45);
+      box-shadow: 0 6px 20px rgba(56, 86, 83, 0.35);
     } 
     .btn-blue:hover, .btn-green:hover {
-      background: linear-gradient(135deg, #7AA39D 0%, #557973 100%);
+      background: linear-gradient(135deg, #5C8783 0%, #436662 100%);
       transform: translateY(-2px);
-      box-shadow: 0 10px 26px rgba(74, 101, 96, 0.45);
+      box-shadow: 0 10px 26px rgba(56, 86, 83, 0.45);
       color: var(--white);
     }
     
@@ -247,15 +247,15 @@
       transform: translateY(-2px);
     }
 
-    /* ============ HEADER & NAV (TONO OSCURO SOLEMNE CON REALCES EN #668983 Y ARENA DORADO) ============ */
+    /* ============ HEADER & NAV (TONO OSCURO SOLEMNE CON REALCES EN #4A706C Y ARENA DORADO) ============ */
     .site-header {
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: linear-gradient(135deg, rgba(74, 101, 96, 0.98) 0%, rgba(102, 137, 131, 0.97) 50%, rgba(58, 82, 78, 0.98) 100%);
+      background: linear-gradient(135deg, rgba(74, 101, 96, 0.98) 0%, rgba(74, 112, 108, 0.97) 50%, rgba(58, 82, 78, 0.98) 100%);
       backdrop-filter: blur(14px);
       -webkit-backdrop-filter: blur(14px);
-      border-top: 1px solid rgba(102, 137, 131, 0.35);
+      border-top: 1px solid rgba(74, 112, 108, 0.35);
       border-bottom: 2px solid var(--sand-gold);
       padding: 0.45rem 0;
       box-shadow: 0 4px 24px rgba(14, 24, 22, 0.25);
@@ -484,8 +484,8 @@
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(ellipse at center, rgba(14, 24, 22, 0.12) 0%, rgba(14, 24, 22, 0.35) 65%, rgba(14, 24, 22, 0.65) 100%),
-        linear-gradient(180deg, rgba(45, 66, 62, 0.40) 0%, rgba(45, 66, 62, 0.12) 40%, rgba(20, 32, 29, 0.70) 100%);
+        radial-gradient(ellipse at center, rgba(20, 36, 33, 0.15) 0%, rgba(20, 36, 33, 0.40) 65%, rgba(20, 36, 33, 0.70) 100%),
+        linear-gradient(180deg, rgba(38, 62, 59, 0.45) 0%, rgba(38, 62, 59, 0.15) 40%, rgba(20, 36, 33, 0.75) 100%);
       z-index: 1;
     }
     .hero-inner {
@@ -534,9 +534,9 @@
       line-height: 1.6;
     }
 
-    /* ============ HORARIOS DE REZO (TONO SOLEMNE CON REALCES EN #668983 Y ARENA DORADO) ============ */
+    /* ============ HORARIOS DE REZO (TONO SOLEMNE CON REALCES EN #4A706C Y ARENA DORADO) ============ */
     .prayer {
-      background: linear-gradient(135deg, #4A6560 0%, #668983 50%, #4A6560 100%);
+      background: linear-gradient(135deg, #4A6560 0%, #4A706C 50%, #4A6560 100%);
       color: var(--white);
       padding: 3.5rem 0;
       border-top: 2px solid var(--sand-gold);
@@ -607,8 +607,8 @@
     @media (max-width: 520px) { .prayer-grid { grid-template-columns: repeat(2, 1fr); gap: 0.65rem; } }
     
     .rezo-caja {
-      background: rgba(102, 137, 131, 0.10);
-      border: 1px solid rgba(102, 137, 131, 0.25);
+      background: rgba(74, 112, 108, 0.10);
+      border: 1px solid rgba(74, 112, 108, 0.25);
       border-radius: var(--radius-md);
       padding: 1.35rem 0.5rem;
       text-align: center;
@@ -638,7 +638,7 @@
       margin-left: 0.2rem;
     }
     .rezo-caja:hover {
-      background: rgba(102, 137, 131, 0.20);
+      background: rgba(74, 112, 108, 0.20);
       border-color: var(--primary-light);
       transform: translateY(-4px);
     }
@@ -924,7 +924,7 @@
       background: var(--primary);
       color: #FFFFFF;
       border-color: var(--primary);
-      box-shadow: 0 4px 14px rgba(102, 137, 131, 0.35);
+      box-shadow: 0 4px 14px rgba(74, 112, 108, 0.35);
     }
     .filter-pill i { font-size: 0.8rem; }
 
@@ -997,7 +997,7 @@
       letter-spacing: 0.08em;
       padding: 0.3rem 0.75rem;
       border-radius: 99px;
-      background: rgba(102, 137, 131, 0.15);
+      background: rgba(74, 112, 108, 0.15);
       color: var(--primary-dark);
     }
     .news-featured-body h3 {
@@ -1101,7 +1101,7 @@
     }
     .category-pill.madrasa { background: rgba(45, 72, 67, 0.9); color: var(--gold-light); }
     .category-pill.obras { background: rgba(111, 82, 65, 0.92); color: #FFFFFF; }
-    .category-pill.comunidad { background: rgba(102, 137, 131, 0.92); color: #FFFFFF; }
+    .category-pill.comunidad { background: rgba(74, 112, 108, 0.92); color: #FFFFFF; }
     .category-pill.avisos { background: rgba(111, 82, 65, 0.95); color: #FFFFFF; }
 
     .article-body {
@@ -1431,10 +1431,10 @@
       transform: none;
     }
 
-    /* ============ AYAH BAND (FONDO SOLEMNE CON MOSAICO Y REALCES EN #668983) ============ */
+    /* ============ AYAH BAND (FONDO SOLEMNE CON MOSAICO Y REALCES EN #4A706C) ============ */
     .ayah-band {
       background:
-        linear-gradient(135deg, rgba(60, 85, 80, 0.96) 0%, rgba(102, 137, 131, 0.92) 50%, rgba(60, 85, 80, 0.96) 100%),
+        linear-gradient(135deg, rgba(60, 85, 80, 0.96) 0%, rgba(74, 112, 108, 0.92) 50%, rgba(60, 85, 80, 0.96) 100%),
         url('images/mosaico.png') center/400px repeat;
       color: var(--white);
       padding: 5.5rem 0;
@@ -1685,7 +1685,7 @@
       text-transform: uppercase;
       letter-spacing: 0.08em;
       color: var(--primary-dark);
-      background: rgba(102, 137, 131, 0.15);
+      background: rgba(74, 112, 108, 0.15);
       padding: 0.35rem 0.75rem;
       border-radius: 99px;
     }
@@ -1879,7 +1879,7 @@
       left: calc(100% / 12);
       width: 50%;
       height: 4px;
-      background: linear-gradient(90deg, #668983 0%, #6F5241 100%);
+      background: linear-gradient(90deg, #4A706C 0%, #6F5241 100%);
       border-radius: 99px;
       z-index: 2;
     }
@@ -1934,12 +1934,12 @@
 
     /* Estados del avance */
     .timeline li.done .phase-dot {
-      background: #668983;
-      border-color: #668983;
+      background: #4A706C;
+      border-color: #4A706C;
       color: #FFFFFF;
     }
     .timeline li.done .phase-num {
-      color: #668983;
+      color: #4A706C;
     }
 
     .timeline li.current .phase-dot {
@@ -2135,7 +2135,7 @@
       font-family: var(--font-serif);
       font-size: 2.2rem;
       font-weight: 700;
-      color: rgba(102, 137, 131, 0.15);
+      color: rgba(74, 112, 108, 0.15);
       line-height: 1;
     }
     .pillar-tag {
@@ -2195,11 +2195,11 @@
     .program-tags li {
       font-size: 0.8rem;
       font-weight: 700;
-      background: rgba(102, 137, 131, 0.08);
+      background: rgba(74, 112, 108, 0.08);
       color: var(--primary-dark);
       padding: 0.25rem 0.75rem;
       border-radius: 99px;
-      border: 1px solid rgba(102, 137, 131, 0.2);
+      border: 1px solid rgba(74, 112, 108, 0.2);
     }
     
     .enrol {
@@ -2747,7 +2747,7 @@
     .btn-copy {
       background: linear-gradient(135deg, #28413C 0%, #3D6059 100%);
       color: #FFFFFF;
-      border: 1px solid rgba(102, 137, 131, 0.4);
+      border: 1px solid rgba(74, 112, 108, 0.4);
       padding: 0.45rem 0.9rem;
       border-radius: 8px;
       font-size: 0.82rem;
@@ -2848,7 +2848,7 @@
     .field input:focus, .field select:focus, .field textarea:focus {
       outline: none;
       border-color: var(--primary);
-      box-shadow: 0 0 0 3px rgba(102, 137, 131, 0.15);
+      box-shadow: 0 0 0 3px rgba(74, 112, 108, 0.15);
     }
 
     /* ============ FOOTER (AZUL NOCHE & LOGO EMBLEMA) ============ */
@@ -3234,7 +3234,7 @@
   flex-wrap: wrap !important;
 }
 .u-chip-location {
-  background: rgba(102, 137, 131, 0.12) !important;
+  background: rgba(74, 112, 108, 0.12) !important;
   color: var(--primary-dark) !important;
   font-size: 0.78rem !important;
   font-weight: 700 !important;
@@ -3805,7 +3805,7 @@
   width: 44px;
   height: 44px;
   border-radius: 12px;
-  background: rgba(102, 137, 131, 0.15);
+  background: rgba(74, 112, 108, 0.15);
   color: var(--primary);
   display: flex;
   align-items: center;
@@ -4083,7 +4083,7 @@
   width: 44px;
   height: 44px;
   border-radius: 12px;
-  background: rgba(102, 137, 131, 0.15);
+  background: rgba(74, 112, 108, 0.15);
   color: var(--primary);
   display: flex;
   align-items: center;
@@ -4337,8 +4337,8 @@
    ======================================================== */
 .madrasa-annur-banner {
   margin-top: 2rem;
-  background: linear-gradient(135deg, rgba(102, 137, 131, 0.1) 0%, rgba(212, 199, 167, 0.08) 100%), #FFFFFF;
-  border: 1.5px solid rgba(102, 137, 131, 0.25);
+  background: linear-gradient(135deg, rgba(74, 112, 108, 0.1) 0%, rgba(212, 199, 167, 0.08) 100%), #FFFFFF;
+  border: 1.5px solid rgba(74, 112, 108, 0.25);
   border-radius: var(--radius-lg);
   padding: 1.35rem 1.6rem;
   display: flex;
@@ -4373,7 +4373,7 @@
   justify-content: center;
   font-size: 1.35rem;
   flex-shrink: 0;
-  box-shadow: 0 4px 12px rgba(102, 137, 131, 0.25);
+  box-shadow: 0 4px 12px rgba(74, 112, 108, 0.25);
 }
 
 .madrasa-annur-banner-text {
@@ -4394,7 +4394,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  background: rgba(102, 137, 131, 0.14);
+  background: rgba(74, 112, 108, 0.14);
   color: var(--primary-deep);
   font-size: 0.76rem;
   font-weight: 700;
@@ -4747,9 +4747,9 @@
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  background: rgba(102, 137, 131, 0.12);
+  background: rgba(74, 112, 108, 0.12);
   color: var(--primary-deep);
-  border: 1px solid rgba(102, 137, 131, 0.25);
+  border: 1px solid rgba(74, 112, 108, 0.25);
   padding: 0.35rem 0.75rem;
   border-radius: 99px;
   font-size: 0.82rem;
@@ -4822,7 +4822,7 @@
 
 /* DonaciÃ³n en persona: Sedes y horarios */
 .in-person-card {
-  border-color: rgba(102, 137, 131, 0.35);
+  border-color: rgba(74, 112, 108, 0.35);
 }
 
 .in-person-badge {
@@ -5360,7 +5360,7 @@
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: rgba(102, 137, 131, 0.35);
+  background: rgba(74, 112, 108, 0.35);
   border: none;
   padding: 0;
   cursor: pointer;
