@@ -1014,7 +1014,7 @@
               <!-- Marco interactivo de diapositivas -->
               <div class="madrasa-carousel-frame" id="madrasaCarouselFrame" onclick="madrasaCarousel.next()" title="Haz clic para avanzar a la siguiente foto">
                 
-                <!-- Diapositiva 1: ExplicaciÃ³n en clase con la profesora y pantalla interactiva -->
+                <!-- Diapositiva 1: Explicaci&oacute;n en clase con la profesora y pantalla interactiva -->
                 <div class="madrasa-slide active" data-index="0">
                   <img src="images/madrasa-portada.jpg" alt="Clase y formaci&oacute;n con pantalla interactiva en Madrasat Iqraa" class="madrasa-slide-img u-img-pos-center-65" />
                   <div class="madrasa-slide-caption">
@@ -1040,6 +1040,47 @@
                   </div>
                 </div>
 
+                <!-- Diapositiva 3: Proyecto DÃ­a Mundial de la Lengua Ãrabe -->
+                <div class="madrasa-slide" data-index="2">
+                  <div class="madrasa-slide-backdrop" style="background-image: url('images/madrasa-dia-arabe.jpg');"></div>
+                  <img src="images/madrasa-dia-arabe.jpg" alt="Mural del D&iacute;a Mundial de la Lengua &Aacute;rabe elaborado por alumnos" class="madrasa-slide-img madrasa-slide-img-contain" />
+                  <div class="madrasa-slide-caption">
+                    <div class="madrasa-caption-text">
+                      <span class="u-badge-gold-pill"><i class="fa-solid fa-scroll"></i> D&iacute;a de la Lengua &Aacute;rabe</span>
+                      <h4>Murales y proyectos culturales de los alumnos</h4>
+                      <p>Celebraci&oacute;n del 18 de Diciembre: amor por la lengua del Cor&aacute;n, caligraf&iacute;a y literatura.</p>
+                    </div>
+                    <span class="u-chip-glass"><i class="fa-solid fa-feather-pointed u-text-gold"></i> Proyecto escolar</span>
+                  </div>
+                </div>
+
+                <!-- Diapositiva 4: Maquetas y talleres manuales -->
+                <div class="madrasa-slide" data-index="3">
+                  <div class="madrasa-slide-backdrop" style="background-image: url('images/madrasa-maqueta.jpg');"></div>
+                  <img src="images/madrasa-maqueta.jpg" alt="Maqueta de mezquita construida artesanalmente en taller did&aacute;ctico" class="madrasa-slide-img madrasa-slide-img-contain" />
+                  <div class="madrasa-slide-caption">
+                    <div class="madrasa-caption-text">
+                      <span class="u-badge-gold-pill"><i class="fa-solid fa-cubes-stacked"></i> Talleres Creativos</span>
+                      <h4>Maquetas de mezquitas y arte arquitect&oacute;nico</h4>
+                      <p>Construcci&oacute;n did&aacute;ctica donde los alumnos recrean mezquitas, lugares sagrados y patrimonio.</p>
+                    </div>
+                    <span class="u-chip-glass"><i class="fa-solid fa-award u-text-gold"></i> Exposici&oacute;n escolar</span>
+                  </div>
+                </div>
+
+                <!-- Diapositiva 5: Charlas, orientaciÃ³n y conferencias con especialistas -->
+                <div class="madrasa-slide" data-index="4">
+                  <img src="images/madrasa-conferencia.jpg" alt="Conferencia y orientaci&oacute;n acad&eacute;mica con especialistas en auditorio" class="madrasa-slide-img" />
+                  <div class="madrasa-slide-caption">
+                    <div class="madrasa-caption-text">
+                      <span class="u-badge-gold-pill"><i class="fa-solid fa-graduation-cap"></i> Charlas y Orientaci&oacute;n</span>
+                      <h4>Encuentros con especialistas y comunidad</h4>
+                      <p>Jornadas formativas sobre educaci&oacute;n, apoyo universitario y orientaci&oacute;n para j&oacute;venes y familias.</p>
+                    </div>
+                    <span class="u-chip-glass"><i class="fa-solid fa-chalkboard-user u-text-gold"></i> Orientaci&oacute;n acad&eacute;mica</span>
+                  </div>
+                </div>
+
                 <!-- Botones Anterior / Siguiente -->
                 <button type="button" class="madrasa-nav-btn madrasa-nav-prev" onclick="event.stopPropagation(); madrasaCarousel.prev();" aria-label="Foto anterior">
                   <i class="fa-solid fa-chevron-left"></i>
@@ -1050,7 +1091,7 @@
 
                 <!-- PÃ­ldora de contador -->
                 <div class="madrasa-counter-badge" id="madrasaCounter">
-                  <i class="fa-regular fa-images"></i> <span id="madrasaCounterText">1 / 2</span>
+                  <i class="fa-regular fa-images"></i> <span id="madrasaCounterText">1 / 5</span>
                 </div>
               </div>
 
@@ -1063,6 +1104,9 @@
                 <div class="madrasa-dots" id="madrasaDots">
                   <button type="button" class="madrasa-dot active" onclick="event.stopPropagation(); madrasaCarousel.goTo(0)" aria-label="Ver foto 1"></button>
                   <button type="button" class="madrasa-dot" onclick="event.stopPropagation(); madrasaCarousel.goTo(1)" aria-label="Ver foto 2"></button>
+                  <button type="button" class="madrasa-dot" onclick="event.stopPropagation(); madrasaCarousel.goTo(2)" aria-label="Ver foto 3"></button>
+                  <button type="button" class="madrasa-dot" onclick="event.stopPropagation(); madrasaCarousel.goTo(3)" aria-label="Ver foto 4"></button>
+                  <button type="button" class="madrasa-dot" onclick="event.stopPropagation(); madrasaCarousel.goTo(4)" aria-label="Ver foto 5"></button>
                 </div>
               </div>
             </div>

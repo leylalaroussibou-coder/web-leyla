@@ -1,4 +1,4 @@
-﻿    if ('scrollRestoration' in history) { history.scrollRestoration = 'manual'; }
+    if ('scrollRestoration' in history) { history.scrollRestoration = 'manual'; }
     // === LÓGICA DE SPA Y SCROLLING ===
     const app = {
       views: ['view-home', 'view-nosotros', 'view-annur', 'view-arriduan', 'view-madrasa', 'view-interesados', 'view-noticias', 'view-contacto'],
@@ -804,6 +804,22 @@
             }
           }
         }, { passive: true });
+      }
+
+      // Generar puntos dinÃ¡micamente si no coinciden
+      if (dotsContainer) {
+        dotsContainer.innerHTML = '';
+        for (let i = 0; i < total; i++) {
+          const dot = document.createElement('button');
+          dot.type = 'button';
+          dot.className = 'madrasa-dot' + (i === 0 ? ' active' : '');
+          dot.setAttribute('aria-label', 'Ir a la foto ' + (i + 1));
+          dot.addEventListener('click', function(e) {
+            e.stopPropagation();
+            goTo(i);
+          });
+          dotsContainer.appendChild(dot);
+        }
       }
 
       // Iniciar
